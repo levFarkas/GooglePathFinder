@@ -7,37 +7,38 @@ from GooglePathFinder.src.heuristics import l2distance
 # Utility functions
 
 # Generate scalars in the form of [[x11,...,x1n],[x21,...,x2n],...]
+# All permutations are generated of the predefined values
 def scalar_generator(dimensions=2):
-    dim = [[-2, 1, 0, 1, 2]] * dimensions
-    scalars = list(product(*dim))
+    base = [[-2, 1, 0, 1, 2]] * dimensions
+    permutations = list(product(*base))
 
     def generator():
-        for i in range(len(scalars)):
-            yield scalars[i]
+        for i in range(len(permutations)):
+            yield permutations[i]
 
     return generator
 
 
-# Check a property of a scalar
-def scalar_tester(property_assertion):
+# Check a criteria for one scalar
+def scalar_tester(criteria_function):
     def scalar_tester():
         x_generator = scalar_generator()
         for x in x_generator():
-            assert property_assertion(x)
+            assert criteria_function(x)
             print(f"Assertion passed: {x}")
 
     return scalar_tester
 
 
-# Check a property of multiple scalars
+# Check a criteria for multiple scalars
 def multi_scalar_tester(num_scalars):
-    def multi_scalar_tester_factory(property_assertion):
+    def multi_scalar_tester_factory(criteria_function):
         def scalar_tester():
             generator_list = [scalar_generator()() for i in range(num_scalars)]
             prod = product(*generator_list)
 
             for p in prod:
-                assert property_assertion(*[p[i] for i in range(num_scalars)])
+                assert criteria_function(*[p[i] for i in range(num_scalars)])
                 print(f"Assertion passed: {[p[i] for i in range(num_scalars)]}")
 
         return scalar_tester
