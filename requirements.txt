@@ -1,2 +1,4 @@
+mysql
 pytest
 pylint
+mysql-connector-python
