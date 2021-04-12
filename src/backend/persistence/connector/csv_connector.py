@@ -1,8 +1,8 @@
 import csv
 from typing import List
 
-from backend.persistence.connector.interface.connector import Connector
-from backend.persistence.connector.model.node import Node
+from GooglePathFinder.src.backend.persistence.connector.interface.connector import Connector
+from GooglePathFinder.src.backend.persistence.connector.model.node import Node
 
 
 class CSVConnector(Connector):

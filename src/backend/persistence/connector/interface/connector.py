@@ -1,6 +1,6 @@
 from typing import List
 
-from backend.persistence.connector.model.node import Node
+from GooglePathFinder.src.backend.persistence.connector.model.node import Node
 
 
 class Connector:

@@ -1,4 +1,4 @@
-from backend.services.distance_service import DistanceService
+from GooglePathFinder.src.backend.services.distance_service import DistanceService
 
 
 class Handler:

@@ -2,7 +2,7 @@ import os
 
 import mysql.connector
 
-from backend.persistence.connector.interface.connector import Connector
+from GooglePathFinder.src.backend.persistence.connector.interface.connector import Connector
 
 
 class MySQLConnector(Connector):

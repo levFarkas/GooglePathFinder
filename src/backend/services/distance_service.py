@@ -1,7 +1,7 @@
 from typing import List
 
-from backend.persistence.connector.csv_connector import CSVConnector
-from backend.persistence.connector.model.node import Node
+from GooglePathFinder.src.backend.persistence.connector.csv_connector import CSVConnector
+from GooglePathFinder.src.backend.persistence.connector.model.node import Node
 
 
 class DistanceService:
