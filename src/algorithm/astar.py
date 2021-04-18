@@ -1,11 +1,16 @@
 from queue import PriorityQueue
+from typing import Callable
 
 from GooglePathFinder.src.model.node import Node
 
 
-class Dijkstra:
+class AStar:
     @staticmethod
-    def run(start_node: Node, end_node: Node):
+    def run(
+        start_node: Node,
+        end_node: Node,
+        heuristic_function: Callable[[Node, Node], float],
+    ):
         curr_node = start_node
         curr_distance = 0
 
@@ -17,6 +22,7 @@ class Dijkstra:
 
         neighbor_queue = PriorityQueue()
         for (n_distance, n_node) in start_node.get_neighbors():
+            n_distance += heuristic_function(n_node, end_node)
             neighbor_queue.put([n_distance, n_node])
             node_dict[n_node] = {
                 "sum_distance": n_distance,
@@ -34,7 +40,12 @@ class Dijkstra:
             node_dict[curr_node]["visited"] = True
 
             for (n_distance, n_node) in curr_node.get_neighbors():
-                updated_distance = curr_distance + n_distance
+                updated_distance = (
+                    curr_distance
+                    - heuristic_function(curr_node, end_node)
+                    + n_distance
+                    + heuristic_function(n_node, end_node)
+                )
 
                 if n_node not in node_dict.keys():
                     queued_node = [updated_distance, n_node]
@@ -47,6 +58,8 @@ class Dijkstra:
 
                 elif node_dict[n_node]["sum_distance"] > updated_distance:
                     if node_dict[n_node]["visited"]:
+                        # The heuristic function must be consistent: h(n) <= c(n,n') + h(n')
+                        # This is equivalent to the triangle inequality if h(n) is the l2distance
                         raise AssertionError(
                             "The fetched node is already visited but the path is not optimal!"
                         )

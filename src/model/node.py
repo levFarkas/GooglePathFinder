@@ -2,7 +2,7 @@ from typing import List
 
 
 class Node:
-    def __init__(self, node_id, city="", latitude=0, longitude=0, heuristics=0):
+    def __init__(self, node_id, latitude=0, longitude=0, heuristics=0, city=""):
         self.node_id = node_id
         self.city = city
         self.latitude = latitude

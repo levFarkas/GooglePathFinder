@@ -1,28 +1,26 @@
-from GooglePathFinder.src.algorithm.dijkstra import Dijkstra
+from GooglePathFinder.src.algorithm.astar import AStar
 from GooglePathFinder.src.model.node import Node
+from GooglePathFinder.src.algorithm.heuristics import nodel2distance
 
 
-def test_dijkstra_predefined_match():
+def test_astar_predefined_match():
     """
     Compare the output to a manually computed solution
-    The graph features the following corner cases:
-    - update required of an already queued node
-    - intermediate node without neighbors (no outgoing edge)
     """
 
     # Nodes
     s = Node("s")  # Start node
-    a = Node("a")
-    b = Node("b")
-    c = Node("c")
-    d = Node("d")
-    e = Node("e")
-    f = Node("f")
-    h = Node("h")
-    i = Node("i")
-    j = Node("j")
-    k = Node("k")
-    g = Node("g")  # End node
+    a = Node("a", 12, 35)
+    b = Node("b", 8, 15)
+    c = Node("c", 5, 12)
+    d = Node("d", 3, 4)
+    e = Node("e", 3, 4)
+    f = Node("f", 9, 40)
+    h = Node("h", 15, 8)
+    i = Node("i", 12, 5)
+    j = Node("j", 7, 24)
+    k = Node("k", 39, 80)
+    g = Node("g", 0, 0)  # End node
 
     # Neighbors
     s.set_neighbors([[3, d], [9, e], [1, i]])
@@ -38,40 +36,40 @@ def test_dijkstra_predefined_match():
     k.set_neighbors([[5, f]])
     g.set_neighbors([])
 
-    solver = Dijkstra()
-    manual_solution = (["d", "e", "h", "j", "k", "f", "g"], 23)
-    (path, sum_distance) = solver.run(s, g)
+    solver = AStar()
+    manual_solution = (["d", "e", "f", "g"], 24)
+    (path, sum_distance) = solver.run(s, g, nodel2distance)
 
     assert (path, sum_distance) == manual_solution
 
 
-def test_dijkstra_emptyqueue_unmatched():
+def test_astar_emptyqueue_unmatched():
 
     # Nodes
-    s = Node("s")  # Start node
-    g = Node("g")  # End node
+    s = Node("s", 1, 1)  # Start node
+    g = Node("g", 0, 0)  # End node
 
     # Neighbors
     s.set_neighbors([])
     g.set_neighbors([])
 
-    solver = Dijkstra()
+    solver = AStar()
     manual_solution = ([], float("inf"))
-    (path, sum_distance) = solver.run(s, g)
+    (path, sum_distance) = solver.run(s, g, nodel2distance)
 
     assert (path, sum_distance) == manual_solution
 
 
-def test_dijkstra_multigraph_match():
+def test_astar_multigraph_match():
     """
     The graph contains loops (edges defined by the same vertex)
     """
 
     # Nodes
-    s = Node("s")  # Start node
-    a = Node("a")
-    b = Node("b")
-    g = Node("g")  # End node
+    s = Node("s", 10, 10)  # Start node
+    a = Node("a", 3, 4)
+    b = Node("b", 2, 2)
+    g = Node("g", 0, 0)  # End node
 
     # Neighbors
     s.set_neighbors([[3, a]])
@@ -79,8 +77,8 @@ def test_dijkstra_multigraph_match():
     b.set_neighbors([[1, b], [2, a], [3, g]])
     g.set_neighbors([])
 
-    solver = Dijkstra()
+    solver = AStar()
     manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance) = solver.run(s, g)
+    (path, sum_distance) = solver.run(s, g, nodel2distance)
 
     assert (path, sum_distance) == manual_solution
