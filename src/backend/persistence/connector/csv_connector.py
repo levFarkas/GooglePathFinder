@@ -2,7 +2,7 @@ import csv
 from typing import List
 
 from GooglePathFinder.src.backend.persistence.connector.interface.connector import Connector
-from GooglePathFinder.src.backend.persistence.connector.model.node import NodeDao
+from GooglePathFinder.src.backend.persistence.connector.model.nodedao import NodeDao
 
 
 class CSVConnector(Connector):
@@ -12,7 +12,7 @@ class CSVConnector(Connector):
 
     def find_neighbors_by_node(self, node: str) -> List[NodeDao]:
         with open("../resources/mocks/neighbours.csv") as f:
-            return self._read_data
+            return self._read_data(f)
 
     @staticmethod
     def _read_data(f):
