@@ -3,6 +3,7 @@ from itertools import product
 
 from GooglePathFinder.src.algorithm.heuristics import l2distance
 
+
 ###############################################################################
 # Utility functions
 

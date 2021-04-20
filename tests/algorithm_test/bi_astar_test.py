@@ -1,6 +1,6 @@
 from GooglePathFinder.src.algorithm.bi_astar import BiAStar
-from GooglePathFinder.src.model.node import Node
 from GooglePathFinder.src.algorithm.heuristics import node_l2distance
+from GooglePathFinder.src.model.node import Node
 
 
 def test_biastar_predefined_match():
@@ -44,7 +44,6 @@ def test_biastar_predefined_match():
 
 
 def test_biastar_emptyqueue_unmatched():
-
     # Nodes
     s = Node("s", 1, 1)  # Start node
     g = Node("g", 0, 0)  # End node

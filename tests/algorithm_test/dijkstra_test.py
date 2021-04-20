@@ -46,7 +46,6 @@ def test_dijkstra_predefined_match():
 
 
 def test_dijkstra_emptyqueue_unmatched():
-
     # Nodes
     s = Node("s")  # Start node
     g = Node("g")  # End node
