@@ -1,12 +1,13 @@
 import logging
-from queue import PriorityQueue
 from typing import Callable
 
 from GooglePathFinder.src.model.node import Node
 
-# Bidirectional A* implementation based on the NBS algorithm
-# https://arxiv.org/abs/1703.03868
+
 class BiAStar:
+    """Bidirectional A* implementation based on the NBS algorithm
+    https://arxiv.org/abs/1703.03868"""
+
     @staticmethod
     def run(
         start_node: Node,
@@ -57,32 +58,34 @@ class BiAStar:
             # Find candidates with minimum weight (by minimizing tentative_cost)
             min_nodes = []
             min_cost = float("inf")
-            for f, b in zip(forward_open.keys(), backward_open.keys()):
+            for f_node, b_node in zip(forward_open.keys(), backward_open.keys()):
                 tentative_cost = max(
-                    forward_open[f] + heuristic_function(f, end_node),
-                    backward_open[b] + heuristic_function(b, start_node),
-                    forward_open[f] + backward_open[b],
+                    forward_open[f_node] + heuristic_function(f_node, end_node),
+                    backward_open[b_node] + heuristic_function(b_node, start_node),
+                    forward_open[f_node] + backward_open[b_node],
                 )
                 if tentative_cost < min_cost:
-                    min_nodes = [(f, b)]
+                    min_nodes = [(f_node, b_node)]
                     min_cost = tentative_cost
                 elif tentative_cost == min_cost:
-                    min_nodes.append((f, b))
+                    min_nodes.append((f_node, b_node))
 
             if min_cost > solution["path_cost"]:
                 break
 
             # Expand nodes in both directions based on a forward node with minimum cost
-            expanded_nodes = min(min_nodes, key=lambda t: forward_open[t[0]])
+            (f_expanded, b_expanded) = min(
+                min_nodes, key=lambda node_pair: forward_open[node_pair[0]]
+            )
 
-            del forward_open[expanded_nodes[0]]
-            forward_dict[expanded_nodes[0]]["preceding"] = forward_current
-            forward_current = expanded_nodes[0]
+            del forward_open[f_expanded]
+            forward_dict[f_expanded]["preceding"] = forward_current
+            forward_current = f_expanded
             forward_dict[forward_current]["visited"] = True
 
-            del backward_open[expanded_nodes[1]]
-            backward_dict[expanded_nodes[1]]["preceding"] = backward_current
-            backward_current = expanded_nodes[1]
+            del backward_open[b_expanded]
+            backward_dict[b_expanded]["preceding"] = backward_current
+            backward_current = b_expanded
             backward_dict[backward_current]["visited"] = True
 
             # Check the neighbors of the forward expanded node (not just in the open set)
@@ -178,9 +181,11 @@ class BiAStar:
 
         sum_distance = solution["path_cost"]
         logging.info(
-            f"Path computed successfully between node {start_node.node_id} and {end_node.node_id}. Final distance is {sum_distance}"
+            f"Path computed successfully between node {start_node.node_id} and \
+            {end_node.node_id}. Final distance is {sum_distance}"
         )
 
+        # Reconstruct the path
         path = []
         curr_forward = solution["node"]
         curr_backward = solution["node"]

@@ -6,6 +6,11 @@ from GooglePathFinder.src.model.node import Node
 
 
 class AStar:
+    """A* algorithm using a priority queue. Nodes may appear multiple times in
+    the queue, since the update of priorities is not supported in queue.PriorityQueue.
+    Instead, the invalid queue elements are skipped. A node is invalid if the queued
+    distance does not match the separately stored distance."""
+
     @staticmethod
     def run(
         start_node: Node,
@@ -16,10 +21,6 @@ class AStar:
         curr_distance = 0
 
         node_dict = {curr_node: {"sum_distance": 0, "preceding": None, "visited": True}}
-
-        # Nodes may appear multiple times in the queue, since the update of priorities is not
-        # supported in queue.PriorityQueue. Instead, the invalid queue elements are skipped.
-        # A node is invalid if the queued distance does not match the stored distance.
 
         neighbor_queue = PriorityQueue()
         for (n_distance, n_node) in start_node.get_neighbors():
@@ -49,8 +50,7 @@ class AStar:
                 )
 
                 if n_node not in node_dict.keys():
-                    queued_node = [updated_distance, n_node]
-                    neighbor_queue.put(queued_node)
+                    neighbor_queue.put([updated_distance, n_node])
                     node_dict[n_node] = {
                         "sum_distance": updated_distance,
                         "preceding": curr_node,
@@ -65,8 +65,7 @@ class AStar:
                             "The fetched node is already visited but the path is not optimal!"
                         )
 
-                    queued_node = [updated_distance, n_node]
-                    neighbor_queue.put(queued_node)
+                    neighbor_queue.put([updated_distance, n_node])
                     node_dict[n_node]["preceding"] = curr_node
                     node_dict[n_node]["sum_distance"] = updated_distance
 
@@ -79,8 +78,11 @@ class AStar:
 
         sum_distance = node_dict[end_node]["sum_distance"]
         logging.info(
-            f"Path computed successfully between node {start_node.node_id} and {end_node.node_id}. Final distance is {sum_distance}"
+            f"Path computed successfully between node {start_node.node_id} and \
+            {end_node.node_id}. Final distance is {sum_distance}"
         )
+
+        # Reconstruct the path
         path = []
         while curr_node != start_node:
             path.insert(0, curr_node.node_id)
