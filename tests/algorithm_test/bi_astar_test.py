@@ -1,9 +1,9 @@
-from GooglePathFinder.src.algorithm.astar import AStar
+from GooglePathFinder.src.algorithm.bi_astar import BiAStar
 from GooglePathFinder.src.model.node import Node
 from GooglePathFinder.src.algorithm.heuristics import nodel2distance
 
 
-def test_astar_predefined_match():
+def test_biastar_predefined_match():
     """
     Compare the output to a manually computed solution
     """
@@ -36,14 +36,14 @@ def test_astar_predefined_match():
     k.set_neighbors([[5, f]])
     g.set_neighbors([])
 
-    solver = AStar()
+    solver = BiAStar()
     manual_solution = (["d", "e", "f", "g"], 24)
     (path, sum_distance) = solver.run(s, g, nodel2distance)
 
     assert (path, sum_distance) == manual_solution
 
 
-def test_astar_emptyqueue_unmatched():
+def test_biastar_emptyqueue_unmatched():
 
     # Nodes
     s = Node("s", 1, 1)  # Start node
@@ -53,14 +53,14 @@ def test_astar_emptyqueue_unmatched():
     s.set_neighbors([])
     g.set_neighbors([])
 
-    solver = AStar()
+    solver = BiAStar()
     manual_solution = ([], float("inf"))
     (path, sum_distance) = solver.run(s, g, nodel2distance)
 
     assert (path, sum_distance) == manual_solution
 
 
-def test_astar_multigraph_match():
+def test_biastar_multigraph_match():
     """
     The graph contains loops (edges defined by the same vertex)
     """
@@ -77,14 +77,14 @@ def test_astar_multigraph_match():
     b.set_neighbors([[1, b], [2, a], [3, g]])
     g.set_neighbors([])
 
-    solver = AStar()
+    solver = BiAStar()
     manual_solution = (["a", "b", "g"], 9)
     (path, sum_distance) = solver.run(s, g, nodel2distance)
 
     assert (path, sum_distance) == manual_solution
 
 
-def test_astar_direct_path_match():
+def test_biastar_direct_path_match():
     """
     Direct path between the start and end node
     """
@@ -97,8 +97,58 @@ def test_astar_direct_path_match():
     s.set_neighbors([[1, g]])
     g.set_neighbors([])
 
-    solver = AStar()
+    solver = BiAStar()
     manual_solution = (["g"], 1)
+    (path, sum_distance) = solver.run(s, g, nodel2distance)
+
+    assert (path, sum_distance) == manual_solution
+
+
+def test_biastar_odd_length_match():
+    """
+    The path has an odd length
+    """
+
+    # Nodes
+    s = Node("s", 10, 10)  # Start node
+    a = Node("a", 3, 4)
+    b = Node("b", 2, 2)
+    g = Node("g", 0, 0)  # End node
+
+    # Neighbors
+    s.set_neighbors([[3, a]])
+    a.set_neighbors([[3, b]])
+    b.set_neighbors([[3, g]])
+    g.set_neighbors([])
+
+    solver = BiAStar()
+    manual_solution = (["a", "b", "g"], 9)
+    (path, sum_distance) = solver.run(s, g, nodel2distance)
+
+    assert (path, sum_distance) == manual_solution
+
+
+def test_biastar_even_length_match():
+    """
+    The path has an even length
+    """
+
+    # Nodes
+    s = Node("s", 10, 10)  # Start node
+    a = Node("a", 3, 4)
+    b = Node("b", 2, 2)
+    c = Node("c", 1, 1)
+    g = Node("g", 0, 0)  # End node
+
+    # Neighbors
+    s.set_neighbors([[3, a]])
+    a.set_neighbors([[3, b]])
+    b.set_neighbors([[3, c]])
+    c.set_neighbors([[1, g]])
+    g.set_neighbors([])
+
+    solver = BiAStar()
+    manual_solution = (["a", "b", "c", "g"], 10)
     (path, sum_distance) = solver.run(s, g, nodel2distance)
 
     assert (path, sum_distance) == manual_solution

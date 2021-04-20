@@ -84,3 +84,23 @@ def test_dijkstra_multigraph_match():
     (path, sum_distance) = solver.run(s, g)
 
     assert (path, sum_distance) == manual_solution
+
+
+def test_dijkstra_direct_path_match():
+    """
+    Direct path between the start and end node
+    """
+
+    # Nodes
+    s = Node("s")  # Start node
+    g = Node("g")  # End node
+
+    # Neighbors
+    s.set_neighbors([[1, g]])
+    g.set_neighbors([])
+
+    solver = Dijkstra()
+    manual_solution = (["g"], 1)
+    (path, sum_distance) = solver.run(s, g)
+
+    assert (path, sum_distance) == manual_solution

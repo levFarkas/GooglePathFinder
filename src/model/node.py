@@ -9,6 +9,7 @@ class Node:
         self.longitude = longitude
         self.heuristics = heuristics
         self.neighbor_list = []
+        self.backward_neighbor_list = []
 
     def __hash__(self):
         return hash(self.node_id)
@@ -26,5 +27,14 @@ class Node:
         # the interconnections between the nodes
         self.neighbor_list = l
 
+        for (n_distance, n_node) in l:
+            n_node.add_backwards_neighbor([n_distance, self])
+
     def get_neighbors(self):
         return self.neighbor_list
+
+    def add_backwards_neighbor(self, l: List):
+        self.backward_neighbor_list.append(l)
+
+    def get_backwards_neighbors(self):
+        return self.backward_neighbor_list
