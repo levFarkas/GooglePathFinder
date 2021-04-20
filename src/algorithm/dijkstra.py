@@ -1,3 +1,4 @@
+import logging
 from queue import PriorityQueue
 
 from GooglePathFinder.src.model.node import Node
@@ -56,12 +57,17 @@ class Dijkstra:
                     node_dict[n_node]["preceding"] = curr_node
                     node_dict[n_node]["sum_distance"] = updated_distance
 
+        # Evaluate the solution ------------------------------------------------
         if curr_node != end_node:
-            print("There is no path between the nodes!")
+            logging.info(
+                f"There is no path between {start_node.node_id} and {end_node.node_id}."
+            )
             return [], float("inf")
 
         sum_distance = node_dict[end_node]["sum_distance"]
-        print(f"Path computed successfully! Final distance is {sum_distance}")
+        logging.info(
+            f"Path computed successfully between node {start_node.node_id} and {end_node.node_id}. Final distance is {sum_distance}"
+        )
         path = []
         while curr_node != start_node:
             path.insert(0, curr_node.node_id)

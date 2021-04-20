@@ -10,7 +10,7 @@ def l2distance(x, y):
 
 
 # latitude and longitude are treated as cartesian coordinates (only for testing purposes!)
-def nodel2distance(node_x: Node, node_y: Node):
+def node_l2distance(node_x: Node, node_y: Node):
     return l2distance(
         (node_x.latitude, node_x.longitude), (node_y.latitude, node_y.longitude)
     )

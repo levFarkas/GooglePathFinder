@@ -1,3 +1,4 @@
+import logging
 from queue import PriorityQueue
 from typing import Callable
 
@@ -42,7 +43,7 @@ class BiAStar:
         }
         backward_current = end_node
         backward_open = {}
-        for (n_distance, n_node) in end_node.get_backwards_neighbors():
+        for (n_distance, n_node) in end_node.get_backward_neighbors():
             backward_open[n_node] = n_distance
             backward_dict[n_node] = {
                 "sum_distance": n_distance,
@@ -113,7 +114,7 @@ class BiAStar:
                         continue
 
                     if forward_dict[n_node]["visited"]:
-                        print("A closed node is revisited.")
+                        logging.warning("A closed node is revisited.")
 
                     forward_dict[n_node]["sum_distance"] = neighbor_distance
                     forward_dict[n_node]["preceding"] = forward_current
@@ -126,8 +127,8 @@ class BiAStar:
                     }
                 forward_open[n_node] = neighbor_distance
 
-            # Check the neighbors of the backwards expanded node (not just in the open set)
-            for (n_distance, n_node) in backward_current.get_backwards_neighbors():
+            # Check the neighbors of the backward expanded node (not just in the open set)
+            for (n_distance, n_node) in backward_current.get_backward_neighbors():
                 matching_forward_nodes = [
                     node for node in forward_dict.keys() if n_node == node
                 ]
@@ -155,7 +156,7 @@ class BiAStar:
                         continue
 
                     if backward_dict[n_node]["visited"]:
-                        print("A closed node is revisited.")
+                        logging.warning("A closed node is revisited.")
 
                     backward_dict[n_node]["sum_distance"] = neighbor_distance
                     backward_dict[n_node]["preceding"] = backward_current
@@ -168,12 +169,17 @@ class BiAStar:
                     }
                 backward_open[n_node] = neighbor_distance
 
+        # Evaluate the solution -----------------------------------------------
         if solution["node"] == None:
-            print("There is no path between the nodes!")
+            logging.info(
+                f"There is no path between {start_node.node_id} and {end_node.node_id}."
+            )
             return [], float("inf")
 
         sum_distance = solution["path_cost"]
-        print(f"Path computed successfully! Final distance is {sum_distance}")
+        logging.info(
+            f"Path computed successfully between node {start_node.node_id} and {end_node.node_id}. Final distance is {sum_distance}"
+        )
 
         path = []
         curr_forward = solution["node"]

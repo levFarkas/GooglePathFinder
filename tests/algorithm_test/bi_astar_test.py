@@ -1,6 +1,6 @@
 from GooglePathFinder.src.algorithm.bi_astar import BiAStar
 from GooglePathFinder.src.model.node import Node
-from GooglePathFinder.src.algorithm.heuristics import nodel2distance
+from GooglePathFinder.src.algorithm.heuristics import node_l2distance
 
 
 def test_biastar_predefined_match():
@@ -38,7 +38,7 @@ def test_biastar_predefined_match():
 
     solver = BiAStar()
     manual_solution = (["d", "e", "f", "g"], 24)
-    (path, sum_distance) = solver.run(s, g, nodel2distance)
+    (path, sum_distance) = solver.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -55,7 +55,7 @@ def test_biastar_emptyqueue_unmatched():
 
     solver = BiAStar()
     manual_solution = ([], float("inf"))
-    (path, sum_distance) = solver.run(s, g, nodel2distance)
+    (path, sum_distance) = solver.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -79,7 +79,7 @@ def test_biastar_multigraph_match():
 
     solver = BiAStar()
     manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance) = solver.run(s, g, nodel2distance)
+    (path, sum_distance) = solver.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -99,7 +99,7 @@ def test_biastar_direct_path_match():
 
     solver = BiAStar()
     manual_solution = (["g"], 1)
-    (path, sum_distance) = solver.run(s, g, nodel2distance)
+    (path, sum_distance) = solver.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -123,7 +123,7 @@ def test_biastar_odd_length_match():
 
     solver = BiAStar()
     manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance) = solver.run(s, g, nodel2distance)
+    (path, sum_distance) = solver.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -149,6 +149,6 @@ def test_biastar_even_length_match():
 
     solver = BiAStar()
     manual_solution = (["a", "b", "c", "g"], 10)
-    (path, sum_distance) = solver.run(s, g, nodel2distance)
+    (path, sum_distance) = solver.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
