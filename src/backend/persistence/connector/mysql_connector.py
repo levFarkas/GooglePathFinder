@@ -16,3 +16,12 @@ class MySQLConnector(Connector):
         )
         if self._db.cursor:
             print("Successful connection to database.")
+
+    def find_all(self):
+        pass
+
+    def find_neighbors_by_node(self, node_id: str):
+        pass
+
+    def find_backward_neighbors_by_node(self, node_id: str):
+        pass

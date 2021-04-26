@@ -1,3 +1,6 @@
+from GooglePathFinder.src.model.node import Node
+
+
 class NodeDao:
     def __init__(self, data: dict):
         self.node_id = data["NODE_ID"]
@@ -7,3 +10,11 @@ class NodeDao:
         self.latitude = data["LATITUDE"]
         self.longitude = data["LONGITUDE"]
         self.heuristic = data["HEURISTICS"]
+
+    def convert_to_node_model(self) -> Node:
+        return Node(
+            node_id=self.node_id,
+            longitude=self.longitude,
+            latitude=self.latitude,
+            heuristics=self.heuristic,
+            city=self.city)
