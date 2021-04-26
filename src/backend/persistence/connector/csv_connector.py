@@ -14,6 +14,10 @@ class CSVConnector(Connector):
         with open("../resources/mocks/neighbours.csv") as f:
             return self._read_data(f)
 
+    def find_backward_neighbors_by_node(self, node: str) -> List[NodeDao]:
+        with open("../resources/mocks/backward_neighbours.csv") as f:
+            return self._read_data(f)
+
     @staticmethod
     def _read_data(f):
         reader = csv.reader(f)
