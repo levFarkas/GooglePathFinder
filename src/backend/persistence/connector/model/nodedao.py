@@ -1,4 +1,4 @@
-class Node:
+class NodeDao:
     def __init__(self, data: dict):
         self.node_id = data["NODE_ID"]
         self.node_name = data["NODE_ID"]
