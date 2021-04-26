@@ -36,9 +36,8 @@ def test_astar_predefined_match():
     k.set_neighbors([[5, f]])
     g.set_neighbors([])
 
-    solver = AStar()
     manual_solution = (["d", "e", "f", "g"], 24)
-    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = AStar.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -52,9 +51,8 @@ def test_astar_emptyqueue_unmatched():
     s.set_neighbors([])
     g.set_neighbors([])
 
-    solver = AStar()
     manual_solution = ([], float("inf"))
-    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = AStar.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -76,9 +74,8 @@ def test_astar_multigraph_match():
     b.set_neighbors([[1, b], [2, a], [3, g]])
     g.set_neighbors([])
 
-    solver = AStar()
     manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = AStar.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -96,8 +93,7 @@ def test_astar_direct_path_match():
     s.set_neighbors([[1, g]])
     g.set_neighbors([])
 
-    solver = AStar()
     manual_solution = (["g"], 1)
-    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = AStar.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution

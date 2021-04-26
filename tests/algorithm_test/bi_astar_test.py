@@ -36,9 +36,8 @@ def test_biastar_predefined_match():
     k.set_neighbors([[5, f]])
     g.set_neighbors([])
 
-    solver = BiAStar()
     manual_solution = (["d", "e", "f", "g"], 24)
-    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -52,9 +51,8 @@ def test_biastar_emptyqueue_unmatched():
     s.set_neighbors([])
     g.set_neighbors([])
 
-    solver = BiAStar()
     manual_solution = ([], float("inf"))
-    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -76,9 +74,8 @@ def test_biastar_multigraph_match():
     b.set_neighbors([[1, b], [2, a], [3, g]])
     g.set_neighbors([])
 
-    solver = BiAStar()
     manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -96,9 +93,8 @@ def test_biastar_direct_path_match():
     s.set_neighbors([[1, g]])
     g.set_neighbors([])
 
-    solver = BiAStar()
     manual_solution = (["g"], 1)
-    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -120,9 +116,8 @@ def test_biastar_odd_length_match():
     b.set_neighbors([[3, g]])
     g.set_neighbors([])
 
-    solver = BiAStar()
     manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -146,8 +141,7 @@ def test_biastar_even_length_match():
     c.set_neighbors([[1, g]])
     g.set_neighbors([])
 
-    solver = BiAStar()
     manual_solution = (["a", "b", "c", "g"], 10)
-    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
