@@ -13,5 +13,5 @@ class Connector:
     def find_neighbors_by_node(self, node: str) -> List[NodeDao]:
         pass
 
-    def find_backward_neighbors_by_node(self, node: str) -> List[Node]:
+    def find_backward_neighbors_by_node(self, node: str) -> List[NodeDao]:
         pass
