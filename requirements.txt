@@ -3,3 +3,4 @@ pytest
 pylint
 mysql-connector-python
 geopy
+dearpygui==0.6.162
