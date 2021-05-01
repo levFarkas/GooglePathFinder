@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import List, Optional
 
 import mysql.connector
 
@@ -22,7 +22,7 @@ class MySQLConnector(Connector):
     def find_all(self) -> List[NodeDao]:
         cursor = self._db.cursor()
         cursor.execute("""
-        SELECT NODE_ID, NODE_NAME, CITY, ZIP_CODE, LONGITUDE, LATITUDE, HEURISTICS 
+        SELECT NODE_ID, NODE_NAME, CITY, ZIP_CODE, LONGITUDE, LATITUDE, HEURISTICS
         FROM PATHFINDER.NODES""")
 
         columns = tuple([d[0] for d in cursor.description])
@@ -32,6 +32,22 @@ class MySQLConnector(Connector):
         cursor.close()
 
         return [NodeDao(item) for item in result]
+
+    def find_node_by_id(self, node_id : str) -> Optional[NodeDao]:
+        cursor = self._db.cursor()
+        cursor.execute("""
+        SELECT NODE_ID, NODE_NAME, CITY, ZIP_CODE, LONGITUDE, LATITUDE, HEURISTICS
+        FROM PATHFINDER.NODES
+        where NODE_ID = """ + node_id)
+
+        columns = tuple([d[0] for d in cursor.description])
+
+        result = [dict(zip(columns, row)) for row in cursor]
+        assert len(result) <= 1
+
+        cursor.close()
+
+        return NodeDao(result[0]) if len(result) == 1 else None
 
     def find_neighbors_by_node(self, node_id: str) -> List[NodeDao]:
         cursor = self._db.cursor()
