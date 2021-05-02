@@ -117,6 +117,17 @@ class InputPanel:
             )
             core.end()  # destination_input
 
+            core.add_spacing(count=5)
+
+            # GUI elements for the algorithm selection## ######################
+            core.add_text("Algorithm selection")
+            core.add_listbox(
+                "algorithm_selector",
+                label="",
+                items=["Dijkstra", "A*", "Bidirectional A*"],
+                width=450,
+            )
+
     def sample_by_mouse(self, sender, callback_object):
         def update_on_click(sender):
             core.set_value(callback_object, core.get_drawing_mouse_pos())
