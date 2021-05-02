@@ -26,15 +26,17 @@ def deg2num(lat_deg: float, lon_deg: float, zoom: int):
     return (xtile, ytile)
 
 
-def load_tiles(lat: float, long: float, zoom: int, num_tiles: int) -> List[int]:
+def load_tiles(lat: float, long: float, zoom: int, tile_radius: int) -> List[int]:
     tile_x, tile_y = deg2num(lat, long, zoom)
 
-    image_data = np.full((256 * num_tiles, 256 * num_tiles, 4), 255, dtype=np.uint8)
-    idx_generator = tile_idx_generator(num_tiles)
+    image_data = np.full(
+        (256 * (2 * tile_radius + 1), 256 * (2 * tile_radius + 1), 4),
+        255,
+        dtype=np.uint8,
+    )
+    idx_generator = tile_idx_generator(2 * tile_radius + 1)
     for x_idx, y_idx in idx_generator():
-        image_url = (
-            f"https://tile.openstreetmap.org/{zoom}/{tile_x+x_idx}/{tile_y+y_idx}.png"
-        )
+        image_url = f"https://tile.openstreetmap.org/{zoom}/{tile_x+x_idx-tile_radius}/{tile_y+y_idx-tile_radius}.png"
 
         r = requests.get(image_url, stream=True)
         if r.status_code == 200:

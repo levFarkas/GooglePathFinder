@@ -19,7 +19,7 @@ class PathFinderGui:
 
         with simple.window("main_window"):
             core.add_group("main_panel", parent="main_window", horizontal=True)
-            map_display = MapDisplay("map_display", parent="main_panel", num_tiles=4)
+            map_display = MapDisplay("map_display", parent="main_panel", tile_radius=1)
             map_display.construct()
 
             core.add_group("user_panel", parent="main_panel", horizontal=False)
@@ -38,10 +38,10 @@ class PathFinderGui:
 
 
 class MapDisplay:
-    def __init__(self, name, parent, num_tiles):
+    def __init__(self, name, parent, tile_radius):
         self.name = name
         self.parent = parent
-        self.num_tiles = num_tiles
+        self.tile_radius = tile_radius
         self.pool = Pool()
 
         def destruct():
@@ -56,11 +56,11 @@ class MapDisplay:
             core.add_texture(
                 "geomap",
                 [255 for i in range(700 * 700 * 4)],
-                256 * self.num_tiles,
-                256 * self.num_tiles,
+                256 * self.tile_radius,
+                256 * self.tile_radius,
             )
 
-            self.async_update_by_coordinate(46.98828541972894, 17.933220574578318, 16)
+            self.async_update_by_coordinate(46.98337006427196, 17.94085796579044, 16)
 
     def async_update_by_coordinate(self, lat, long, zoom):
         self.pool.apply_async(
@@ -69,7 +69,7 @@ class MapDisplay:
                 "lat": lat,
                 "long": long,
                 "zoom": zoom,
-                "num_tiles": self.num_tiles,
+                "tile_radius": self.tile_radius,
             },
             callback=self.update,
         )
@@ -78,8 +78,8 @@ class MapDisplay:
         core.add_texture(
             "geomap",
             image_data,
-            256 * self.num_tiles,
-            256 * self.num_tiles,
+            256 * (2 * self.tile_radius + 1),
+            256 * (2 * self.tile_radius + 1),
         )
         core.draw_image("canvas", "geomap", [0, 0], [700, 700])
 
@@ -119,7 +119,7 @@ class InputPanel:
 
             core.add_spacing(count=5)
 
-            # GUI elements for the algorithm selection## ######################
+            # GUI elements for the algorithm selection ########################
             core.add_text("Algorithm selection")
             core.add_listbox(
                 "algorithm_selector",
