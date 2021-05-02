@@ -5,5 +5,5 @@ mysql-connector-python
 geopy
 dearpygui==0.6.415
 numpy
-PIL
+pillow
 requests
