@@ -29,7 +29,7 @@ def deg2num(lat_deg: float, lon_deg: float, zoom: int):
 def load_tiles(lat: float, long: float, zoom: int, num_tiles: int) -> List[int]:
     tile_x, tile_y = deg2num(lat, long, zoom)
 
-    image_data = np.full((256 * num_tiles, 256 * num_tiles, 4), 255)
+    image_data = np.full((256 * num_tiles, 256 * num_tiles, 4), 255, dtype=np.uint8)
     idx_generator = tile_idx_generator(num_tiles)
     for x_idx, y_idx in idx_generator():
         image_url = (

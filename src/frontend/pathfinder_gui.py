@@ -1,6 +1,6 @@
 import dearpygui.core as core
 import dearpygui.simple as simple
-import threading
+import atexit
 from multiprocessing import Pool
 
 from GooglePathFinder.src.frontend.image_loader import load_tiles
@@ -18,10 +18,19 @@ class PathFinderGui:
         core.set_main_window_resizable(resizable=False)
 
         with simple.window("main_window"):
-            core.add_group("main_group", parent="main_window", horizontal=True)
-            map_display = MapDisplay("map_display", "main_window", 4)
+            core.add_group("main_panel", parent="main_window", horizontal=True)
+            map_display = MapDisplay("map_display", parent="main_panel", num_tiles=4)
             map_display.construct()
-            core.end()
+
+            core.add_group("user_panel", parent="main_panel", horizontal=False)
+            input_panel = InputPanel("input_panel", parent="user_panel")
+            input_panel.construct()
+
+            execution_panel = ExecutionPanel("execution_panel", parent="user_panel")
+            execution_panel.construct()
+            core.end()  # user_panel
+
+            core.end()  # main_panel
 
     @staticmethod
     def run():
@@ -35,6 +44,12 @@ class MapDisplay:
         self.num_tiles = num_tiles
         self.pool = Pool()
 
+        def destruct():
+            self.pool.terminate()
+            self.pool.join()
+
+        atexit.register(destruct)
+
     def construct(self):
         with simple.group(self.name, parent=self.parent):
             core.add_drawing("canvas", width=700, height=700)
@@ -45,16 +60,19 @@ class MapDisplay:
                 256 * self.num_tiles,
             )
 
-            self.pool.apply_async(
-                load_tiles,
-                kwds={
-                    "lat": 46.98828541972894,
-                    "long": 17.933220574578318,
-                    "zoom": 16,
-                    "num_tiles": self.num_tiles,
-                },
-                callback=self.update,
-            )
+            self.async_update_by_coordinate(46.98828541972894, 17.933220574578318, 16)
+
+    def async_update_by_coordinate(self, lat, long, zoom):
+        self.pool.apply_async(
+            load_tiles,
+            kwds={
+                "lat": lat,
+                "long": long,
+                "zoom": zoom,
+                "num_tiles": self.num_tiles,
+            },
+            callback=self.update,
+        )
 
     def update(self, image_data):
         core.add_texture(
