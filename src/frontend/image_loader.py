@@ -26,6 +26,15 @@ def deg2num(lat_deg: float, lon_deg: float, zoom: int):
     return (xtile, ytile)
 
 
+# source: https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames
+def num2deg(xtile, ytile, zoom):
+    n = 2.0 ** zoom
+    lon_deg = xtile / n * 360.0 - 180.0
+    lat_rad = math.atan(math.sinh(math.pi * (1 - 2 * ytile / n)))
+    lat_deg = math.degrees(lat_rad)
+    return (lat_deg, lon_deg)
+
+
 def load_tiles(lat: float, long: float, zoom: int, tile_radius: int) -> List[int]:
     tile_x, tile_y = deg2num(lat, long, zoom)
 
