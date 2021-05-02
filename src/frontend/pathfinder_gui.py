@@ -90,7 +90,39 @@ class InputPanel:
         self.parent = parent
 
     def construct(self):
-        pass
+        with simple.group(self.name, parent=self.parent):
+            # GUI elements for the initial coordinate #########################
+            core.add_text("Initial coordinate (latitude, longitude)")
+            core.add_group("init_input", horizontal=True, horizontal_spacing=0)
+            core.add_input_float2("init_coordinate", label="", format="%f°", width=450)
+            core.add_button(
+                "Sample##input",
+                callback=self.sample_by_mouse,
+                callback_data=("init_coordinate"),
+            )
+            core.end()  # init_input
+
+            core.add_spacing(count=5)
+
+            # GUI elements for the destination coordinate #####################
+            core.add_text("Destination coordinate (latitude, longitude)")
+            core.add_group("destination_input", horizontal=True, horizontal_spacing=0)
+            core.add_input_float2(
+                "destination_coordinate", format="%f°", label="", width=450
+            )
+            core.add_button(
+                "Sample##destination",
+                callback=self.sample_by_mouse,
+                callback_data=("destination_coordinate"),
+            )
+            core.end()  # destination_input
+
+    def sample_by_mouse(self, sender, callback_object):
+        def update_on_click(sender):
+            core.set_value(callback_object, core.get_drawing_mouse_pos())
+            core.set_mouse_click_callback(None)
+
+        core.set_mouse_click_callback(update_on_click)
 
 
 class ExecutionPanel:
