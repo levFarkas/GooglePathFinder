@@ -2,7 +2,6 @@ import os
 from typing import List, Optional
 
 import mysql.connector
-
 from GooglePathFinder.src.backend.persistence.connector.interface.connector import Connector
 from GooglePathFinder.src.backend.persistence.connector.model.nodedao import NodeDao
 
@@ -52,11 +51,10 @@ class MySQLConnector(Connector):
     def find_neighbors_by_node(self, node_id: str) -> List[NodeDao]:
         cursor = self._db.cursor()
         cursor.execute("""
-        SELECT n2.NODE_ID, n2.NODE_NAME, n2.CITY, n2.ZIP_CODE, n2.LONGITUDE, n2.LATITUDE, n2.HEURISTICS 
-        FROM PATHFINDER.EDGES e
-        INNER JOIN PATHFINDER.NODES n on n.NODE_ID = e.FROM_CROSSROADS_ID 
-        INNER JOIN PATHFINDER.NODES n2 on n2.NODE_ID = e.TO_CROSSROADS_ID 
-        where n.NODE_ID = """ + node_id)
+        SELECT n.NODE_ID, n.NODE_NAME, n.CITY, n.ZIP_CODE, n.LATITUDE, n.LONGITUDE, n.HEURISTICS
+        FROM PATHFINDER.NODES n LEFT JOIN PATHFINDER.GRAPH g ON n.node_id=g.NODE_ID 
+        RIGHT JOIN PATHFINDER.EDGES e ON g.EDGE_ID=E.EDGE_ID
+        WHERE e.FROM_CROSSROADS_ID = = """ + node_id)
 
         columns = tuple([d[0] for d in cursor.description])
 
@@ -69,11 +67,10 @@ class MySQLConnector(Connector):
     def find_backward_neighbors_by_node(self, node_id: str) -> List[NodeDao]:
         cursor = self._db.cursor()
         cursor.execute("""
-        SELECT n2.NODE_ID, n2.NODE_NAME, n2.CITY, n2.ZIP_CODE, n2.LONGITUDE, n2.LATITUDE, n2.HEURISTICS 
-        FROM PATHFINDER.EDGES e
-        INNER JOIN PATHFINDER.NODES n on n.NODE_ID = e.TO_CROSSROADS_ID 
-        INNER JOIN PATHFINDER.NODES n2 on n2.NODE_ID = e.FROM_CROSSROADS_ID 
-        where n.NODE_ID = """ + node_id)
+        SELECT n.NODE_ID, n.NODE_NAME, n.CITY, n.ZIP_CODE, n.LATITUDE, n.LONGITUDE, n.HEURISTICS
+        FROM PATHFINDER.NODES n LEFT JOIN PATHFINDER.GRAPH g ON n.node_id=g.NODE_ID 
+        RIGHT JOIN PATHFINDER.EDGES e ON g.EDGE_ID=E.EDGE_ID
+        WHERE e.TO_CROSSROADS_ID = """ + node_id)
 
         columns = tuple([d[0] for d in cursor.description])
 
