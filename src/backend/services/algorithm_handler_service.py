@@ -40,7 +40,7 @@ class AlgorithmHandlerService:
             return self.do_biastar()
 
     def compute(self, objective: Dict, algorithms: List):
-        """Call this function directly to compute without multiprocessing"""
+        """Call this function using a multiprocessing pool"""
         self.objective = objective
         self.algorithms = algorithms
 
@@ -48,8 +48,3 @@ class AlgorithmHandlerService:
             return map(self.algorithm_mapper, self.algorithms)
         except:
             return []
-
-    def run(self, objective: Dict, algorithms: List, processing_queue: Queue):
-        """Execute on a separate process"""
-        result = self.compute(objective, algorithms)
-        processing_queue.put(result)
