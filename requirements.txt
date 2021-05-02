@@ -4,7 +4,6 @@ pylint
 mysql-connector-python
 geopy
 dearpygui==0.6.415
-itertools
 numpy
 PIL
 requests
