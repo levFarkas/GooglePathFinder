@@ -24,8 +24,8 @@ class PathFinderGui:
                 "map_display",
                 parent="main_panel",
                 tile_radius=1,
-                latitude=46.98337006427196,
-                longitude=17.94085796579044,
+                latitude=47.48460625322428,
+                longitude=19.052776677264482,
             )
             map_display.construct()
 
@@ -101,7 +101,7 @@ class MapDisplay:
                 256 * self.tile_radius,
             )
 
-            # self.async_update_by_coordinate(self.latitude, self.longitude, self.zoom)
+            self.async_update_by_coordinate(self.latitude, self.longitude, self.zoom)
 
     def async_update_by_coordinate(self, lat, long, zoom):
         self.pool.apply_async(
@@ -188,9 +188,9 @@ class InputPanel:
             )
             core.end()  # algorithm_input##lists
 
-            def move(src, dest):
+            def move(src, dest, gui_element):
                 if len(src):
-                    current = core.get_value("algorithm_selector##available")
+                    current = core.get_value(gui_element)
                     item = src.pop(current)
                     dest.append(item)
                     self.update_listbox()
@@ -202,13 +202,21 @@ class InputPanel:
                 self.update_listbox()
 
             def add(sender):
-                move(self.available_algorithms, self.selected_algorithms)
+                move(
+                    self.available_algorithms,
+                    self.selected_algorithms,
+                    "algorithm_selector##available",
+                )
 
             def add_all(sender):
                 move_all(self.available_algorithms, self.selected_algorithms)
 
             def remove(sender):
-                move(self.selected_algorithms, self.available_algorithms)
+                move(
+                    self.selected_algorithms,
+                    self.available_algorithms,
+                    "algorithm_selector##selected",
+                )
 
             def remove_all(sender):
                 move_all(self.selected_algorithms, self.available_algorithms)
