@@ -68,29 +68,30 @@ class MapDisplay:
     def get_drawing_size(self):
         return self.map_size
 
-    def adjust_coordinate_to_center_block(self):
+    def adjust_coordinate_to_center_tile(self):
         x_tile, y_tile = deg2num(self.latitude, self.longitude, self.zoom)
         lat_adjusted, long_adjusted = num2deg(x_tile, y_tile, self.zoom)
         self.latitude = lat_adjusted
         self.longitude = long_adjusted
 
     def convert_map_coordinate(self, percent_x, percent_y):
-        self.adjust_coordinate_to_center_block()
+        self.adjust_coordinate_to_center_tile()
         x_tile, y_tile = deg2num(self.latitude, self.longitude, self.zoom)
-        lat_next, long_next = num2deg(x_tile + 1, y_tile + 1, self.zoom)
+        lat_next, long_next = num2deg(x_tile + 1, y_tile - 1, self.zoom)
 
-        lat_delta = self.latitude - lat_next
+        lat_delta = lat_next - self.latitude
         long_delta = long_next - self.longitude
 
         lat_first = self.latitude - (self.tile_radius + 1) * lat_delta
         long_first = self.longitude - self.tile_radius * long_delta
 
-        return (lat_first + (2 * self.tile_radius + 1) * lat_delta * (percent_y)), (
-            long_first + (2 * self.tile_radius + 1) * long_delta * percent_x
-        )
+        lat_current = lat_first + (2 * self.tile_radius + 1) * lat_delta * percent_y
+        long_current = long_first + (2 * self.tile_radius + 1) * long_delta * percent_x
+
+        return lat_current, long_current
 
     def construct(self):
-        self.adjust_coordinate_to_center_block()
+        self.adjust_coordinate_to_center_tile()
         with simple.group(self.name, parent=self.parent):
             core.add_drawing("canvas", width=self.map_size[0], height=self.map_size[1])
             core.add_texture(
@@ -100,7 +101,7 @@ class MapDisplay:
                 256 * self.tile_radius,
             )
 
-            self.async_update_by_coordinate(self.latitude, self.longitude, self.zoom)
+            # self.async_update_by_coordinate(self.latitude, self.longitude, self.zoom)
 
     def async_update_by_coordinate(self, lat, long, zoom):
         self.pool.apply_async(
@@ -129,13 +130,15 @@ class InputPanel:
         self.name = name
         self.parent = parent
         self.context = map_display
+        self.available_algorithms = ["Dijkstra", "A*", "Bidirectional A*"]
+        self.selected_algorithms = []
 
     def construct(self):
         with simple.group(self.name, parent=self.parent):
             # GUI elements for the initial coordinate #########################
             core.add_text("Initial coordinate (latitude, longitude)")
             core.add_group("init_input", horizontal=True, horizontal_spacing=0)
-            core.add_input_float2("init_coordinate", label="", format="%f°", width=450)
+            core.add_input_float2("init_coordinate", label="", format="%f°", width=390)
             core.add_button(
                 "Sample##input",
                 callback=self.sample_by_mouse,
@@ -149,7 +152,7 @@ class InputPanel:
             core.add_text("Destination coordinate (latitude, longitude)")
             core.add_group("destination_input", horizontal=True, horizontal_spacing=0)
             core.add_input_float2(
-                "destination_coordinate", format="%f°", label="", width=450
+                "destination_coordinate", format="%f°", label="", width=390
             )
             core.add_button(
                 "Sample##destination",
@@ -161,13 +164,61 @@ class InputPanel:
             core.add_spacing(count=5)
 
             # GUI elements for the algorithm selection ########################
-            core.add_text("Algorithm selection")
-            core.add_listbox(
-                "algorithm_selector",
-                label="",
-                items=["Dijkstra", "A*", "Bidirectional A*"],
-                width=450,
+            core.add_group(
+                "algorithm_input##labels", horizontal=True, horizontal_spacing=90
             )
+            core.add_text("Available algorithms")
+            core.add_text("Selected algorithms")
+            core.end()  # algorithm_input##labels
+
+            core.add_group(
+                "algorithm_input#lists", horizontal=True, horizontal_spacing=0
+            )
+            core.add_listbox(
+                "algorithm_selector##available",
+                label="",
+                items=self.available_algorithms,
+                width=220,
+            )
+            core.add_listbox(
+                "algorithm_selector##selected",
+                label="",
+                items=self.selected_algorithms,
+                width=220,
+            )
+            core.end()  # algorithm_input##lists
+
+            def move(src, dest):
+                if len(src):
+                    current = core.get_value("algorithm_selector##available")
+                    item = src.pop(current)
+                    dest.append(item)
+                    self.update_listbox()
+
+            def move_all(src, dest):
+                for i in src:
+                    dest.append(i)
+                src.clear()
+                self.update_listbox()
+
+            def add(sender):
+                move(self.available_algorithms, self.selected_algorithms)
+
+            def add_all(sender):
+                move_all(self.available_algorithms, self.selected_algorithms)
+
+            def remove(sender):
+                move(self.selected_algorithms, self.available_algorithms)
+
+            def remove_all(sender):
+                move_all(self.selected_algorithms, self.available_algorithms)
+
+            core.add_group("algorithm_input##buttons", horizontal=True)
+            core.add_button("Add", width=107, callback=add)
+            core.add_button("Add all", width=107, callback=add_all)
+            core.add_button("Remove", width=107, callback=remove)
+            core.add_button("Remove all", width=107, callback=remove_all)
+            core.end()  # algorithm_input##buttons
 
     def sample_by_mouse(self, sender, callback_object):
         def update_on_click(sender):
@@ -180,6 +231,16 @@ class InputPanel:
             core.set_mouse_click_callback(None)
 
         core.set_mouse_click_callback(update_on_click)
+
+    def update_listbox(self):
+        core.configure_item(
+            "algorithm_selector##available", items=self.available_algorithms
+        )
+        core.set_value("algorithm_selector##available", 0)
+        core.configure_item(
+            "algorithm_selector##selected", items=self.selected_algorithms
+        )
+        core.set_value("algorithm_selector##selected", 0)
 
 
 class ExecutionPanel:

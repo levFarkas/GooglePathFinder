@@ -15,6 +15,6 @@ if __name__ == "__main__":
     handler = Handler()
     handler.handle()
 
-    gui = PathFinderGui(1280, 720)
+    gui = PathFinderGui(1180, 720)
     gui.construct()
     gui.run()
