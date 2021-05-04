@@ -1,9 +1,11 @@
 import dearpygui.core as core
 import dearpygui.simple as simple
 
+from GooglePathFinder.src.frontend.map_display import MapDisplay
+
 
 class InputPanel:
-    def __init__(self, name, parent, map_display):
+    def __init__(self, name: str, parent: str, map_display: MapDisplay):
         self.name = name
         self.parent = parent
         self.context = map_display
@@ -105,11 +107,11 @@ class InputPanel:
             core.add_button("Remove all", width=107, callback=remove_all)
             core.end()  # algorithm_input##buttons
 
-    def sample_by_mouse(self, sender, callback_object):
+    def sample_by_mouse(self, sender: str, callback_object: str):
         def update_on_click(sender):
             pos_x, pos_y = core.get_drawing_mouse_pos()
             sx, sy = self.context.get_drawing_size()
-            coordinates = self.context.convert_map_coordinate(
+            coordinates = self.context.pixel_to_coordinate(
                 pos_x / sx, (sy - pos_y) / sy
             )
             core.set_value(callback_object, coordinates)
