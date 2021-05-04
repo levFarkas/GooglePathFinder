@@ -114,6 +114,7 @@ class InputPanel:
             coordinates = self.context.pixel_to_coordinate(
                 pos_x / sx, (sy - pos_y) / sy
             )
+            print(coordinates)
             core.set_value(callback_object, coordinates)
             core.set_mouse_click_callback(None)
 

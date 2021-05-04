@@ -1,8 +1,11 @@
 import dearpygui.core as core
 import dearpygui.simple as simple
 import atexit
+import os.path
 from multiprocessing import Pool
 from typing import List, Tuple
+from numpy import save, load
+
 
 from GooglePathFinder.src.frontend.image_loader import load_tiles, deg2num, num2deg
 
@@ -24,6 +27,12 @@ class MapDisplay:
         self.zoom = 16
         self.pool = Pool()
         self.map_size = [700, 700]
+        self.stored_map = [255 for i in range(self.map_size[0] * self.map_size[1] * 4)]
+        self.cached = False
+
+        if os.path.exists("cached_map.npy"):
+            self.stored_map = load("cached_map.npy")
+            self.cached = True
 
         def destruct():
             self.pool.terminate()
@@ -84,7 +93,7 @@ class MapDisplay:
                 [p_x[i - 1], p_y[i - 1]],
                 [p_x[i], p_y[i]],
                 color=route_color,
-                thickness=2,
+                thickness=3,
             )
 
     def construct(self):
@@ -93,22 +102,49 @@ class MapDisplay:
             core.add_drawing("canvas", width=self.map_size[0], height=self.map_size[1])
             core.add_texture(
                 "geomap",
-                [255 for i in range(self.map_size[0] * self.map_size[1] * 4)],
+                self.stored_map,
                 256 * self.tile_radius,
                 256 * self.tile_radius,
             )
+
+            if self.cached == False:
+                # Only use if necessary so that the OSM tile servers are not overloaded.
+                self.async_update_by_coordinate(
+                    self.latitude, self.longitude, self.zoom
+                )
+            else:
+                self.render()
+
             # Example plot by geographic coordinates
             self.plot_route(
                 [
-                    (47.481045, 19.060196),
-                    (47.485195, 19.059820),
-                    (47.488888, 19.052568),
-                    (47.481808, 19.050968),
-                    (47.490826, 19.046143),
+                    (46.98951907893645, 17.933736746651785),
+                    (46.98892490282087, 17.933854457310268),
+                    (46.98845919721676, 17.93390154157366),
+                    (46.98815407975201, 17.93397216796875),
+                    (46.987768668217576, 17.934254673549106),
+                    (46.987463550752814, 17.934678431919643),
+                    (46.98707813921838, 17.935573032924108),
+                    (46.986644551242144, 17.936585344587055),
+                    (46.985889786987215, 17.93747994559152),
+                    (46.98494231696507, 17.938351004464284),
+                    (46.98470143475605, 17.938633510044642),
+                    (46.98426784677981, 17.939104352678573),
+                    (46.984107258640464, 17.93936331612723),
+                    (46.98407514101259, 17.93964582170759),
+                    (46.984059082198655, 17.939810616629465),
+                    (46.98421967033801, 17.939881243024555),
+                    (46.98474961119785, 17.940446254185268),
+                    (46.9853759049413, 17.94115251813616),
+                    (46.98492625815113, 17.942117745535715),
+                    (46.98457296424457, 17.942918178013393),
+                    (46.98446055254703, 17.94308297293527),
+                    (46.98457296424457, 17.943812779017858),
+                    (46.98468537594211, 17.944189453125),
+                    (46.98519925798802, 17.943341936383927),
+                    (46.98553649308065, 17.943812779017858),
                 ]
             )
-            # Uncomment to display the tiles. Only use if necessary so that the OSM tile servers are not overloaded.
-            # self.async_update_by_coordinate(self.latitude, self.longitude, self.zoom)
 
     def async_update_by_coordinate(self, lat: float, long: float, zoom: int):
         self.pool.apply_async(
@@ -123,9 +159,15 @@ class MapDisplay:
         )
 
     def update(self, image_data: List[float]):
+        self.stored_map = image_data
+        save("cached_map.npy", image_data)
+        self.cached = True
+        self.render()
+
+    def render(self):
         core.add_texture(
             "geomap",
-            image_data,
+            self.stored_map,
             256 * (2 * self.tile_radius + 1),
             256 * (2 * self.tile_radius + 1),
         )

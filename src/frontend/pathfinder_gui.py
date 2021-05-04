@@ -24,8 +24,8 @@ class PathFinderGui:
                 "map_display",
                 parent="main_panel",
                 tile_radius=1,
-                latitude=47.48460625322428,
-                longitude=19.052776677264482,
+                latitude=46.98703882546629,
+                longitude=17.9394546906496,
             )
             map_display.construct()
 
