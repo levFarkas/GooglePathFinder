@@ -3,3 +3,7 @@ pytest
 pylint
 mysql-connector-python
 geopy
+dearpygui==0.6.415
+numpy
+pillow
+requests
