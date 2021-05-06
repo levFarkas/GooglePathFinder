@@ -1,7 +1,7 @@
 import logging
 from typing import Callable
 
-from GooglePathFinder.src.model.node import Node
+from src.model.node import Node
 
 
 class BiAStar:

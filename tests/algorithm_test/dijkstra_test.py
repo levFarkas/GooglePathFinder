@@ -1,5 +1,5 @@
-from GooglePathFinder.src.algorithm.dijkstra import Dijkstra
-from GooglePathFinder.src.model.node import Node
+from src.algorithm.dijkstra import Dijkstra
+from src.model.node import Node
 
 
 def test_dijkstra_predefined_match():

@@ -1,6 +1,6 @@
-from GooglePathFinder.src.algorithm.bi_astar import BiAStar
-from GooglePathFinder.src.algorithm.heuristics import node_l2distance
-from GooglePathFinder.src.model.node import Node
+from src.algorithm.bi_astar import BiAStar
+from src.algorithm.heuristics import node_l2distance
+from src.model.node import Node
 
 
 def test_biastar_predefined_match():

@@ -1,7 +1,7 @@
 import math
 from itertools import product
 
-from GooglePathFinder.src.algorithm.heuristics import l2distance
+from src.algorithm.heuristics import l2distance
 
 
 ###############################################################################

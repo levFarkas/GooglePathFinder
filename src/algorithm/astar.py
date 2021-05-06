@@ -2,7 +2,7 @@ import logging
 from queue import PriorityQueue
 from typing import Callable
 
-from GooglePathFinder.src.model.node import Node
+from src.model.node import Node
 
 
 class AStar:

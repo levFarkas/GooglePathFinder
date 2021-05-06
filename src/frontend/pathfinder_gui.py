@@ -1,9 +1,9 @@
 import dearpygui.core as core
 import dearpygui.simple as simple
 
-from GooglePathFinder.src.frontend.map_display import MapDisplay
-from GooglePathFinder.src.frontend.input_panel import InputPanel
-from GooglePathFinder.src.frontend.execution_panel import ExecutionPanel
+from src.frontend.map_display import MapDisplay
+from src.frontend.input_panel import InputPanel
+from src.frontend.execution_panel import ExecutionPanel
 
 
 class PathFinderGui:

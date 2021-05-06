@@ -1,6 +1,6 @@
-from GooglePathFinder.src.algorithm.astar import AStar
-from GooglePathFinder.src.algorithm.heuristics import node_l2distance
-from GooglePathFinder.src.model.node import Node
+from src.algorithm.astar import AStar
+from src.algorithm.heuristics import node_l2distance
+from src.model.node import Node
 
 
 def test_astar_predefined_match():

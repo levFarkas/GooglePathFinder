@@ -1,8 +1,8 @@
 import csv
 from typing import List, Optional
 
-from GooglePathFinder.src.backend.persistence.connector.interface.connector import Connector
-from GooglePathFinder.src.backend.persistence.connector.model.nodedao import NodeDao
+from src.backend.persistence.connector.interface.connector import Connector
+from src.backend.persistence.connector.model.nodedao import NodeDao
 
 
 class CSVConnector(Connector):
