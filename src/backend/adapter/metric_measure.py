@@ -1,8 +1,10 @@
+from functools import wraps
 from time import perf_counter
 
 
 def metric_measure(f):
 
+    @wraps(f)
     def inner(*args, **kwargs):
         start_time = perf_counter()
         alg_result = f(*args, **kwargs)

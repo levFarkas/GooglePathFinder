@@ -14,17 +14,17 @@ class AlgorithmHandlerService:
     def __init__(self):
         self.distance_service = DistanceService()
 
-    #@metric_measure
+    @metric_measure
     def do_dijkstra(self):
         return []
         # return Dijkstra.run()
 
-    #@metric_measure
+    @metric_measure
     def do_astar(self):
         return []
         # return AStar.run()
 
-    #@metric_measure
+    @metric_measure
     def do_biastar(self):
         return []
         # return BiAStar.run()
