@@ -18,15 +18,15 @@ class AlgorithmHandlerService:
 
     @metric_measure
     def do_dijkstra(self, start_node: Node, end_node: Node):
-        return Dijkstra.run(start_node, end_node)
+        return Dijkstra.run(start_node, end_node, self.distance_service)
 
     @metric_measure
     def do_astar(self, start_node: Node, end_node: Node):
-        return AStar.run(start_node, end_node, node_l2distance)
+        return AStar.run(start_node, end_node, node_l2distance, self.distance_service)
 
     @metric_measure
     def do_biastar(self, start_node: Node, end_node: Node):
-        return BiAStar.run(start_node, end_node, node_l2distance)
+        return BiAStar.run(start_node, end_node, node_l2distance, self.distance_service)
 
     @staticmethod
     def _min(a, b):
