@@ -38,7 +38,7 @@ def test_astar_predefined_match():
 
     solver = AStar()
     manual_solution = (["d", "e", "f", "g"], 24)
-    (path, sum_distance) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -54,7 +54,7 @@ def test_astar_emptyqueue_unmatched():
 
     solver = AStar()
     manual_solution = ([], float("inf"))
-    (path, sum_distance) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -78,7 +78,7 @@ def test_astar_multigraph_match():
 
     solver = AStar()
     manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
 
@@ -98,6 +98,6 @@ def test_astar_direct_path_match():
 
     solver = AStar()
     manual_solution = (["g"], 1)
-    (path, sum_distance) = solver.run(s, g, node_l2distance)
+    (path, sum_distance, expand_number) = solver.run(s, g, node_l2distance)
 
     assert (path, sum_distance) == manual_solution
