@@ -49,14 +49,14 @@ class ExecutionPanel:
         def move(src, dest, gui_element):
             if len(src):
                 current = core.get_value(gui_element)
-                item = GooglePathFinder.src.pop(current)
+                item = src.pop(current)
                 dest.append(item)
                 self.update_listbox()
 
         def move_all(src, dest):
             for i in src:
                 dest.append(i)
-            GooglePathFinder.src.clear()
+            src.clear()
             self.update_listbox()
 
         def add(sender):

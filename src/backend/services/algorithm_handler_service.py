@@ -41,23 +41,3 @@ class AlgorithmHandlerService:
             } for node in nodes
         ]
         return reduce(self._min, nodes_distances)["node"]
-
-    def algorithm_mapper(self, algorithm_id: str):
-        if algorithm_id == "dijkstra":
-            return self.do_dijkstra()
-
-        if algorithm_id == "astar":
-            return self.do_astar()
-
-        if algorithm_id == "biastar":
-            return self.do_biastar()
-
-    def compute(self, objective: Dict, algorithms: List):
-        """Call this function using a multiprocessing pool"""
-        self.objective = objective
-        self.algorithms = algorithms
-
-        try:
-            return map(self.algorithm_mapper, self.algorithms)
-        except:
-            return []
