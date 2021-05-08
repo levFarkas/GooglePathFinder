@@ -2,6 +2,7 @@ import logging
 from typing import Callable
 
 from GooglePathFinder.src.model.node import Node
+from GooglePathFinder.src.backend.services.distance_service import DistanceService
 
 
 class BiAStar:
@@ -13,6 +14,7 @@ class BiAStar:
         start_node: Node,
         end_node: Node,
         heuristic_function: Callable[[Node, Node], float],
+        distance_service: DistanceService,
     ):
 
         solution = {
@@ -26,7 +28,7 @@ class BiAStar:
         }
         forward_current = start_node
         forward_open = {}
-        for (n_distance, n_node) in start_node.get_neighbors():
+        for (n_distance, n_node) in distance_service.get_neighbours_by_node(start_node.node_id):
             forward_open[n_node] = n_distance
             forward_dict[n_node] = {
                 "sum_distance": n_distance,
@@ -44,7 +46,7 @@ class BiAStar:
         }
         backward_current = end_node
         backward_open = {}
-        for (n_distance, n_node) in end_node.get_backward_neighbors():
+        for (n_distance, n_node) in distance_service.get_backward_neighbours_by_node(end_node.node_id):
             backward_open[n_node] = n_distance
             backward_dict[n_node] = {
                 "sum_distance": n_distance,
@@ -89,7 +91,7 @@ class BiAStar:
             backward_dict[backward_current]["visited"] = True
 
             # Check the neighbors of the forward expanded node (not just in the open set)
-            for (n_distance, n_node) in forward_current.get_neighbors():
+            for (n_distance, n_node) in distance_service.get_neighbours_by_node(forward_current.node_id):
                 matching_backward_nodes = [
                     node for node in backward_dict.keys() if n_node == node
                 ]
@@ -131,7 +133,7 @@ class BiAStar:
                 forward_open[n_node] = neighbor_distance
 
             # Check the neighbors of the backward expanded node (not just in the open set)
-            for (n_distance, n_node) in backward_current.get_backward_neighbors():
+            for (n_distance, n_node) in distance_service.get_backward_neighbours_by_node(backward_current.node_id):
                 matching_forward_nodes = [
                     node for node in forward_dict.keys() if n_node == node
                 ]
@@ -177,7 +179,7 @@ class BiAStar:
             logging.info(
                 f"There is no path between {start_node.node_id} and {end_node.node_id}."
             )
-            return [], float("inf"), len(backward_dict) + len(forward_dict)
+            return {"path": [], "distance": float("inf"), "expanded": len(backward_dict) + len(forward_dict)}
 
         sum_distance = solution["path_cost"]
         logging.info(
@@ -199,4 +201,4 @@ class BiAStar:
             if curr_backward != None:
                 path.append(curr_backward.node_id)
 
-        return path, sum_distance, len(backward_dict) + len(forward_dict)
+        return {"path": path, "distance": sum_distance, "expanded": len(backward_dict) + len(forward_dict)}

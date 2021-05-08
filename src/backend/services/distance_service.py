@@ -1,10 +1,12 @@
 from typing import List, Tuple
 
 from GooglePathFinder.src.backend.persistence.connector.mysql_connector import MySQLConnector
+from GooglePathFinder.src.backend.services.interface.distance_interface import DistanceInterface
+from GooglePathFinder.src.backend.persistence.connector.csv_connector import CSVConnector
 from GooglePathFinder.src.model.node import Node
 
 
-class DistanceService:
+class DistanceService(DistanceInterface):
 
     def __init__(self):
         self._connector = MySQLConnector()

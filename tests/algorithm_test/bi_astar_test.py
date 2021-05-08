@@ -1,12 +1,14 @@
 from GooglePathFinder.src.algorithm.bi_astar import BiAStar
 from GooglePathFinder.src.algorithm.heuristics import node_l2distance
 from GooglePathFinder.src.model.node import Node
+from GooglePathFinder.src.backend.services.mocks.mock_distance_service import MockDistanceService
 
 
 def test_biastar_predefined_match():
     """
     Compare the output to a manually computed solution
     """
+    mock_service = MockDistanceService()
 
     # Nodes
     s = Node("s")  # Start node
@@ -23,44 +25,47 @@ def test_biastar_predefined_match():
     g = Node("g", 0, 0)  # End node
 
     # Neighbors
-    s.set_neighbors([[3, d], [9, e], [1, i]])
-    a.set_neighbors([])
-    b.set_neighbors([[2, a]])
-    c.set_neighbors([[2, a]])
-    d.set_neighbors([[1, b], [8, c], [2, e]])
-    e.set_neighbors([[9, k], [1, h], [14, f]])
-    f.set_neighbors([[5, g]])
-    h.set_neighbors([[4, j], [4, i]])
-    i.set_neighbors([[15, j]])
-    j.set_neighbors([[3, k]])
-    k.set_neighbors([[5, f]])
-    g.set_neighbors([])
+    mock_service.set_neighbors(s, [[3, d], [9, e], [1, i]])
+    mock_service.set_neighbors(a, [])
+    mock_service.set_neighbors(b, [[2, a]])
+    mock_service.set_neighbors(c, [[2, a]])
+    mock_service.set_neighbors(d, [[1, b], [8, c], [2, e]])
+    mock_service.set_neighbors(e, [[9, k], [1, h], [14, f]])
+    mock_service.set_neighbors(f, [[5, g]])
+    mock_service.set_neighbors(h, [[4, j], [4, i]])
+    mock_service.set_neighbors(i, [[15, j]])
+    mock_service.set_neighbors(j, [[3, k]])
+    mock_service.set_neighbors(k, [[5, f]])
+    mock_service.set_neighbors(g, [])
 
     manual_solution = (["d", "e", "f", "g"], 24)
-    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
+    result = BiAStar.run(s, g, node_l2distance, mock_service)
 
-    assert (path, sum_distance) == manual_solution
+    assert (result['path'], result['distance']) == manual_solution
 
 
 def test_biastar_emptyqueue_unmatched():
+    mock_service = MockDistanceService()
+
     # Nodes
     s = Node("s", 1, 1)  # Start node
     g = Node("g", 0, 0)  # End node
 
     # Neighbors
-    s.set_neighbors([])
-    g.set_neighbors([])
+    mock_service.set_neighbors(s, [])
+    mock_service.set_neighbors(g, [])
 
     manual_solution = ([], float("inf"))
-    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
+    result = BiAStar.run(s, g, node_l2distance, mock_service)
 
-    assert (path, sum_distance) == manual_solution
+    assert (result['path'], result['distance']) == manual_solution
 
 
 def test_biastar_multigraph_match():
     """
     The graph contains loops (edges defined by the same vertex)
     """
+    mock_service = MockDistanceService()
 
     # Nodes
     s = Node("s", 10, 10)  # Start node
@@ -69,40 +74,42 @@ def test_biastar_multigraph_match():
     g = Node("g", 0, 0)  # End node
 
     # Neighbors
-    s.set_neighbors([[3, a]])
-    a.set_neighbors([[1, a], [3, b]])
-    b.set_neighbors([[1, b], [2, a], [3, g]])
-    g.set_neighbors([])
+    mock_service.set_neighbors(s, [[3, a]])
+    mock_service.set_neighbors(a, [[1, a], [3, b]])
+    mock_service.set_neighbors(b, [[1, b], [2, a], [3, g]])
+    mock_service.set_neighbors(g, [])
 
     manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
+    result = BiAStar.run(s, g, node_l2distance, mock_service)
 
-    assert (path, sum_distance) == manual_solution
+    assert (result['path'], result['distance']) == manual_solution
 
 
 def test_biastar_direct_path_match():
     """
     Direct path between the start and end node
     """
+    mock_service = MockDistanceService()
 
     # Nodes
     s = Node("s", 10, 10)  # Start node
     g = Node("g", 0, 0)  # End node
 
     # Neighbors
-    s.set_neighbors([[1, g]])
-    g.set_neighbors([])
+    mock_service.set_neighbors(s, [[1, g]])
+    mock_service.set_neighbors(g, [])
 
     manual_solution = (["g"], 1)
-    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
+    result = BiAStar.run(s, g, node_l2distance, mock_service)
 
-    assert (path, sum_distance) == manual_solution
+    assert (result['path'], result['distance']) == manual_solution
 
 
 def test_biastar_odd_length_match():
     """
     The path has an odd length
     """
+    mock_service = MockDistanceService()
 
     # Nodes
     s = Node("s", 10, 10)  # Start node
@@ -111,21 +118,22 @@ def test_biastar_odd_length_match():
     g = Node("g", 0, 0)  # End node
 
     # Neighbors
-    s.set_neighbors([[3, a]])
-    a.set_neighbors([[3, b]])
-    b.set_neighbors([[3, g]])
-    g.set_neighbors([])
+    mock_service.set_neighbors(s, [[3, a]])
+    mock_service.set_neighbors(a, [[3, b]])
+    mock_service.set_neighbors(b, [[3, g]])
+    mock_service.set_neighbors(g, [])
 
     manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
+    result = BiAStar.run(s, g, node_l2distance, mock_service)
 
-    assert (path, sum_distance) == manual_solution
+    assert (result['path'], result['distance']) == manual_solution
 
 
 def test_biastar_even_length_match():
     """
     The path has an even length
     """
+    mock_service = MockDistanceService()
 
     # Nodes
     s = Node("s", 10, 10)  # Start node
@@ -135,13 +143,13 @@ def test_biastar_even_length_match():
     g = Node("g", 0, 0)  # End node
 
     # Neighbors
-    s.set_neighbors([[3, a]])
-    a.set_neighbors([[3, b]])
-    b.set_neighbors([[3, c]])
-    c.set_neighbors([[1, g]])
-    g.set_neighbors([])
+    mock_service.set_neighbors(s, [[3, a]])
+    mock_service.set_neighbors(a, [[3, b]])
+    mock_service.set_neighbors(b, [[3, c]])
+    mock_service.set_neighbors(c, [[1, g]])
+    mock_service.set_neighbors(g, [])
 
     manual_solution = (["a", "b", "c", "g"], 10)
-    (path, sum_distance, expand_number) = BiAStar.run(s, g, node_l2distance)
+    result = BiAStar.run(s, g, node_l2distance, mock_service)
 
-    assert (path, sum_distance) == manual_solution
+    assert (result['path'], result['distance']) == manual_solution

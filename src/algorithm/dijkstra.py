@@ -2,6 +2,7 @@ import logging
 from queue import PriorityQueue
 
 from GooglePathFinder.src.model.node import Node
+from GooglePathFinder.src.backend.services.distance_service import DistanceService
 
 
 class Dijkstra:
@@ -11,7 +12,7 @@ class Dijkstra:
     distance does not match the separately stored distance."""
 
     @staticmethod
-    def run(start_node: Node, end_node: Node):
+    def run(start_node: Node, end_node: Node, distance_service: DistanceService):
 
         curr_node = start_node
         curr_distance = 0
@@ -19,7 +20,7 @@ class Dijkstra:
         node_dict = {curr_node: {"sum_distance": 0, "preceding": None, "visited": True}}
 
         neighbor_queue = PriorityQueue()
-        for (n_distance, n_node) in start_node.get_neighbors():
+        for (n_distance, n_node) in distance_service.get_neighbours_by_node(start_node.node_id):
             neighbor_queue.put([n_distance, n_node])
             node_dict[n_node] = {
                 "sum_distance": n_distance,
@@ -36,7 +37,7 @@ class Dijkstra:
 
             node_dict[curr_node]["visited"] = True
 
-            for (n_distance, n_node) in curr_node.get_neighbors():
+            for (n_distance, n_node) in distance_service.get_neighbours_by_node(curr_node.node_id):
                 updated_distance = curr_distance + n_distance
 
                 if n_node not in node_dict.keys():
@@ -62,7 +63,7 @@ class Dijkstra:
             logging.info(
                 f"There is no path between {start_node.node_id} and {end_node.node_id}."
             )
-            return [], float("inf"), len(node_dict)
+            return {"path": [], "distance": float("inf"), "expanded": len(node_dict)}
 
         sum_distance = node_dict[end_node]["sum_distance"]
         logging.info(
@@ -76,4 +77,4 @@ class Dijkstra:
             path.insert(0, curr_node.node_id)
             curr_node = node_dict[curr_node]["preceding"]
 
-        return path, sum_distance, len(node_dict)
+        return {"path": path, "distance": sum_distance, "expanded": len(node_dict)}
