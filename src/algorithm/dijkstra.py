@@ -62,7 +62,7 @@ class Dijkstra:
             logging.info(
                 f"There is no path between {start_node.node_id} and {end_node.node_id}."
             )
-            return [], float("inf")
+            return [], float("inf"), len(node_dict)
 
         sum_distance = node_dict[end_node]["sum_distance"]
         logging.info(
