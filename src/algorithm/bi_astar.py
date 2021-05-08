@@ -177,7 +177,7 @@ class BiAStar:
             logging.info(
                 f"There is no path between {start_node.node_id} and {end_node.node_id}."
             )
-            return [], float("inf")
+            return [], float("inf"), len(backward_dict) + len(forward_dict)
 
         sum_distance = solution["path_cost"]
         logging.info(
@@ -199,4 +199,4 @@ class BiAStar:
             if curr_backward != None:
                 path.append(curr_backward.node_id)
 
-        return path, sum_distance
+        return path, sum_distance, len(backward_dict) + len(forward_dict)

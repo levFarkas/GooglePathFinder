@@ -40,7 +40,7 @@ def test_dijkstra_predefined_match():
 
     solver = Dijkstra()
     manual_solution = (["d", "e", "h", "j", "k", "f", "g"], 23)
-    (path, sum_distance) = solver.run(s, g)
+    (path, sum_distance, expand_number) = solver.run(s, g)
 
     assert (path, sum_distance) == manual_solution
 
@@ -56,7 +56,7 @@ def test_dijkstra_emptyqueue_unmatched():
 
     solver = Dijkstra()
     manual_solution = ([], float("inf"))
-    (path, sum_distance) = solver.run(s, g)
+    (path, sum_distance, expand_number) = solver.run(s, g)
 
     assert (path, sum_distance) == manual_solution
 
@@ -80,7 +80,7 @@ def test_dijkstra_multigraph_match():
 
     solver = Dijkstra()
     manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance) = solver.run(s, g)
+    (path, sum_distance, expand_number) = solver.run(s, g)
 
     assert (path, sum_distance) == manual_solution
 
@@ -100,6 +100,6 @@ def test_dijkstra_direct_path_match():
 
     solver = Dijkstra()
     manual_solution = (["g"], 1)
-    (path, sum_distance) = solver.run(s, g)
+    (path, sum_distance, expand_number) = solver.run(s, g)
 
     assert (path, sum_distance) == manual_solution

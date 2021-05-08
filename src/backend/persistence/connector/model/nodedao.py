@@ -10,6 +10,7 @@ class NodeDao:
         self.latitude = data["LATITUDE"]
         self.longitude = data["LONGITUDE"]
         self.heuristic = data["HEURISTICS"]
+        self.distance = data["DISTANCE"]
 
     def convert_to_node_model(self) -> Node:
         return Node(
