@@ -1,5 +1,5 @@
-from src.backend.services.distance_service import DistanceService
-from src.frontend.pathfinder_gui import PathFinderGui
+from GooglePathFinder.src.backend.services.distance_service import DistanceService
+from GooglePathFinder.src.frontend.pathfinder_gui import PathFinderGui
 
 
 class Handler:

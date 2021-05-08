@@ -3,7 +3,7 @@ from typing import List
 import dearpygui.core as core
 import dearpygui.simple as simple
 
-from src.frontend.map_display import MapDisplay
+from GooglePathFinder.src.frontend.map_display import MapDisplay
 
 
 class InputPanel:

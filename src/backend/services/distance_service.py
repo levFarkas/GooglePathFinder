@@ -1,7 +1,7 @@
 from typing import List, Tuple
 
-from src.backend.persistence.connector.mysql_connector import MySQLConnector
-from src.model.node import Node
+from GooglePathFinder.src.backend.persistence.connector.mysql_connector import MySQLConnector
+from GooglePathFinder.src.model.node import Node
 
 
 class DistanceService:

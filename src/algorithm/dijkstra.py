@@ -1,7 +1,7 @@
 import logging
 from queue import PriorityQueue
 
-from src.model.node import Node
+from GooglePathFinder.src.model.node import Node
 
 
 class Dijkstra:

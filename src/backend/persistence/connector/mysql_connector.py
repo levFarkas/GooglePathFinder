@@ -2,8 +2,8 @@ import os
 from typing import List, Optional
 
 import mysql.connector
-from src.backend.persistence.connector.interface.connector import Connector
-from src.backend.persistence.connector.model.nodedao import NodeDao
+from GooglePathFinder.src.backend.persistence.connector.interface.connector import Connector
+from GooglePathFinder.src.backend.persistence.connector.model.nodedao import NodeDao
 
 
 class MySQLConnector(Connector):

@@ -1,4 +1,4 @@
-from src.model.node import Node
+from GooglePathFinder.src.model.node import Node
 
 
 class NodeDao:

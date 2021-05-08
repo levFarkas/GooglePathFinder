@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from src.backend.persistence.connector.model.nodedao import NodeDao
+from GooglePathFinder.src.backend.persistence.connector.model.nodedao import NodeDao
 
 
 class Connector:

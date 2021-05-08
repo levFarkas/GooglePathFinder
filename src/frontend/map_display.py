@@ -7,7 +7,7 @@ from typing import List, Tuple
 from numpy import save, load
 
 
-from src.frontend.image_loader import load_tiles, deg2num, num2deg
+from GooglePathFinder.src.frontend.image_loader import load_tiles, deg2num, num2deg
 
 
 class MapDisplay:

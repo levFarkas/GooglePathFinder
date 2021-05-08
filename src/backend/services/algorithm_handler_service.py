@@ -3,13 +3,13 @@ from multiprocessing import Process
 from multiprocessing import Queue
 from typing import List, Dict
 
-from src.algorithm.heuristics import l2distance, node_l2distance
-from src.backend.services.distance_service import DistanceService
-from src.algorithm.dijkstra import Dijkstra
-from src.algorithm.astar import AStar
-from src.algorithm.bi_astar import BiAStar
-from src.backend.adapter.metric_measure import metric_measure
-from src.model.node import Node
+from GooglePathFinder.src.algorithm.heuristics import l2distance, node_l2distance
+from GooglePathFinder.src.backend.services.distance_service import DistanceService
+from GooglePathFinder.src.algorithm.dijkstra import Dijkstra
+from GooglePathFinder.src.algorithm.astar import AStar
+from GooglePathFinder.src.algorithm.bi_astar import BiAStar
+from GooglePathFinder.src.backend.adapter.metric_measure import metric_measure
+from GooglePathFinder.src.model.node import Node
 
 
 class AlgorithmHandlerService:

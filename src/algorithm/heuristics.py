@@ -2,7 +2,7 @@ import math
 from geopy import distance
 from geopy import Point
 
-from src.model.node import Node
+from GooglePathFinder.src.model.node import Node
 
 
 def l2distance(x, y):
