@@ -3,7 +3,7 @@ from queue import PriorityQueue
 from typing import Callable
 
 from GooglePathFinder.src.model.node import Node
-from GooglePathFinder.src.backend.services.distance_service import DistanceService
+from GooglePathFinder.src.backend.services.interface.distance_interface import DistanceInterface
 
 
 class AStar:
@@ -17,7 +17,7 @@ class AStar:
         start_node: Node,
         end_node: Node,
         heuristic_function: Callable[[Node, Node], float],
-        distance_service: DistanceService,
+        distance_service: DistanceInterface,
     ):
         curr_node = start_node
         curr_distance = 0

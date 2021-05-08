@@ -2,7 +2,7 @@ import logging
 from queue import PriorityQueue
 
 from GooglePathFinder.src.model.node import Node
-from GooglePathFinder.src.backend.services.distance_service import DistanceService
+from GooglePathFinder.src.backend.services.interface.distance_interface import DistanceInterface
 
 
 class Dijkstra:
@@ -12,7 +12,7 @@ class Dijkstra:
     distance does not match the separately stored distance."""
 
     @staticmethod
-    def run(start_node: Node, end_node: Node, distance_service: DistanceService):
+    def run(start_node: Node, end_node: Node, distance_service: DistanceInterface):
 
         curr_node = start_node
         curr_distance = 0
