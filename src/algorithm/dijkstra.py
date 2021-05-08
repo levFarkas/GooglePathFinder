@@ -76,4 +76,4 @@ class Dijkstra:
             path.insert(0, curr_node.node_id)
             curr_node = node_dict[curr_node]["preceding"]
 
-        return path, sum_distance
+        return path, sum_distance, len(node_dict)

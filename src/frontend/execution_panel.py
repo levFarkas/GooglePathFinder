@@ -104,12 +104,14 @@ class ExecutionPanel:
             result.get()
 
     def _do_execute(self, algorithm: str, init_coords, dest_coords):
-        print(algorithm)
-        print(init_coords)
-        print(dest_coords)
+        init_node = self.algorithm_service.get_nearest_node_by_lat_long(float(init_coords[0]), float(init_coords[1]))
+        dest_node = self.algorithm_service.get_nearest_node_by_lat_long(float(dest_coords[0]), float(dest_coords[1]))
+        print(init_node.node_id)
+        print(dest_node.node_id)
+        return self.algorithms[algorithm](init_node, dest_node)
 
     def _handle_result(self, result):
-        print("done")
+        print(result)
 
     def update_listbox(self):
         core.configure_item(
@@ -124,7 +126,6 @@ class ExecutionPanel:
     def __getstate__(self):
         self_dict = self.__dict__.copy()
         del self_dict['pool']
-        del self_dict['algorithm_service']
         return self_dict
 
     def __setstate__(self, state):

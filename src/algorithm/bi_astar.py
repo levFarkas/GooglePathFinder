@@ -199,4 +199,4 @@ class BiAStar:
             if curr_backward != None:
                 path.append(curr_backward.node_id)
 
-        return path, sum_distance
+        return path, sum_distance, len(backward_dict) + len(forward_dict)
