@@ -30,13 +30,13 @@ for idx, row in nodes.iterrows():
 
 add_edge = ("INSERT INTO PATHFINDER.EDGES "
             "(EDGE_ID, EDGE_NAME, FROM_CROSSROADS_ID, TO_CROSSROADS_ID, DISTANCE) "
-            "VALUES (%(id)s, %(name)s, %(from_)s, %(to)s, %(dist)s)")
+            "VALUES (%(id)s, %(name)s, %(from)s, %(to)s, %(dist)s)")
 
 for idx, row in edges.iterrows():
   data_edge = {
     "id": idx,
     "name": 'dummy',
-    "from_": row['FROM_ID'],
+    "from": row['FROM_ID'],
     "to": row['TO_ID'],
     "dist": row['DISTANCE']
   }
