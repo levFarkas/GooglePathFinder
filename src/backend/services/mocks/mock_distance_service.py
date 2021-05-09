@@ -11,10 +11,10 @@ class MockDistanceService(DistanceInterface):
     def get_all_nodes(self) -> List[Node]:
         return [n['instance'] for n in self.nodes]
 
-    def get_neighbours_by_node(self, node: str) -> List[Node]:
+    def get_neighbours_by_node(self, node: str) -> List[Tuple[Node, float]]:
         return self.nodes[node]['neighbors']
 
-    def get_backward_neighbours_by_node(self, node: str) -> List[Node]:
+    def get_backward_neighbours_by_node(self, node: str) -> List[Tuple[Node, float]]:
         return self.nodes[node]['backward_neigbors']
 
     def set_neighbors(self, node: Node, l: List[Tuple[float, Node]]):

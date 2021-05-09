@@ -38,7 +38,7 @@ def test_astar_predefined_match():
     mock_service.set_neighbors(k, [[5, f]])
     mock_service.set_neighbors(g, [])
 
-    manual_solution = (["d", "e", "f", "g"], 24)
+    manual_solution = ([d, e, f, g], 24)
     result = AStar.run(s, g, node_l2distance, mock_service)
 
     assert (result['path'], result['distance']) == manual_solution
@@ -79,7 +79,7 @@ def test_astar_multigraph_match():
     mock_service.set_neighbors(b, [[1, b], [2, a], [3, g]])
     mock_service.set_neighbors(g, [])
 
-    manual_solution = (["a", "b", "g"], 9)
+    manual_solution = ([a, b, g], 9)
     result = AStar.run(s, g, node_l2distance, mock_service)
 
     assert (result['path'], result['distance']) == manual_solution
@@ -99,7 +99,7 @@ def test_astar_direct_path_match():
     mock_service.set_neighbors(s, [[1, g]])
     mock_service.set_neighbors(g, [])
 
-    manual_solution = (["g"], 1)
+    manual_solution = ([g], 1)
     result = AStar.run(s, g, node_l2distance, mock_service)
 
     assert (result['path'], result['distance']) == manual_solution

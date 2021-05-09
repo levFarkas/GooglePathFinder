@@ -1,713 +1,4743 @@
-FROM_ID,TO_ID,DISTANCE,HEURISTICS,BIDIRECTIONAL,EDGE_NAME
-174,49,86.01,30,1,Balatoni utca
-49,401,100.79,30,1,Balatoni utca
-401,169,101.42,30,1,Balatoni utca
-169,165,91.22,30,1,Balatoni utca
-165,163,90.24,30,1,Balatoni utca
-163,400,8.26,30,1,Balatoni utca
-400,635,3.58,30,1,Balatoni utca
-635,46,7.58,30,1,Balatoni utca
-26,475,10.97,100,1,Zrínyi utca
-475,467,7.11,100,1,Zrínyi utca
-467,8,19.55,100,1,Zrínyi utca
-8,468,19.97,100,1,Zrínyi utca
-468,469,25.22,100,1,Zrínyi utca
-469,470,20.63,100,1,Zrínyi utca
-470,9,25.87,100,1,Zrínyi utca
-84,74,137.1,90,1,
-46,5,56.74,90,1,
-5,258,35.57,90,1,
-258,44,42.21,90,1,
-44,83,63.44,90,1,
-83,263,56.68,90,1,
-263,678,28.76,90,1,
-50,77,23.13,30,1,Szerdahelyi utca
-77,76,19.12,30,1,Szerdahelyi utca
-76,75,23.36,30,1,Szerdahelyi utca
-75,198,24.12,30,1,Szerdahelyi utca
-198,51,24.77,30,1,Szerdahelyi utca
-51,52,24.69,30,1,Szerdahelyi utca
-52,79,34.51,30,1,Szerdahelyi utca
-79,53,43.04,30,1,Szerdahelyi utca
-53,81,32.3,30,1,Szerdahelyi utca
-81,80,23.32,30,1,Szerdahelyi utca
-80,162,27.02,30,1,Szerdahelyi utca
-162,155,154.14,30,1,Szerdahelyi utca
-155,54,38.9,30,1,Szerdahelyi utca
-54,55,77.49,30,1,Szerdahelyi utca
-55,157,73.07,30,1,Szerdahelyi utca
-157,56,88.75,30,1,Szerdahelyi utca
-85,7,32.48,50,1,
-7,71,142.94,50,1,
-71,69,81.77,50,1,
-69,70,76.04,50,1,
-70,72,222.34,50,1,
-269,569,5.03,30,1,Mandula út
-569,127,2.91,30,1,Mandula út
-127,353,4.96,30,1,Mandula út
-353,568,4.52,30,1,Mandula út
-568,354,4.15,30,1,Mandula út
-354,355,5.42,30,1,Mandula út
-355,570,23.78,30,1,Mandula út
-570,129,5.41,30,1,Mandula út
-129,620,3.67,30,1,Mandula út
-620,356,2.1,30,1,Mandula út
-356,274,11.82,30,1,Mandula út
-274,571,8.8,30,1,Mandula út
-571,128,8.94,30,1,Mandula út
-128,276,30.93,30,1,Mandula út
-276,572,18.42,30,1,Mandula út
-572,573,12.33,30,1,Mandula út
-573,132,12.99,30,1,Mandula út
-132,134,63.19,30,1,Mandula út
-134,133,9.96,30,1,Mandula út
-133,352,58.47,30,1,Mandula út
-352,126,52.65,30,1,Mandula út
-126,350,47.35,30,1,Mandula út
-350,125,45.11,30,1,Mandula út
-125,124,91.42,30,1,Mandula út
-124,122,57.05,30,1,Mandula út
-122,349,32.58,30,1,Mandula út
-349,625,12.34,30,1,Mandula út
-625,121,13.64,30,1,Mandula út
-121,268,22.85,30,1,Mandula út
-268,120,90.05,30,1,Mandula út
-120,347,30.66,30,1,Mandula út
-347,346,12.07,30,1,Mandula út
-346,118,13.46,30,1,Mandula út
-118,344,26.81,30,1,Mandula út
-344,117,15.05,30,1,Mandula út
-117,342,41.25,30,1,Mandula út
-342,341,27.97,30,1,Mandula út
-341,116,29.97,30,1,Mandula út
-116,339,15.04,30,1,Mandula út
-339,337,10.69,30,1,Mandula út
-337,630,4.14,30,1,Mandula út
-630,336,12.42,30,1,Mandula út
-336,114,16.81,30,1,Mandula út
-114,112,19.14,30,1,Mandula út
-105,106,11.59,30,1,Tódi utca
-106,107,36.63,30,1,Tódi utca
-107,246,26.41,30,1,Vincellér út
-246,102,209.14,30,1,Vincellér út
-102,100,72.87,30,1,Vincellér út
-100,99,60.73,30,1,Vincellér út
-99,320,11.49,30,1,Vincellér út
-320,98,12.12,30,1,Vincellér út
-98,97,10.11,30,1,Vincellér út
-97,95,5.39,30,1,Vincellér út
-112,543,14.37,30,1,Pincesor út
-543,108,14.35,30,1,Pincesor út
-108,535,9.92,30,1,Pincesor út
-535,454,9.56,30,1,Pincesor út
-454,534,9.85,30,1,Pincesor út
-534,105,10.96,30,1,Pincesor út
-503,690,7.51,50,1,Fő utca
-690,93,22.64,50,1,Fő utca
-93,416,32.26,50,1,Fő utca
-416,415,12.61,50,1,Fő utca
-415,91,14.16,50,1,Fő utca
-91,90,20.49,50,1,Fő utca
-90,89,11.59,50,1,Fő utca
-89,532,18.9,50,1,Fő utca
-532,641,24.32,50,1,Fő utca
-641,239,22.51,50,1,Fő utca
-239,87,56.19,50,1,Fő utca
-141,150,142.83,10,1,
-150,140,82.33,10,1,
-140,149,106.11,10,1,
-139,140,45.73,10,1,
-140,142,24.1,10,1,
-56,137,150.11,10,1,Camping utca
-137,136,30.7,10,1,Camping utca
-138,150,72.75,10,1,
-150,144,26.21,10,1,
-144,160,28.15,10,1,
-160,161,58.14,10,1,
-161,159,33.59,10,1,
-136,154,24.88,10,1,
-154,158,6.93,10,1,
-158,156,36.95,10,1,
-156,152,18.32,10,1,
-152,151,80.47,10,1,
-151,153,80.08,10,1,
-179,660,180.33,30,1,Napsugár utca
-660,182,2.28,30,1,Napsugár utca
-175,172,145.53,30,1,Rákóczi utca
-172,227,15.34,30,1,Rákóczi utca
-227,226,9.43,30,1,Rákóczi utca
-226,225,9.53,30,1,Rákóczi utca
-176,173,162.49,30,1,Kisparti utca
-180,668,11.34,30,1,Petőfi utca
-668,669,58.06,30,1,Petőfi utca
-669,178,38.96,30,1,Petőfi utca
-178,512,29.55,30,1,Petőfi utca
-512,177,37.13,30,1,Petőfi utca
-18,181,31.32,30,1,Fűzfa utca
-181,183,57.57,30,1,Fűzfa utca
-183,184,121.26,30,1,Fűzfa utca
-49,654,22.76,30,1,Királydombi utca
-654,171,24.83,30,1,Királydombi utca
-171,170,26.22,30,1,Királydombi utca
-165,634,6.54,30,1,Kisköre utca
-634,224,91.97,30,1,Kisköre utca
-224,168,74.64,30,1,Kisköre utca
-168,650,4.63,30,1,Kisköre utca
-650,167,3.86,30,1,Kisköre utca
-167,649,3.58,30,1,Kisköre utca
-649,166,3.03,30,1,Kisköre utca
-166,164,55.85,30,1,Kisköre utca
-164,235,9.62,30,1,Kisköre utca
-235,233,62.99,30,1,Kisköre utca
-233,231,12.41,30,1,Kisköre utca
-231,232,6.19,30,1,Kisköre utca
-232,234,5.71,30,1,Kisköre utca
-234,224,66.4,30,1,Kisköre utca
-9,471,40.98,100,1,Zrínyi utca
-471,623,15.62,100,1,Zrínyi utca
-623,472,20.72,100,1,Zrínyi utca
-472,10,124.23,100,1,Zrínyi utca
-10,627,61.33,100,1,Zrínyi utca
-627,11,55.41,100,1,Zrínyi utca
-11,228,36.29,100,1,Zrínyi utca
-228,12,25.9,100,1,Zrínyi utca
-12,474,22.13,100,1,Zrínyi utca
-474,473,16.38,100,1,Zrínyi utca
-473,478,6.67,100,1,Zrínyi utca
-478,236,11.71,100,1,Zrínyi utca
-236,466,16.29,100,1,Zrínyi utca
-466,27,19.91,100,1,Zrínyi utca
-27,465,25.63,100,1,Zrínyi utca
-465,13,41.91,100,1,Zrínyi utca
-13,414,15.52,100,1,Zrínyi utca
-414,640,16.15,100,1,Zrínyi utca
-640,28,3.21,100,1,Zrínyi utca
-28,14,21.97,100,1,Zrínyi utca
-14,29,36.15,100,1,Zrínyi utca
-29,174,10.27,100,1,Zrínyi utca
-174,87,6.13,100,1,Zrínyi utca
-87,15,15.51,100,1,Zrínyi utca
-15,175,28.45,100,1,Zrínyi utca
-175,402,36.08,100,1,Zrínyi utca
-402,30,35.35,100,1,Zrínyi utca
-30,176,16.46,100,1,Zrínyi utca
-176,177,5.33,100,1,Zrínyi utca
-177,16,42.12,100,1,Zrínyi utca
-16,179,32.57,100,1,Zrínyi utca
-179,17,25.12,100,1,Zrínyi utca
-17,426,34.29,100,1,Zrínyi utca
-426,18,24.58,100,1,Zrínyi utca
-18,31,15.76,100,1,Zrínyi utca
-31,439,25.1,100,1,Zrínyi utca
-439,19,22.26,100,1,Zrínyi utca
-19,243,34.03,100,1,Zrínyi utca
-243,443,47.05,100,1,Zrínyi utca
-443,32,40.94,100,1,Zrínyi utca
-32,448,54.86,100,1,
-448,450,50.28,100,1,
-450,451,26.5,100,1,
-451,20,24.27,100,1,
-20,266,34.32,100,1,
-266,455,38.97,100,1,
-455,21,25.88,100,1,
-21,457,32.41,100,1,
-457,632,21.18,100,1,
-632,33,20.23,100,1,
-33,267,13.21,100,1,
-267,34,28.22,100,1,
-34,631,24.96,100,1,
-631,357,4.78,100,1,
-357,549,28.22,100,1,
-549,459,25.63,100,1,
-459,551,19.68,100,1,
-551,22,19.55,100,1,
-22,35,22.05,100,1,
-35,23,16.46,100,1,
-23,362,9.0,100,1,
-362,615,8.49,100,1,
-615,554,12.82,100,1,
-554,36,22.86,100,1,
-36,48,30.73,100,1,
-48,561,39.52,100,1,
-561,358,39.54,100,1,
-358,24,15.22,100,1,
-24,359,21.3,100,1,
-359,37,63.74,100,1,
-37,25,85.77,100,1,
-25,130,27.69,100,1,
-197,196,16.53,30,1,
-196,194,36.83,30,1,
-194,639,8.2,30,1,
-639,67,7.5,30,1,
-67,638,5.55,30,1,
-638,47,2.82,30,1,
-47,637,2.46,30,1,
-637,636,7.33,30,1,
-636,46,10.67,30,1,
-464,611,6.98,50,1,
-611,610,15.72,50,1,
-610,463,10.79,50,1,
-463,531,17.14,50,1,
-531,315,54.15,50,1,
-217,216,12.04,20,1,Balaton utca
-216,215,61.06,20,1,Balaton utca
-215,214,72.98,20,1,Balaton utca
-214,413,50.99,20,1,Balaton utca
-413,412,24.87,20,1,Balaton utca
-412,213,3.97,20,1,Balaton utca
-213,409,16.63,20,1,Balaton utca
-409,406,20.03,20,1,Balaton utca
-406,404,23.7,20,1,Balaton utca
-404,403,8.57,20,1,Balaton utca
-56,643,7.33,5,1,Vörösparti sor
-643,57,35.33,5,1,Vörösparti sor
-57,58,40.05,5,1,Vörösparti sor
-58,190,42.12,5,1,Vörösparti sor
-190,59,50.56,5,1,Vörösparti sor
-59,188,30.35,5,1,Vörösparti sor
-188,186,37.47,5,1,Vörösparti sor
-186,187,35.31,5,1,Vörösparti sor
-187,60,35.5,5,1,Vörösparti sor
-60,189,33.6,5,1,Vörösparti sor
-189,191,34.1,5,1,Vörösparti sor
-191,61,34.84,5,1,Vörösparti sor
-61,192,36.18,5,1,Vörösparti sor
-192,62,45.16,5,1,Vörösparti sor
-62,647,24.89,5,1,Vörösparti sor
-136,138,41.46,10,1,
-138,148,148.67,10,1,
-148,141,64.89,10,1,
-141,146,20.86,10,1,
-146,144,142.17,10,1,
-144,159,58.37,10,1,
-159,142,27.16,10,1,
-142,147,106.16,10,1,
-147,149,17.01,10,1,
-149,145,39.39,10,1,
-145,139,97.22,10,1,
-139,143,67.93,10,1,
-170,223,7.42,30,0,Királydombi utca
-223,222,40.24,30,0,Királydombi utca
-222,221,61.06,30,0,Királydombi utca
-221,220,53.37,30,0,Királydombi utca
-220,219,47.08,30,0,Királydombi utca
-219,218,18.75,30,0,Királydombi utca
-243,508,17.63,30,1,Sport utca
-508,184,70.75,30,1,Sport utca
-102,247,194.85,10,1,
-247,542,4.91,10,1,
-542,540,10.32,10,1,
-540,537,8.77,10,1,
-537,539,11.41,10,1,
-539,541,9.86,10,1,
-541,544,9.48,10,1,
-544,546,9.39,10,1,
-546,545,10.46,10,1,
-545,538,9.79,10,1,
-538,536,23.97,10,1,
-110,248,22.35,30,1,Tódi utca
-248,249,32.7,30,1,Tódi utca
-249,250,30.86,30,1,Tódi utca
-478,480,17.79,30,1,Kossuth utca
-480,481,42.05,30,1,Kossuth utca
-481,482,7.62,30,1,Kossuth utca
-482,483,9.56,30,1,Kossuth utca
-483,485,11.49,30,1,Kossuth utca
-485,487,17.5,30,1,Kossuth utca
-285,284,12.38,30,1,Pincesor út
-284,283,15.86,30,1,Pincesor út
-283,282,18.16,30,1,Pincesor út
-282,280,20.71,30,1,Pincesor út
-280,279,14.97,30,1,Pincesor út
-279,278,21.86,30,1,Pincesor út
-278,277,14.42,30,1,Pincesor út
-277,275,27.65,30,1,Pincesor út
-275,273,22.98,30,1,Pincesor út
-273,272,19.69,30,1,Pincesor út
-272,271,14.53,30,1,Pincesor út
-271,270,6.53,30,1,Pincesor út
-270,395,20.34,30,1,Pincesor út
-395,394,15.84,30,1,Pincesor út
-394,393,7.79,30,1,Pincesor út
-393,392,14.31,30,1,Pincesor út
-392,391,19.6,30,1,Pincesor út
-391,390,32.72,30,1,Pincesor út
-276,286,78.61,50,1,Cifhegyi út
-286,287,13.19,50,1,Cifhegyi út
-287,574,7.36,50,1,Cifhegyi út
-574,575,7.78,50,1,Cifhegyi út
-575,576,10.89,50,1,Cifhegyi út
-576,289,15.05,50,1,Cifhegyi út
-289,290,22.48,50,1,Cifhegyi út
-290,580,41.96,50,1,Cifhegyi út
-580,293,41.74,50,1,Cifhegyi út
-293,583,23.7,50,1,Cifhegyi út
-583,295,14.44,50,1,Cifhegyi út
-295,585,16.82,50,1,Cifhegyi út
-585,586,7.64,50,1,Cifhegyi út
-586,298,7.44,50,1,Cifhegyi út
-298,587,39.89,50,1,Cifhegyi út
-587,588,9.52,50,1,Cifhegyi út
-588,299,6.56,50,1,Cifhegyi út
-299,619,8.41,50,1,Cifhegyi út
-619,589,4.85,50,1,Cifhegyi út
-589,300,7.35,50,1,Cifhegyi út
-300,591,8.63,50,1,Cifhegyi út
-591,301,17.82,50,1,Cifhegyi út
-301,594,24.25,50,1,Cifhegyi út
-594,302,12.01,50,1,Cifhegyi út
-302,303,22.58,50,1,Cifhegyi út
-303,595,12.03,50,1,Cifhegyi út
-595,596,13.3,50,1,Cifhegyi út
-596,306,10.15,50,1,Cifhegyi út
-306,308,32.12,50,1,Cifhegyi út
-308,598,9.78,50,1,Cifhegyi út
-598,599,4.47,50,1,Cifhegyi út
-599,309,4.56,50,1,Cifhegyi út
-309,600,9.52,50,1,Cifhegyi út
-600,601,11.22,50,1,Cifhegyi út
-601,310,12.92,50,1,Cifhegyi út
-310,311,27.32,50,1,Cifhegyi út
-311,314,18.97,50,1,Cifhegyi út
-314,607,5.97,50,1,Cifhegyi út
-607,316,7.62,50,1,Cifhegyi út
-316,609,7.79,50,1,Cifhegyi út
-609,317,8.57,50,1,Cifhegyi út
-317,608,19.13,50,1,Cifhegyi út
-608,606,24.5,50,1,Cifhegyi út
-606,313,38.27,50,1,Cifhegyi út
-313,604,8.71,50,1,Cifhegyi út
-604,312,9.55,50,1,Cifhegyi út
-312,605,8.47,50,1,Cifhegyi út
-605,315,8.72,50,1,Cifhegyi út
-131,329,10.1,30,1,Szép utca
-329,331,9.44,30,1,Szép utca
-331,330,4.8,30,1,Szép utca
-330,328,6.7,30,1,Szép utca
-328,327,19.33,30,1,Szép utca
-327,326,11.65,30,1,Szép utca
-326,325,13.71,30,1,Szép utca
-325,324,45.89,30,1,Szép utca
-324,323,30.43,30,1,Szép utca
-323,322,19.51,30,1,Szép utca
-322,566,32.15,30,1,Szép utca
-566,421,17.69,30,1,Szép utca
-421,564,14.18,30,1,Szép utca
-564,420,34.02,30,1,Szép utca
-420,558,43.88,30,1,Szép utca
-558,419,37.08,30,1,Szép utca
-419,552,41.26,30,1,Szép utca
-552,418,18.78,30,1,Szép utca
-418,550,25.98,30,1,Szép utca
-550,340,20.22,30,1,Szép utca
-340,338,16.22,30,1,Szép utca
-95,96,57.7,30,1,Petőfi utca
-96,319,17.59,30,1,Petőfi utca
-319,318,20.04,30,1,Petőfi utca
-318,94,42.49,30,1,Petőfi utca
-94,92,80.95,30,1,Petőfi utca
-92,88,120.27,30,1,Petőfi utca
-88,238,40.34,30,1,Petőfi utca
-238,237,10.7,30,1,Petőfi utca
-237,86,51.59,30,1,Petőfi utca
-86,618,48.42,30,1,Petőfi utca
-618,38,33.44,30,1,Petőfi utca
-110,111,11.73,30,1,Rizling út
-111,332,11.69,30,1,Rizling út
-332,109,8.37,30,1,Rizling út
-109,333,13.63,30,1,Rizling út
-333,334,10.03,30,1,Rizling út
-334,321,11.09,30,1,Rizling út
-321,113,25.35,30,1,Rizling út
-113,335,28.31,30,1,Rizling út
-335,115,22.84,30,1,Rizling út
-115,338,33.49,30,1,Rizling út
-338,251,51.24,30,1,Rizling út
-251,343,21.6,30,1,Rizling út
-343,345,24.94,30,1,Rizling út
-345,119,63.22,30,1,Rizling út
-119,348,56.91,30,1,Rizling út
-348,123,50.47,30,1,Rizling út
-123,642,66.21,30,1,Rizling út
-642,351,70.56,30,1,Rizling út
-351,131,55.98,30,1,Rizling út
-131,680,52.41,30,1,Rizling út
-680,681,14.05,30,1,Rizling út
-681,682,6.82,30,1,Rizling út
-682,683,6.77,30,1,Rizling út
-683,135,6.44,30,1,Rizling út
-364,365,81.98,30,1,Pincesor út
-365,367,40.2,30,1,Pincesor út
-404,405,14.67,5,1,
-405,407,19.78,5,1,
-407,408,13.11,5,1,
-408,410,8.42,5,1,
-410,411,9.54,5,1,
-411,413,29.36,5,1,
-250,252,22.16,20,1,Tódi utca
-252,652,10.3,20,1,Tódi utca
-652,253,9.97,20,1,Tódi utca
-253,254,82.03,20,1,Tódi utca
-254,371,45.88,20,1,Tódi utca
-448,453,65.81,50,1,Határ út
-453,456,84.86,50,1,Határ út
-456,458,57.88,50,1,Határ út
-458,518,49.41,50,1,Határ út
-518,519,24.47,50,1,Határ út
-519,653,8.39,50,1,Határ út
-653,520,8.27,50,1,Határ út
-520,521,46.29,50,1,Határ út
-521,522,88.72,50,1,Határ út
-522,523,8.4,50,1,Határ út
-523,525,8.66,50,1,Határ út
-525,528,6.51,50,1,Határ út
-528,526,9.6,50,1,Határ út
-526,524,6.9,50,1,Határ út
-524,527,5.79,50,1,Határ út
-527,529,10.49,50,1,Határ út
-529,530,62.91,50,1,Határ út
-441,440,12.77,50,1,Kishegyi út
-440,438,23.45,50,1,Kishegyi út
-438,435,37.41,50,1,Kishegyi út
-435,432,32.68,50,1,Kishegyi út
-432,424,44.39,50,1,Kishegyi út
-424,422,34.85,50,1,Kishegyi út
-422,628,16.59,50,1,Kishegyi út
-628,423,6.75,50,1,Kishegyi út
-423,425,32.29,50,1,Kishegyi út
-425,430,24.14,50,1,Kishegyi út
-430,436,24.14,50,1,Kishegyi út
-436,614,21.62,50,1,Kishegyi út
-614,437,2.62,50,1,Kishegyi út
-437,434,40.05,50,1,Kishegyi út
-434,613,10.31,50,1,Kishegyi út
-613,431,24.61,50,1,Kishegyi út
-431,428,26.93,50,1,Kishegyi út
-428,427,22.19,50,1,Kishegyi út
-427,429,25.71,50,1,Kishegyi út
-429,433,32.13,50,1,Kishegyi út
-433,95,27.28,50,1,Kishegyi út
-367,555,17.88,30,1,Pincesor út
-555,368,18.73,30,1,Pincesor út
-368,559,17.87,30,1,Pincesor út
-559,370,17.99,30,1,Pincesor út
-370,372,19.36,30,1,Pincesor út
-372,374,35.11,30,1,Pincesor út
-374,375,27.4,30,1,Pincesor út
-375,376,11.96,30,1,Pincesor út
-376,378,10.27,30,1,Pincesor út
-378,379,16.75,30,1,Pincesor út
-379,380,15.35,30,1,Pincesor út
-380,381,11.08,30,1,Pincesor út
-381,382,8.8,30,1,Pincesor út
-382,383,8.49,30,1,Pincesor út
-383,384,22.5,30,1,Pincesor út
-384,385,19.37,30,1,Pincesor út
-385,386,15.49,30,1,Pincesor út
-386,387,16.24,30,1,Pincesor út
-387,388,16.12,30,1,Pincesor út
-388,622,4.49,30,1,Pincesor út
-622,389,7.64,30,1,Pincesor út
-389,390,23.03,30,1,Pincesor út
-364,185,12.47,30,1,Pincesor út
-185,548,6.68,30,1,Pincesor út
-548,547,6.46,30,1,Pincesor út
-547,363,8.84,30,1,Pincesor út
-363,112,30.31,30,1,Pincesor út
-417,449,22.6,5,1,Pipacs utca
-449,447,24.05,5,1,Pipacs utca
-447,446,14.38,5,1,Pipacs utca
-446,445,6.62,5,1,Pipacs utca
-445,444,8.54,5,1,Pipacs utca
-444,442,112.88,5,1,Pipacs utca
-442,513,18.53,5,1,Pipacs utca
-513,435,13.73,5,1,Pipacs utca
-315,603,11.9,30,1,Nagyhegyi út
-603,602,16.82,30,1,Nagyhegyi út
-602,212,21.21,30,1,Nagyhegyi út
-212,307,24.95,30,1,Nagyhegyi út
-307,597,13.2,30,1,Nagyhegyi út
-597,305,11.51,30,1,Nagyhegyi út
-305,304,30.37,30,1,Nagyhegyi út
-304,593,62.25,30,1,Nagyhegyi út
-593,592,6.6,30,1,Nagyhegyi út
-592,211,6.55,30,1,Nagyhegyi út
-211,590,24.18,30,1,Nagyhegyi út
-590,210,34.17,30,1,Nagyhegyi út
-210,297,36.8,30,1,Nagyhegyi út
-297,296,23.52,30,1,Nagyhegyi út
-296,584,9.66,30,1,Nagyhegyi út
-584,209,7.57,30,1,Nagyhegyi út
-209,294,9.02,30,1,Nagyhegyi út
-294,582,8.74,30,1,Nagyhegyi út
-582,292,12.75,30,1,Nagyhegyi út
-292,581,13.7,30,1,Nagyhegyi út
-581,688,11.22,30,1,Nagyhegyi út
-688,208,2.51,30,1,Nagyhegyi út
-208,579,6.19,30,1,Nagyhegyi út
-579,578,6.55,30,1,Nagyhegyi út
-578,291,12.49,30,1,Nagyhegyi út
-291,577,18.44,30,1,Nagyhegyi út
-577,288,18.44,30,1,Nagyhegyi út
-288,207,25.92,30,1,Nagyhegyi út
-207,285,39.48,30,1,Nagyhegyi út
-285,281,20.83,30,1,Nagyhegyi út
-281,206,20.19,30,1,Nagyhegyi út
-206,462,35.05,30,1,Nagyhegyi út
-462,205,44.53,30,1,Nagyhegyi út
-205,624,10.07,30,1,Nagyhegyi út
-624,361,28.25,30,1,Nagyhegyi út
-361,204,11.43,30,1,Nagyhegyi út
-204,626,21.32,30,1,Nagyhegyi út
-626,360,7.0,30,1,Nagyhegyi út
-360,461,12.48,30,1,Nagyhegyi út
-461,203,14.67,30,1,Nagyhegyi út
-203,460,44.93,30,1,Nagyhegyi út
-460,377,38.01,30,1,Nagyhegyi út
-377,567,9.49,30,1,Nagyhegyi út
-567,565,11.15,30,1,Nagyhegyi út
-565,202,8.06,30,1,Nagyhegyi út
-202,373,36.66,30,1,Nagyhegyi út
-373,563,9.58,30,1,Nagyhegyi út
-563,562,14.03,30,1,Nagyhegyi út
-562,621,13.72,30,1,Nagyhegyi út
-621,201,15.57,30,1,Nagyhegyi út
-201,560,25.15,30,1,Nagyhegyi út
-560,369,26.04,30,1,Nagyhegyi út
-369,557,15.94,30,1,Nagyhegyi út
-557,556,15.71,30,1,Nagyhegyi út
-556,200,13.3,30,1,Nagyhegyi út
-200,366,20.73,30,1,Nagyhegyi út
-366,553,12.33,30,1,Nagyhegyi út
-553,199,46.07,30,1,Nagyhegyi út
-199,364,45.36,30,1,Nagyhegyi út
-107,110,76.94,30,1,Tódi utca
-487,490,34.66,30,1,Kossuth Lajos utca
-490,496,14.61,30,1,Kossuth Lajos utca
-496,499,52.02,30,1,Kossuth Lajos utca
-499,500,37.97,30,1,Kossuth Lajos utca
-500,651,4.82,30,1,Kossuth Lajos utca
-651,501,6.34,30,1,Kossuth Lajos utca
-501,503,10.06,30,1,Kossuth Lajos utca
-484,486,8.75,10,1,Görbe utca
-486,491,48.32,10,1,Görbe utca
-491,492,5.25,10,1,Görbe utca
-492,495,9.67,10,1,Görbe utca
-495,497,23.51,10,1,Görbe utca
-497,498,9.3,10,1,Görbe utca
-498,502,91.44,10,1,Görbe utca
-502,95,7.58,10,1,Görbe utca
-493,498,27.72,10,1,Görbe utca
-509,508,27.01,10,1,
-89,691,3.05,30,1,Ady Endre utca
-691,240,5.83,30,1,Ady Endre utca
-240,241,5.26,30,1,Ady Endre utca
-241,511,8.82,30,1,Ady Endre utca
-511,242,32.73,30,1,Ady Endre utca
-242,673,38.82,30,1,Ady Endre utca
-673,180,2.43,30,1,Ady Endre utca
-487,488,9.24,30,1,Boldog Apor Vilmos utca
-488,489,21.78,30,1,Boldog Apor Vilmos utca
-489,655,20.94,30,1,Boldog Apor Vilmos utca
-655,494,14.2,30,1,Boldog Apor Vilmos utca
-494,89,32.55,30,1,Boldog Apor Vilmos utca
-180,662,56.28,30,1,
-662,656,6.02,30,1,
-656,182,24.57,30,1,
-182,661,4.26,30,1,Hegyalja utca
-661,244,7.47,30,1,Hegyalja utca
-244,517,14.11,30,1,Hegyalja utca
-517,245,30.52,30,1,Hegyalja utca
-513,515,50.81,30,1,
-515,516,8.14,30,1,
-516,514,7.13,30,1,
-514,440,7.33,30,1,
-370,612,19.01,30,1,Csuka köz
-475,476,19.94,10,1,
-476,616,9.58,10,1,
-616,617,10.02,10,1,
-617,477,12.19,10,1,
-477,479,28.2,10,1,
-479,484,58.7,10,1,
-218,633,34.53,30,1,
-633,165,5.07,30,1,
-503,504,9.07,30,1,
-504,533,22.32,30,1,
-533,505,11.29,30,1,
-505,506,20.98,30,1,
-506,507,17.52,30,1,
-507,629,0.94,30,1,
-629,663,16.35,30,1,
-663,667,13.97,30,1,
-667,510,1.96,30,1,
-646,645,33.11,10,1,
-645,644,35.14,10,1,
-644,403,12.44,10,1,
-68,265,69.31,90,1,Füredi út
-265,0,75.84,90,1,Füredi út
-0,78,16.79,90,1,Füredi út
-78,73,21.71,90,1,Füredi út
-73,230,218.26,90,1,Füredi út
-230,1,136.59,90,1,Füredi út
-1,261,41.33,90,1,Füredi út
-261,39,65.7,90,1,Füredi út
-39,264,25.7,90,1,Füredi út
-264,257,28.68,90,1,Füredi út
-257,260,38.82,90,1,Füredi út
-260,40,35.2,90,1,Füredi út
-40,396,69.63,90,1,Füredi út
-396,403,57.25,90,1,Füredi út
-403,2,9.29,90,1,Füredi út
-2,256,55.5,90,1,Füredi út
-256,262,31.11,90,1,Füredi út
-262,41,30.72,90,1,Füredi út
-41,259,57.91,90,1,Füredi út
-259,3,59.21,90,1,Füredi út
-3,42,74.77,90,1,Füredi út
-42,84,41.66,90,1,Füredi út
-667,666,3.61,10,1,
-666,665,20.0,10,1,
-665,664,8.78,10,1,
-662,659,36.21,10,1,
-659,658,3.35,10,1,
-658,657,5.97,10,1,
-673,672,3.53,10,1,
-672,671,17.62,10,1,
-671,670,24.28,10,1,
-532,677,7.17,10,1,
-677,676,10.93,10,1,
-676,675,9.13,10,1,
-675,674,7.19,10,1,
-647,63,56.53,30,1,Vörösparti sor
-63,397,15.2,30,1,Vörösparti sor
-397,193,15.2,30,1,Vörösparti sor
-193,398,25.58,30,1,Vörösparti sor
-398,64,24.94,30,1,Vörösparti sor
-64,229,95.55,30,1,Vörösparti sor
-229,648,13.35,30,1,Vörösparti sor
-648,399,50.17,30,1,Vörösparti sor
-399,65,26.02,30,1,Vörösparti sor
-65,195,51.02,30,1,Vörösparti sor
-195,66,37.57,30,1,Vörösparti sor
-66,197,18.5,30,1,Vörösparti sor
-679,4,43.99,90,1,
-4,82,74.01,90,1,
-82,684,36.68,90,1,
-684,43,36.99,90,1,
-43,46,67.37,90,1,
-678,6,26.87,90,1,
-6,45,165.61,90,1,
-45,255,64.55,90,1,
-255,85,62.87,90,1,
-74,679,139.9,90,1,
-688,687,15.83,30,1,Boszorkány köz
-687,686,22.4,30,1,Boszorkány köz
-686,685,26.39,30,1,Boszorkány köz
-105,104,16.62,50,1,Tódi utca
-104,103,21.63,50,1,Tódi utca
-103,452,15.85,50,1,Tódi utca
-452,417,26.36,50,1,Tódi utca
-417,101,61.65,50,1,Tódi utca
-101,689,116.19,50,1,Tódi utca
-689,441,14.64,50,1,Tódi utca
-441,503,36.87,50,1,Tódi utca
+FROM_ID,TO_ID,DISTANCE,TYPE,HEURISTICS,BIDIRECTIONAL
+796,2597,31.09,primary,70,0
+2597,1586,19.6,primary,70,0
+1586,1579,22.93,primary,70,0
+1579,1578,35.08,primary,70,0
+1578,2596,31.39,primary,70,0
+2596,23,20.92,primary,70,0
+23,2595,25.59,primary,70,0
+2595,1588,28.21,primary,70,0
+1588,2594,10.93,primary,70,0
+2594,2591,11.7,primary,70,0
+2591,2593,25.5,primary,70,0
+2593,1503,26.02,primary,70,0
+1503,2592,27.43,primary,70,0
+2592,2018,29.04,primary,70,0
+2018,2077,32.95,primary,70,0
+2077,1590,33.4,primary,70,0
+22,2557,16.16,primary,50,0
+2557,1393,13.89,primary,50,0
+1393,2030,6.82,primary,50,0
+2030,1357,9.81,primary,50,0
+18,29,6.76,secondary,40,0
+29,785,8.98,secondary,40,0
+785,1805,6.72,secondary,40,0
+1805,789,27.0,secondary,40,0
+789,788,5.92,secondary,40,0
+788,1605,7.66,secondary,40,0
+1605,30,6.5,secondary,40,0
+50,1232,5.79,tertiary,50,1
+1232,1494,8.04,tertiary,50,1
+1494,48,9.46,tertiary,50,1
+48,1469,10.64,tertiary,50,1
+1469,42,11.5,tertiary,50,1
+42,1783,2.61,tertiary,50,1
+1783,530,46.5,tertiary,50,1
+530,534,87.48,tertiary,50,1
+534,80,52.66,tertiary,50,1
+2076,731,41.95,tertiary,50,1
+731,921,39.66,tertiary,50,1
+921,922,20.03,tertiary,50,1
+922,51,19.43,tertiary,50,1
+51,52,30.14,tertiary,50,1
+52,2542,47.81,tertiary,50,1
+2542,529,12.59,tertiary,50,1
+529,1406,58.22,tertiary,50,1
+1406,717,57.72,tertiary,50,1
+717,542,6.87,tertiary,50,1
+542,1596,29.24,tertiary,50,1
+1596,1597,12.88,tertiary,50,1
+1597,923,8.48,tertiary,50,1
+923,53,9.16,tertiary,50,1
+53,2514,8.03,tertiary,50,1
+2514,702,7.73,tertiary,50,1
+702,54,7.06,tertiary,50,1
+54,924,6.75,tertiary,50,1
+924,55,7.35,tertiary,50,1
+55,925,7.33,tertiary,50,1
+925,56,7.51,tertiary,50,1
+56,536,7.87,tertiary,50,1
+536,1611,116.93,tertiary,50,1
+1611,956,32.91,tertiary,50,1
+956,103,18.73,tertiary,50,1
+50,66,7.27,residential,50,1
+66,670,10.58,residential,50,1
+80,2685,4.98,living_street,20,1
+2685,2680,1.6,living_street,20,1
+2680,751,7.38,living_street,20,1
+751,81,9.37,living_street,20,1
+81,82,15.58,living_street,20,1
+82,1919,5.62,living_street,20,1
+1919,2874,5.31,living_street,20,1
+2874,83,5.56,living_street,20,1
+83,84,13.95,living_street,20,1
+84,85,13.52,living_street,20,1
+85,1255,10.92,living_street,20,1
+1255,1799,4.27,living_street,20,1
+1799,86,7.9,living_street,20,1
+86,87,12.59,living_street,20,1
+87,754,25.68,living_street,20,1
+609,3375,137.03,residential,50,1
+3375,3129,4.54,residential,50,1
+3129,198,8.55,residential,50,1
+120,2764,7.43,residential,30,1
+2764,1233,5.68,residential,30,1
+1233,867,20.17,residential,30,1
+867,104,14.5,residential,30,1
+104,105,17.35,residential,30,1
+105,1904,23.58,residential,30,1
+1904,106,13.93,residential,30,1
+106,870,15.08,residential,30,1
+870,107,7.14,residential,30,1
+107,868,7.63,residential,30,1
+868,869,10.87,residential,30,1
+869,108,23.29,residential,30,1
+108,375,27.35,residential,30,1
+375,871,20.44,residential,30,1
+871,872,14.66,residential,30,1
+872,109,20.16,residential,30,1
+109,1809,22.69,residential,30,1
+121,2780,4.99,residential,30,1
+2780,2791,7.29,residential,30,1
+2791,172,91.2,residential,30,1
+172,850,70.81,residential,30,1
+850,122,6.81,residential,30,1
+122,857,5.28,residential,30,1
+857,169,5.4,residential,30,1
+169,851,13.89,residential,30,1
+851,856,5.57,residential,30,1
+856,855,6.81,residential,30,1
+855,123,7.38,residential,30,1
+123,158,102.0,residential,30,1
+132,3516,7.43,residential,30,1
+3516,1711,84.92,residential,30,1
+1711,3411,42.64,residential,30,1
+3411,1712,37.88,residential,30,1
+1712,3997,42.58,residential,30,1
+3997,133,23.57,residential,30,1
+133,838,9.21,residential,30,1
+838,134,12.13,residential,30,1
+134,135,13.36,residential,30,1
+135,136,10.47,residential,30,1
+136,790,7.12,residential,30,1
+790,3567,9.69,residential,30,1
+3567,137,3.67,residential,30,1
+137,154,17.91,residential,30,1
+154,3569,12.67,residential,30,1
+3569,3373,9.35,residential,30,1
+3373,138,33.74,residential,30,1
+138,2622,11.14,residential,30,1
+2622,3557,6.61,residential,30,1
+3557,3555,16.82,residential,30,1
+3555,139,6.5,residential,30,1
+139,140,5.51,residential,30,1
+140,141,6.22,residential,30,1
+141,142,5.2,residential,30,1
+142,143,5.97,residential,30,1
+143,144,4.4,residential,30,1
+147,3378,32.7,residential,30,0
+3378,844,21.9,residential,30,0
+844,3379,40.68,residential,30,0
+3379,3571,19.23,residential,30,0
+3571,148,1.39,residential,30,0
+148,149,14.58,residential,30,0
+149,150,19.31,residential,30,0
+150,151,23.36,residential,30,0
+151,765,11.38,residential,30,0
+765,3570,5.34,residential,30,0
+3570,152,4.24,residential,30,0
+152,791,7.42,residential,30,0
+791,153,7.51,residential,30,0
+153,154,10.32,residential,30,0
+144,2159,8.45,residential,30,0
+2159,2623,12.77,residential,30,0
+2623,2039,46.21,residential,30,0
+2039,2624,66.21,residential,30,0
+2624,2040,1.85,residential,30,0
+2040,2625,90.11,residential,30,0
+2625,155,46.96,residential,30,0
+852,1887,6.43,service,50,1
+1887,165,28.93,service,50,1
+165,2771,8.14,service,50,1
+2771,2772,9.3,service,50,1
+2772,2770,2.58,service,50,1
+2770,166,2.0,service,50,1
+166,2462,39.51,service,50,1
+123,854,105.45,residential,30,1
+169,2344,11.06,residential,30,1
+2344,171,74.3,residential,30,1
+171,129,94.94,residential,30,1
+89,793,17.8,residential,30,1
+172,173,33.36,residential,30,0
+173,174,9.04,residential,30,0
+174,4058,139.99,residential,30,0
+4058,792,7.07,residential,30,0
+1124,215,130.76,residential,30,1
+215,1123,119.34,residential,30,1
+1123,1408,33.52,residential,30,1
+1408,1710,2.04,residential,30,1
+1710,628,55.39,residential,30,1
+628,608,78.07,residential,30,1
+608,811,88.74,residential,30,1
+811,809,23.68,residential,30,1
+809,196,155.34,residential,30,1
+196,2389,54.67,residential,30,1
+2389,2388,5.23,residential,30,1
+2388,4273,4.94,residential,30,1
+4273,2413,5.25,residential,30,1
+2413,1567,2.33,residential,30,1
+1567,797,10.74,residential,30,1
+195,3150,6.05,residential,30,1
+3150,2289,6.78,residential,30,1
+2289,2292,47.18,residential,30,1
+2292,2291,28.09,residential,30,1
+2291,3158,11.33,residential,30,1
+3158,800,5.41,residential,30,1
+800,3159,5.17,residential,30,1
+3159,2415,83.22,residential,30,1
+2415,2414,12.69,residential,30,1
+2414,196,15.25,residential,30,1
+197,4096,10.45,residential,30,1
+4096,214,108.75,residential,30,1
+214,2351,75.4,residential,30,1
+2351,3126,2.09,residential,30,1
+3126,803,6.73,residential,30,1
+199,3374,44.41,residential,50,1
+3374,3727,46.17,residential,50,1
+3727,744,8.41,residential,50,1
+214,3141,86.84,residential,30,1
+3141,804,7.95,residential,30,1
+804,3157,72.92,residential,30,1
+3157,800,5.91,residential,30,1
+259,1923,32.05,residential,30,0
+1923,1922,12.9,residential,30,0
+1922,260,11.51,residential,30,0
+260,1064,12.49,residential,30,0
+1064,261,10.42,residential,30,0
+261,4173,21.11,residential,30,0
+4173,1924,7.78,residential,30,0
+1924,590,28.31,residential,30,0
+237,4159,33.6,residential,30,1
+4159,236,42.91,residential,30,1
+236,4141,38.06,residential,30,1
+4141,813,3.83,residential,30,1
+813,4145,7.9,residential,30,1
+4145,4144,38.86,residential,30,1
+4144,815,8.69,residential,30,1
+815,816,46.91,residential,30,1
+816,836,28.41,residential,30,1
+836,817,21.83,residential,30,1
+817,837,25.47,residential,30,1
+837,814,31.47,residential,30,1
+814,826,28.53,residential,30,1
+826,1566,22.85,residential,30,1
+1566,801,8.69,residential,30,1
+1136,1533,134.69,residential,30,1
+1533,3307,62.67,residential,30,1
+3307,4258,4.7,residential,30,1
+4258,4262,10.71,residential,30,1
+4262,239,39.02,residential,30,1
+239,1135,18.7,residential,30,1
+1062,1974,5.72,residential,30,0
+1974,2007,13.03,residential,30,0
+2007,4169,31.72,residential,30,0
+4169,2453,96.55,residential,30,0
+2453,242,3.73,residential,30,0
+1052,2489,33.39,residential,30,1
+2489,348,52.44,residential,30,1
+348,1910,41.4,residential,30,1
+1910,1914,55.25,residential,30,1
+1914,1263,11.12,residential,30,1
+65,1340,11.93,tertiary,50,1
+1340,304,11.92,tertiary,50,1
+304,1506,33.35,tertiary,50,1
+1261,2584,35.85,tertiary,50,1
+2584,1819,28.82,tertiary,50,1
+1819,1332,16.43,tertiary,50,1
+1332,1292,32.4,tertiary,50,1
+830,1270,14.93,residential,30,1
+1270,1657,36.14,residential,30,1
+1657,2180,21.97,residential,30,1
+2180,845,8.0,residential,30,1
+845,2074,90.38,residential,30,1
+2074,835,16.77,residential,30,1
+835,631,68.13,residential,30,1
+631,2100,16.43,residential,30,1
+2100,630,35.18,residential,30,1
+630,1500,13.98,residential,30,1
+1500,1142,149.97,residential,30,1
+1142,1141,16.33,residential,30,1
+1141,1143,9.07,residential,30,1
+1143,310,11.16,residential,30,1
+310,1362,32.5,residential,30,1
+1362,2199,25.35,residential,30,1
+2199,655,4.96,residential,30,1
+655,311,47.93,residential,30,1
+311,1140,13.35,residential,30,1
+1140,1139,14.56,residential,30,1
+1139,312,11.79,residential,30,1
+312,1138,32.63,residential,30,1
+3366,3372,7.11,residential,30,1
+3372,327,5.51,residential,30,1
+327,328,137.71,residential,30,1
+328,329,19.22,residential,30,1
+329,3370,11.55,residential,30,1
+3257,344,50.23,residential,30,1
+344,1090,37.64,residential,30,1
+1090,345,5.76,residential,30,1
+345,2500,64.55,residential,30,1
+347,1543,150.89,residential,30,1
+1543,1074,84.01,residential,30,1
+1074,1075,21.41,residential,30,1
+1075,1076,9.62,residential,30,1
+1076,1077,9.18,residential,30,1
+1077,1078,7.44,residential,30,1
+1078,1079,8.12,residential,30,1
+1079,1080,11.85,residential,30,1
+1080,1081,11.17,residential,30,1
+1081,1082,9.68,residential,30,1
+1082,1083,10.89,residential,30,1
+1083,1084,10.03,residential,30,1
+1084,4180,3.29,residential,30,1
+4180,1263,13.3,residential,30,1
+355,1751,4.7,residential,30,1
+1751,2690,1.04,residential,30,1
+2690,1725,25.6,residential,30,1
+1725,351,8.92,residential,30,1
+351,352,29.91,residential,30,1
+352,3258,32.97,residential,30,1
+3258,353,33.66,residential,30,1
+353,354,17.12,residential,30,1
+354,1367,21.47,residential,30,1
+1367,1371,15.92,residential,30,1
+1371,3422,7.36,residential,30,1
+3422,1370,9.78,residential,30,1
+1370,1369,21.59,residential,30,1
+1369,937,62.04,residential,30,1
+546,1772,49.4,residential,30,1
+1772,1773,53.58,residential,30,1
+1773,1771,90.97,residential,30,1
+1771,3423,16.4,residential,30,1
+3423,356,5.7,residential,30,1
+356,1774,2.54,residential,30,1
+1774,761,5.33,residential,30,1
+529,2631,4.96,residential,30,1
+2631,2545,5.21,residential,30,1
+2545,2543,5.61,residential,30,1
+2543,2544,4.03,residential,30,1
+2544,533,59.89,residential,30,1
+533,550,40.1,residential,30,1
+550,359,10.45,residential,30,1
+359,360,10.02,residential,30,1
+360,934,10.25,residential,30,1
+934,935,10.13,residential,30,1
+935,361,11.22,residential,30,1
+361,936,12.86,residential,30,1
+936,362,9.84,residential,30,1
+362,363,10.53,residential,30,1
+363,364,8.69,residential,30,1
+364,365,6.27,residential,30,1
+365,546,9.57,residential,30,1
+546,2553,15.68,residential,30,1
+2553,2554,18.48,residential,30,1
+2554,2552,32.43,residential,30,1
+2552,2551,18.52,residential,30,1
+2551,937,19.96,residential,30,1
+937,366,59.28,residential,30,1
+366,3416,25.06,residential,30,1
+3416,367,18.3,residential,30,1
+367,368,13.58,residential,30,1
+368,2338,14.86,residential,30,1
+2338,938,10.61,residential,30,1
+376,2341,55.68,residential,30,1
+2341,2340,6.18,residential,30,1
+2340,375,9.08,residential,30,1
+885,2005,20.46,residential,30,0
+2005,2004,90.35,residential,30,0
+2004,3399,11.32,residential,30,0
+3399,886,2.5,residential,30,0
+886,2008,10.23,residential,30,0
+2008,2002,57.15,residential,30,0
+2002,377,32.01,residential,30,0
+377,2003,4.13,residential,30,0
+2003,1188,4.19,residential,30,0
+378,3460,7.16,residential,30,1
+3460,379,39.98,residential,30,1
+379,893,12.21,residential,30,1
+893,380,13.9,residential,30,1
+380,894,12.64,residential,30,1
+894,381,11.81,residential,30,1
+381,383,80.81,residential,30,1
+383,891,96.51,residential,30,1
+891,2719,1.62,residential,30,1
+2719,384,13.58,residential,30,1
+386,749,72.51,living_street,20,1
+749,668,69.08,living_street,20,1
+668,667,62.84,living_street,20,1
+667,385,61.88,living_street,20,1
+416,2949,6.64,residential,30,0
+2949,1018,31.1,residential,30,0
+1018,1017,7.66,residential,30,0
+1017,403,6.92,residential,30,0
+403,402,7.02,residential,30,0
+402,401,68.12,residential,30,0
+401,400,7.15,residential,30,0
+400,1019,7.46,residential,30,0
+1019,1020,10.22,residential,30,0
+1020,399,8.07,residential,30,0
+399,398,8.24,residential,30,0
+398,397,8.9,residential,30,0
+397,396,8.76,residential,30,0
+396,1021,51.42,residential,30,0
+2046,417,19.42,residential,30,1
+417,418,16.22,residential,30,1
+418,419,9.88,residential,30,1
+419,420,8.17,residential,30,1
+420,421,39.03,residential,30,1
+421,1351,2.29,residential,30,1
+1351,2323,5.65,residential,30,1
+983,984,107.9,residential,30,1
+984,430,38.61,residential,30,1
+430,431,35.19,residential,30,1
+431,4115,20.98,residential,30,1
+4115,432,27.12,residential,30,1
+432,4116,4.77,residential,30,1
+4116,433,24.0,residential,30,1
+433,434,103.94,residential,30,1
+434,435,13.98,residential,30,1
+435,1012,13.78,residential,30,1
+1012,436,9.67,residential,30,1
+436,1013,8.94,residential,30,1
+1013,1014,10.36,residential,30,1
+1014,437,10.35,residential,30,1
+437,4128,5.53,residential,30,1
+4128,438,9.78,residential,30,1
+438,1950,7.32,residential,30,1
+1950,2384,1.01,residential,30,1
+2384,1015,5.98,residential,30,1
+956,2278,5.69,residential,30,0
+2278,1470,31.25,residential,30,0
+1470,2335,43.52,residential,30,0
+2335,2336,13.33,residential,30,0
+2336,439,28.31,residential,30,0
+439,440,32.87,residential,30,0
+440,441,24.67,residential,30,0
+441,442,8.25,residential,30,0
+442,957,4.3,residential,30,0
+957,443,3.95,residential,30,0
+443,101,10.26,residential,30,0
+101,955,9.22,residential,30,0
+955,954,16.69,residential,30,0
+954,102,13.15,residential,30,0
+102,2337,52.55,residential,30,0
+962,560,83.32,residential,30,1
+560,448,107.37,residential,30,1
+448,985,7.22,residential,30,1
+985,449,65.04,residential,30,1
+449,450,11.73,residential,30,1
+450,1955,12.44,residential,30,1
+1955,513,107.28,residential,30,1
+513,986,127.35,residential,30,1
+986,987,32.99,residential,30,1
+987,988,22.03,residential,30,1
+988,989,14.85,residential,30,1
+989,990,14.81,residential,30,1
+990,991,17.96,residential,30,1
+991,992,37.69,residential,30,1
+992,1954,17.55,residential,30,1
+1954,523,35.68,residential,30,1
+523,888,52.54,residential,30,1
+992,451,14.5,residential,30,1
+451,452,17.01,residential,30,1
+452,453,12.2,residential,30,1
+453,995,8.57,residential,30,1
+995,996,10.98,residential,30,1
+996,4147,26.93,residential,30,1
+4147,898,23.63,residential,30,1
+898,454,36.69,residential,30,1
+454,455,13.88,residential,30,1
+455,456,15.39,residential,30,1
+456,457,13.0,residential,30,1
+457,458,19.31,residential,30,1
+458,2365,78.25,residential,30,1
+2365,1004,15.28,residential,30,1
+1004,2364,59.31,residential,30,1
+2364,877,22.73,residential,30,1
+877,4015,19.38,residential,30,1
+4015,459,93.29,residential,30,1
+459,4148,7.49,residential,30,1
+4148,473,107.86,residential,30,1
+473,2346,140.55,residential,30,1
+2346,4083,16.09,residential,30,1
+4083,177,4.59,residential,30,1
+476,291,73.66,residential,30,1
+473,467,51.04,residential,30,1
+467,468,14.96,residential,30,1
+468,1006,13.05,residential,30,1
+1006,469,12.62,residential,30,1
+469,470,13.36,residential,30,1
+470,1007,16.45,residential,30,1
+1007,2296,42.65,residential,30,1
+2296,3075,1.53,residential,30,1
+3075,1008,7.44,residential,30,1
+1008,3079,6.16,residential,30,1
+3079,2295,0.96,residential,30,1
+2295,471,14.76,residential,30,1
+471,1129,14.33,residential,30,1
+1129,1130,12.31,residential,30,1
+1130,613,38.34,residential,30,1
+613,475,34.64,residential,30,1
+475,472,55.5,residential,30,1
+474,2358,11.15,residential,30,1
+2358,2357,11.08,residential,30,1
+2357,475,12.87,residential,30,1
+1094,3329,2.54,residential,30,1
+3329,1106,56.45,residential,30,1
+478,3293,4.93,residential,30,1
+3293,3294,17.07,residential,30,1
+3294,1102,32.08,residential,30,1
+1102,1116,38.49,residential,30,1
+497,496,64.05,residential,30,1
+1015,2986,5.31,residential,50,1
+2986,1043,6.67,residential,50,1
+1043,2987,16.7,residential,50,1
+2987,1042,5.77,residential,50,1
+513,514,9.42,residential,30,1
+514,515,27.59,residential,30,1
+515,1016,33.47,residential,30,1
+1016,516,36.56,residential,30,1
+516,974,46.73,residential,30,1
+974,1953,69.97,residential,30,1
+1953,1952,67.94,residential,30,1
+1952,3000,8.64,residential,30,1
+3000,1948,1.14,residential,30,1
+1948,517,6.54,residential,30,1
+518,4161,30.28,residential,30,1
+4161,4162,133.51,residential,30,1
+4162,448,32.75,residential,30,1
+94,519,23.46,residential,30,1
+94,1959,29.02,residential,30,1
+1959,1958,57.8,residential,30,1
+1958,520,11.53,residential,30,1
+520,1957,10.79,residential,30,1
+1957,1956,52.84,residential,30,1
+1956,450,26.75,residential,30,1
+520,1629,114.56,residential,30,1
+1629,521,39.97,residential,30,1
+521,522,14.97,residential,30,1
+522,523,215.92,residential,30,1
+526,939,150.5,residential,30,1
+939,527,119.08,residential,30,1
+527,2013,2.22,residential,30,1
+2013,941,1.99,residential,30,1
+941,2014,2.81,residential,30,1
+2014,528,2.76,residential,30,1
+528,942,4.73,residential,30,1
+942,943,4.27,residential,30,1
+943,2015,8.36,residential,30,1
+2015,519,8.78,residential,30,1
+530,2661,10.58,residential,30,1
+2661,1761,1.86,residential,30,1
+1761,531,72.37,residential,30,1
+531,532,21.1,residential,30,1
+532,919,16.85,residential,30,1
+919,920,18.35,residential,30,1
+920,533,116.98,residential,30,1
+534,2662,10.26,residential,30,1
+2662,1760,2.27,residential,30,1
+1760,535,134.37,residential,30,1
+2270,931,3.73,residential,30,1
+931,932,10.53,residential,30,1
+932,541,21.08,residential,30,1
+541,2272,64.93,residential,30,1
+2272,540,26.18,residential,30,1
+540,539,15.63,residential,30,1
+539,930,6.22,residential,30,1
+930,538,8.17,residential,30,1
+538,537,26.5,residential,30,1
+537,2516,6.8,residential,30,1
+2516,2273,1.68,residential,30,1
+2273,536,5.01,residential,30,1
+545,544,34.88,residential,30,1
+544,543,7.55,residential,30,1
+543,2513,38.53,residential,30,1
+2513,2884,4.86,residential,30,1
+2884,542,5.21,residential,30,1
+546,547,62.33,residential,30,1
+547,2270,92.2,residential,30,1
+1630,545,39.18,residential,30,1
+545,548,16.72,residential,30,1
+551,552,7.07,residential,50,1
+552,553,15.31,residential,50,1
+553,554,10.77,residential,50,1
+554,555,11.62,residential,50,1
+555,556,18.35,residential,50,1
+556,557,22.09,residential,50,1
+557,558,24.74,residential,50,1
+946,2537,6.35,residential,30,1
+2537,2536,5.95,residential,30,1
+2536,4160,39.68,residential,30,1
+4160,947,61.34,residential,30,1
+947,559,20.0,residential,30,1
+559,560,21.66,residential,30,1
+443,961,94.47,residential,30,1
+961,962,10.48,residential,30,1
+962,963,23.72,residential,30,1
+963,561,52.83,residential,30,1
+561,562,22.34,residential,30,1
+567,568,10.95,steps,5,1
+568,569,11.29,steps,5,1
+569,2045,13.33,steps,5,1
+2045,2043,9.89,steps,5,1
+664,571,47.93,steps,5,1
+21,3182,9.05,residential,30,1
+3182,575,1.61,residential,30,1
+575,576,43.98,residential,30,1
+576,577,16.95,residential,30,1
+577,578,119.14,residential,30,1
+578,591,70.46,residential,30,1
+591,1306,51.47,residential,30,1
+1306,1308,14.89,residential,30,1
+579,1964,16.29,residential,30,1
+1964,580,16.05,residential,30,1
+580,2448,35.16,residential,30,1
+2448,581,16.29,residential,30,1
+581,582,22.09,residential,30,1
+582,2582,18.69,residential,30,1
+2582,2583,18.73,residential,30,1
+2583,1458,52.69,residential,30,1
+1458,2449,1.25,residential,30,1
+2449,2450,1.67,residential,30,1
+2450,2451,3.2,residential,30,1
+2451,1261,5.87,residential,30,1
+1063,2263,116.13,residential,30,0
+2263,2456,22.05,residential,30,0
+2456,585,3.41,residential,30,0
+585,2454,4.69,residential,30,0
+2454,1279,1.7,residential,30,0
+585,1486,7.34,residential,50,0
+589,1973,20.47,residential,30,1
+1973,1971,43.7,residential,30,1
+1971,586,42.76,residential,30,1
+1062,3247,61.36,residential,30,1
+3247,1972,6.63,residential,30,1
+1972,347,117.96,residential,30,1
+347,243,18.58,residential,30,1
+243,1091,19.52,residential,30,1
+1091,244,29.88,residential,30,1
+244,3444,17.31,residential,30,1
+3444,245,12.08,residential,30,1
+245,1090,10.84,residential,30,1
+1090,246,23.54,residential,30,1
+246,247,45.6,residential,30,1
+247,248,31.63,residential,30,1
+248,1095,72.18,residential,30,1
+1095,3371,126.39,residential,30,1
+3371,1101,43.83,residential,30,1
+1101,3297,9.1,residential,30,1
+3297,249,21.72,residential,30,1
+249,250,36.73,residential,30,1
+250,241,67.75,residential,30,1
+590,262,10.03,residential,30,1
+262,1061,9.12,residential,30,1
+1061,263,14.14,residential,30,1
+263,573,48.65,residential,30,1
+573,1925,11.61,residential,30,1
+1925,264,70.26,residential,30,1
+264,1059,7.66,residential,30,1
+1059,1060,8.89,residential,30,1
+1060,1058,9.87,residential,30,1
+1058,265,8.87,residential,30,1
+265,266,12.98,residential,30,1
+266,1057,11.3,residential,30,1
+1057,267,11.56,residential,30,1
+267,268,11.73,residential,30,1
+268,269,11.31,residential,30,1
+269,270,10.18,residential,30,1
+270,271,10.75,residential,30,1
+271,1056,10.68,residential,30,1
+1056,272,9.14,residential,30,1
+272,1073,7.37,residential,30,1
+1073,2501,8.27,residential,30,1
+2501,273,7.23,residential,30,1
+273,1927,34.25,residential,30,1
+1927,1926,21.78,residential,30,1
+1926,664,44.41,residential,30,1
+664,4177,3.88,residential,30,1
+4177,274,12.22,residential,30,1
+274,1049,8.96,residential,30,1
+1049,1048,8.38,residential,30,1
+1048,275,8.35,residential,30,1
+275,1047,8.81,residential,30,1
+1047,1046,8.0,residential,30,1
+1046,276,7.4,residential,30,1
+276,1045,6.47,residential,30,1
+1045,277,7.59,residential,30,1
+277,1044,7.32,residential,30,1
+1044,278,5.85,residential,30,1
+278,1038,5.39,residential,30,1
+1038,279,7.85,residential,30,1
+279,1036,9.14,residential,30,1
+1036,280,10.99,residential,30,1
+280,281,8.32,residential,30,1
+281,1037,13.51,residential,30,1
+1037,282,13.07,residential,30,1
+282,1999,2.78,residential,30,1
+1999,283,7.54,residential,30,1
+283,1039,7.59,residential,30,1
+1039,502,6.57,residential,30,1
+502,284,12.65,residential,30,1
+284,285,16.65,residential,30,1
+285,286,123.54,residential,30,1
+286,287,19.47,residential,30,1
+287,1906,25.48,residential,30,1
+1906,288,21.25,residential,30,1
+288,1917,26.33,residential,30,1
+1917,2659,1.19,residential,30,1
+2659,289,24.62,residential,30,1
+289,1053,12.21,residential,30,1
+1053,1909,14.62,residential,30,1
+1909,1054,19.87,residential,30,1
+1054,1055,18.11,residential,30,1
+1055,290,19.46,residential,30,1
+290,4114,20.39,residential,30,1
+4114,2487,8.03,residential,30,1
+2487,1051,45.03,residential,30,1
+604,168,46.84,residential,30,1
+168,854,15.69,residential,30,1
+854,2345,54.16,residential,30,1
+2345,853,54.2,residential,30,1
+106,1384,62.52,residential,30,1
+1384,2776,4.57,residential,30,1
+2776,2460,5.08,residential,30,1
+609,3868,5.58,residential,30,1
+3868,607,72.92,residential,30,1
+610,3130,165.2,residential,30,1
+3130,611,6.53,residential,30,1
+1005,3863,5.27,residential,30,1
+3863,3866,86.75,residential,30,1
+3866,607,5.65,residential,30,1
+612,4243,127.66,residential,30,1
+4243,1005,7.4,residential,30,1
+613,614,16.4,residential,30,1
+614,1118,7.94,residential,30,1
+1118,615,8.01,residential,30,1
+615,616,9.02,residential,30,1
+616,1119,10.01,residential,30,1
+1119,617,12.72,residential,30,1
+617,618,61.82,residential,30,1
+618,2347,9.72,residential,30,1
+2347,619,15.73,residential,30,1
+619,620,8.47,residential,30,1
+620,621,10.56,residential,30,1
+621,1120,8.65,residential,30,1
+1120,180,16.19,residential,30,1
+622,3105,7.16,residential,30,1
+3105,623,1.98,residential,30,1
+623,624,22.73,residential,30,1
+624,625,13.33,residential,30,1
+625,626,12.56,residential,30,1
+626,1243,125.96,residential,30,1
+1243,627,12.97,residential,30,1
+627,628,36.34,residential,30,1
+629,2106,154.49,residential,30,1
+2106,630,7.53,residential,30,1
+631,2189,6.34,residential,30,1
+2189,632,13.15,residential,30,1
+632,633,5.78,residential,30,1
+633,634,8.8,residential,30,1
+634,635,9.8,residential,30,1
+635,636,4.3,residential,30,1
+636,637,25.21,residential,30,1
+637,638,13.34,residential,30,1
+638,639,10.75,residential,30,1
+639,640,14.37,residential,30,1
+640,641,11.23,residential,30,1
+641,642,8.29,residential,30,1
+642,643,10.59,residential,30,1
+643,644,12.32,residential,30,1
+644,645,47.33,residential,30,1
+645,1165,11.7,residential,30,1
+1165,2112,50.4,residential,30,1
+2112,649,4.11,residential,30,1
+649,2115,3.14,residential,30,1
+2115,2124,95.34,residential,30,1
+2124,646,4.69,residential,30,1
+647,2198,3.43,residential,30,0
+2198,2196,3.09,residential,30,0
+2196,3966,149.46,residential,30,0
+3966,1154,9.93,residential,30,0
+1154,1155,5.92,residential,30,0
+1155,648,8.11,residential,30,0
+648,2116,37.66,residential,30,0
+2116,649,7.25,residential,30,0
+650,2126,3.08,residential,30,1
+2126,1502,145.52,residential,30,1
+1502,651,11.65,residential,30,1
+651,2110,2.61,residential,30,1
+2110,2032,44.35,residential,30,1
+2032,2033,32.02,residential,30,1
+2033,3967,35.88,residential,30,1
+3967,3966,5.07,residential,30,1
+652,1555,9.23,steps,5,1
+655,2202,7.46,residential,30,1
+2202,1151,32.53,residential,30,1
+1151,2211,13.44,residential,30,1
+2211,3316,1.81,residential,30,1
+3316,3318,17.02,residential,30,1
+3318,2217,3.49,residential,30,1
+2217,3317,3.58,residential,30,1
+3317,1152,13.89,residential,30,1
+1152,654,23.3,residential,30,1
+654,2509,16.55,residential,30,1
+2509,660,11.4,residential,30,1
+660,2149,64.3,residential,30,1
+2149,1153,7.19,residential,30,1
+656,657,46.82,service,30,1
+657,2506,12.62,service,30,1
+2506,1150,1.25,service,30,1
+1150,658,10.36,service,30,1
+658,2229,34.66,service,30,1
+2229,1149,9.74,service,30,1
+659,2505,3.34,service,30,1
+2505,2224,20.67,service,30,1
+2224,660,3.5,service,30,1
+661,3299,6.08,residential,30,1
+3299,4041,53.42,residential,30,1
+4041,4036,38.38,residential,30,1
+4036,2236,49.36,residential,30,1
+2236,662,33.23,residential,30,1
+662,1134,12.19,residential,30,1
+1134,663,15.33,residential,30,1
+571,572,40.91,residential,30,1
+572,1030,9.24,residential,30,1
+985,665,86.04,residential,30,1
+665,2362,2.25,steps,5,1
+2362,4198,53.03,steps,5,1
+666,994,47.4,residential,30,1
+994,2366,16.64,residential,30,1
+2366,898,28.73,residential,30,1
+898,1241,54.46,residential,30,1
+1004,1365,30.15,service,10,1
+2778,2777,8.67,service,10,1
+2777,669,7.87,service,10,1
+2639,2541,56.43,residential,50,1
+2541,670,8.29,residential,50,1
+684,1264,55.69,living_street,20,1
+1264,685,60.65,living_street,20,1
+685,686,35.15,living_street,20,1
+686,682,74.31,living_street,20,1
+671,1905,2.83,living_street,20,1
+1905,1836,5.0,living_street,20,1
+1836,672,11.59,living_street,20,1
+672,1837,8.27,living_street,20,1
+1837,673,5.56,living_street,20,1
+673,1907,5.32,living_street,20,1
+1907,674,7.14,living_street,20,1
+674,1835,16.25,living_street,20,1
+1835,683,16.18,living_street,20,1
+683,675,22.84,living_street,20,1
+675,1908,26.84,living_street,20,1
+1908,676,17.4,living_street,20,1
+676,1397,34.71,living_street,20,1
+1397,677,23.6,living_street,20,1
+677,678,12.38,living_street,20,1
+678,3240,8.03,living_street,20,1
+3240,1266,5.89,living_street,20,1
+1266,1399,12.75,living_street,20,1
+1399,2630,7.89,living_street,20,1
+2630,679,2.54,living_street,20,1
+679,680,19.27,living_street,20,1
+680,1402,20.78,living_street,20,1
+1402,2285,11.02,living_street,20,1
+2285,681,7.08,living_street,20,1
+681,70,19.76,living_street,20,1
+30,787,7.95,secondary,40,0
+787,786,8.32,secondary,40,0
+786,31,10.66,secondary,40,0
+31,25,101.86,secondary,40,0
+2322,692,58.26,tertiary,50,1
+692,0,6.3,tertiary,50,1
+0,65,17.45,tertiary,50,1
+1216,690,20.38,living_street,5,0
+690,689,15.16,living_street,5,0
+689,688,15.25,living_street,5,0
+688,1604,5.64,living_street,5,0
+1604,1215,13.79,living_street,5,0
+1215,1603,9.63,living_street,5,0
+1603,1602,19.29,living_street,5,0
+1602,1407,13.45,living_street,5,0
+1407,1476,14.61,living_street,5,0
+1476,2332,4.84,living_street,5,0
+2332,59,5.91,living_street,5,0
+702,2515,5.57,residential,30,1
+2515,1606,3.23,residential,30,1
+1606,2890,1.35,residential,30,1
+2890,1599,31.55,residential,30,1
+1599,701,82.96,residential,30,1
+701,700,76.4,residential,30,1
+700,699,8.61,residential,30,1
+699,698,7.08,residential,30,1
+698,719,6.79,residential,30,1
+719,697,6.42,residential,30,1
+697,696,5.14,residential,30,1
+696,695,15.73,residential,30,1
+695,1269,48.3,residential,30,1
+1269,1491,5.67,residential,30,1
+1491,694,36.63,residential,30,1
+717,2880,4.42,residential,30,1
+2880,2512,5.06,residential,30,1
+2512,2885,66.87,residential,30,1
+2885,716,10.22,residential,30,1
+716,715,11.91,residential,30,1
+715,714,24.53,residential,30,1
+714,713,23.12,residential,30,1
+713,1600,6.66,residential,30,1
+1600,712,20.42,residential,30,1
+712,1601,7.51,residential,30,1
+1601,711,12.19,residential,30,1
+711,710,13.37,residential,30,1
+710,718,8.85,residential,30,1
+718,709,6.13,residential,30,1
+709,708,7.55,residential,30,1
+708,707,8.96,residential,30,1
+707,706,17.65,residential,30,1
+706,705,13.53,residential,30,1
+705,704,10.08,residential,30,1
+704,703,8.6,residential,30,1
+529,2878,4.32,residential,30,0
+2878,730,81.78,residential,30,0
+730,729,9.59,residential,30,0
+729,728,5.54,residential,30,0
+728,727,6.35,residential,30,0
+727,726,10.18,residential,30,0
+726,725,15.43,residential,30,0
+725,724,15.5,residential,30,0
+724,1598,10.13,residential,30,0
+1598,723,7.03,residential,30,0
+723,722,19.22,residential,30,0
+722,721,16.79,residential,30,0
+754,2875,4.09,living_street,20,1
+2875,2873,2.1,living_street,20,1
+2873,755,9.71,living_street,20,1
+755,1784,20.99,living_street,20,1
+1784,1785,10.69,living_street,20,1
+1785,756,30.25,living_street,20,1
+756,760,33.16,living_street,20,1
+760,757,42.5,living_street,20,1
+757,758,15.49,living_street,20,1
+758,759,18.45,living_street,20,1
+759,752,106.07,living_street,20,1
+752,753,10.49,living_street,20,1
+1345,2395,5.46,footway,5,1
+25,653,20.22,primary,50,0
+811,810,8.13,residential,30,1
+810,1445,5.79,residential,30,1
+1445,207,8.08,residential,30,1
+207,812,7.76,residential,30,1
+812,208,7.34,residential,30,1
+208,819,23.37,residential,30,1
+819,818,15.36,residential,30,1
+818,209,19.58,residential,30,1
+209,2529,31.55,residential,30,1
+2529,2530,20.93,residential,30,1
+2530,210,25.63,residential,30,1
+210,4158,18.63,residential,30,1
+4158,211,12.77,residential,30,1
+211,821,6.39,residential,30,1
+821,820,5.08,residential,30,1
+820,822,5.25,residential,30,1
+822,212,4.25,residential,30,1
+212,823,5.14,residential,30,1
+823,213,4.49,residential,30,1
+213,237,6.35,residential,30,1
+1270,833,6.31,footway,5,1
+833,2587,5.55,footway,5,1
+2587,1298,5.47,footway,5,1
+1298,2629,25.35,footway,5,1
+831,832,38.43,footway,5,1
+813,743,67.01,residential,30,1
+743,2185,105.52,residential,30,1
+2185,835,7.58,residential,30,1
+838,3566,12.97,pedestrian,5,1
+3566,3700,68.81,pedestrian,5,1
+3700,3695,10.53,pedestrian,5,1
+3695,4005,7.16,pedestrian,5,1
+4005,3539,10.96,pedestrian,5,1
+3539,2393,5.0,pedestrian,5,1
+2161,3532,1.61,footway,5,1
+3532,3531,1.73,footway,5,1
+3531,2162,2.55,footway,5,1
+2162,3530,1.88,footway,5,1
+3530,3529,2.03,footway,5,1
+3529,3528,2.5,footway,5,1
+3528,3527,2.25,footway,5,1
+3527,1626,3.67,footway,5,1
+1626,3526,3.61,footway,5,1
+3526,2164,2.98,footway,5,1
+2164,3525,2.82,footway,5,1
+3525,3524,2.73,footway,5,1
+3524,1627,2.58,footway,5,1
+1627,3523,2.44,footway,5,1
+3523,3522,3.23,footway,5,1
+3522,2619,5.63,footway,5,1
+2619,2167,3.6,footway,5,1
+605,3870,5.67,residential,30,1
+3870,1005,69.53,residential,30,1
+1303,3536,2.77,residential,30,0
+3536,3479,1.3,residential,30,0
+3479,842,4.27,residential,30,0
+845,2060,28.96,service,10,1
+2060,848,34.35,service,10,1
+848,849,6.16,service,10,1
+849,2072,28.66,service,10,1
+2072,846,20.51,service,10,1
+846,2073,21.49,service,10,1
+2463,866,9.58,footway,5,1
+866,2464,10.03,footway,5,1
+794,4112,6.52,residential,30,1
+4112,793,89.89,residential,30,1
+916,666,15.15,service,10,1
+917,90,16.01,footway,5,1
+896,111,12.3,residential,30,1
+111,873,8.46,residential,30,1
+873,874,7.97,residential,30,1
+874,112,6.92,residential,30,1
+112,875,8.52,residential,30,1
+875,113,8.83,residential,30,1
+113,876,11.9,residential,30,1
+876,114,61.86,residential,30,1
+114,2360,11.0,residential,30,1
+2360,877,13.59,residential,30,1
+877,115,7.84,residential,30,1
+115,2368,6.39,residential,30,1
+2368,116,6.74,residential,30,1
+116,878,9.57,residential,30,1
+878,879,11.46,residential,30,1
+879,2367,14.99,residential,30,1
+2367,117,15.29,residential,30,1
+117,118,75.97,residential,30,1
+118,3059,1.41,residential,30,1
+3059,119,6.59,residential,30,1
+119,3058,6.59,residential,30,1
+3058,2297,1.3,residential,30,1
+2297,496,87.23,residential,30,1
+496,1350,4.36,residential,30,1
+1350,4017,7.68,residential,30,1
+4017,4021,24.9,residential,30,1
+4021,3365,20.77,residential,30,1
+3365,1092,10.73,residential,30,1
+110,896,16.42,residential,30,1
+853,170,16.23,residential,30,1
+158,918,17.77,residential,30,1
+793,3241,46.53,residential,30,1
+3241,171,68.09,residential,30,1
+794,4107,3.9,residential,30,1
+4107,130,13.91,residential,30,1
+62,1623,5.24,residential,30,1
+1623,979,1.49,residential,30,1
+979,404,8.24,residential,30,1
+404,405,3.64,residential,30,1
+405,406,4.8,residential,30,1
+406,407,6.25,residential,30,1
+407,1509,9.65,residential,30,1
+1509,408,11.07,residential,30,1
+408,980,12.56,residential,30,1
+980,409,88.93,residential,30,1
+409,2304,6.08,residential,30,1
+2304,978,3.63,residential,30,1
+978,2048,4.29,residential,30,1
+2048,2303,4.26,residential,30,1
+2303,2047,3.39,residential,30,1
+65,1288,13.97,tertiary,50,1
+1350,495,6.31,residential,30,1
+495,494,9.85,residential,30,1
+494,1050,12.01,residential,30,1
+1050,493,20.42,residential,30,1
+493,2299,45.75,residential,30,1
+2299,492,47.13,residential,30,1
+492,491,248.43,residential,30,1
+491,490,24.57,residential,30,1
+490,489,28.4,residential,30,1
+489,4181,11.7,residential,30,1
+4181,1542,2.85,residential,30,1
+291,1125,46.86,residential,30,1
+1125,292,13.55,residential,30,1
+292,293,8.23,residential,30,1
+293,1126,10.94,residential,30,1
+1126,294,11.26,residential,30,1
+294,474,9.04,residential,30,1
+474,295,22.23,residential,30,1
+295,296,22.0,residential,30,1
+296,1127,9.51,residential,30,1
+1127,297,8.99,residential,30,1
+297,472,5.01,residential,30,1
+472,298,20.67,residential,30,1
+298,299,8.01,residential,30,1
+299,300,16.86,residential,30,1
+300,1128,13.76,residential,30,1
+1128,215,16.54,residential,30,1
+215,216,8.68,residential,30,1
+216,217,6.64,residential,30,1
+217,218,16.16,residential,30,1
+218,219,11.99,residential,30,1
+219,220,12.65,residential,30,1
+220,1131,11.82,residential,30,1
+1131,221,14.11,residential,30,1
+221,222,11.71,residential,30,1
+222,1132,9.39,residential,30,1
+1132,1133,11.48,residential,30,1
+1133,223,17.08,residential,30,1
+223,663,36.99,residential,30,1
+663,224,15.63,residential,30,1
+224,3300,12.44,residential,30,1
+3300,2237,33.57,residential,30,1
+2237,3303,10.11,residential,30,1
+3303,225,11.45,residential,30,1
+225,3302,28.78,residential,30,1
+3302,3301,21.15,residential,30,1
+3301,226,21.79,residential,30,1
+226,4039,4.38,residential,30,1
+4039,241,17.21,residential,30,1
+241,2139,89.28,residential,30,1
+2139,1138,6.64,residential,30,1
+1061,1062,46.68,residential,30,0
+1062,2535,6.22,residential,30,0
+2535,1063,97.92,residential,30,0
+1117,1106,69.95,service,30,1
+1106,1107,23.83,service,30,1
+1107,1108,4.24,service,30,1
+1108,3473,3.01,service,30,1
+3473,1109,3.7,service,30,1
+1109,1110,4.2,service,30,1
+1110,1111,12.6,service,30,1
+1111,1112,3.09,service,30,1
+1112,3474,3.29,service,30,1
+3474,1113,3.82,service,30,1
+1113,1114,6.32,service,30,1
+1114,1115,8.51,service,30,1
+1115,3281,20.44,service,30,1
+3281,1116,15.92,service,30,1
+880,462,3.44,residential,30,1
+462,461,62.01,residential,30,1
+461,881,3.26,residential,30,1
+881,460,3.01,residential,30,1
+460,459,70.32,residential,30,1
+1146,1147,35.59,service,10,1
+1147,1148,11.69,service,10,1
+646,2125,5.53,footway,5,1
+2125,1164,11.79,footway,5,1
+1164,1163,10.63,footway,5,1
+1163,1162,10.92,footway,5,1
+1162,1156,4.63,footway,5,1
+1156,1157,75.59,footway,5,1
+1157,1158,6.13,footway,5,1
+1158,1159,2.53,footway,5,1
+1159,1160,6.6,footway,5,1
+1160,1804,6.19,footway,5,1
+1804,1803,3.13,footway,5,1
+1803,1161,2.87,footway,5,1
+242,259,22.87,residential,30,0
+259,4234,4.92,residential,30,0
+4234,1214,7.73,residential,30,0
+661,255,67.04,residential,30,1
+255,256,22.28,residential,30,1
+256,478,14.58,residential,30,1
+478,257,16.36,residential,30,1
+257,1093,15.34,residential,30,1
+1093,258,16.62,residential,30,1
+258,1094,61.68,residential,30,1
+766,2820,6.62,residential,30,1
+2820,2819,5.7,residential,30,1
+2819,3403,9.12,residential,30,1
+3403,132,18.93,residential,30,1
+124,2789,5.01,residential,30,1
+2789,125,5.94,residential,30,1
+125,126,4.8,residential,30,1
+126,127,4.72,residential,30,1
+127,2343,7.75,residential,30,1
+2343,843,3.66,residential,30,1
+843,128,3.86,residential,30,1
+128,2866,122.94,residential,30,1
+2866,792,19.62,residential,30,1
+22,1394,30.03,primary,50,0
+1394,2387,6.74,primary,50,0
+2387,1392,12.96,primary,50,0
+17,3196,21.19,primary,50,0
+3196,1591,1.04,primary,50,0
+1591,3193,19.34,primary,50,0
+3193,1594,3.63,primary,50,0
+1594,2419,18.17,primary,50,0
+2419,1592,4.32,primary,50,0
+1592,2020,3.35,primary,50,0
+2020,1593,14.92,primary,50,0
+1196,1283,5.44,service,10,1
+1200,2400,7.07,service,10,1
+2400,2314,2.19,service,10,1
+2314,2315,3.22,service,10,1
+2315,306,5.71,service,10,1
+570,1022,199.62,residential,30,1
+1022,1024,14.95,residential,30,1
+1024,1023,11.93,residential,30,1
+1023,1201,38.45,residential,30,1
+1201,2937,12.77,residential,30,1
+2937,1021,44.16,residential,30,1
+1021,4199,52.52,residential,30,1
+4199,748,20.6,residential,30,1
+1292,1826,8.26,tertiary,50,1
+1826,1294,10.04,tertiary,50,1
+1294,1212,49.82,tertiary,50,1
+1212,308,42.1,tertiary,50,1
+308,309,50.32,tertiary,50,1
+309,1289,6.04,tertiary,50,1
+1289,1329,43.7,tertiary,50,1
+1329,1333,58.44,tertiary,50,1
+1333,1293,24.94,tertiary,50,1
+2724,1237,5.59,footway,5,1
+1237,4250,7.71,footway,5,1
+4250,2720,3.94,footway,5,1
+2720,4251,3.94,footway,5,1
+603,2575,10.47,tertiary,50,0
+2575,2567,14.68,tertiary,50,0
+2567,2573,11.36,tertiary,50,0
+2573,2563,8.51,tertiary,50,0
+2563,2574,8.28,tertiary,50,0
+2574,2566,12.44,tertiary,50,0
+2566,2565,12.77,tertiary,50,0
+2565,945,14.35,tertiary,50,0
+1189,1768,10.74,tertiary,50,0
+1768,2709,7.89,tertiary,50,0
+2709,2710,4.18,tertiary,50,0
+2710,1767,4.19,tertiary,50,0
+1767,47,7.79,tertiary,50,0
+47,1346,5.86,tertiary,50,0
+670,2540,4.8,residential,30,1
+2540,3490,1.93,residential,30,1
+3490,1495,7.77,residential,30,1
+1495,67,17.97,residential,30,1
+67,68,14.81,residential,30,1
+68,1405,19.85,residential,30,1
+1405,69,10.43,residential,30,1
+69,1778,7.94,residential,30,1
+1778,70,7.28,residential,30,1
+842,1302,6.71,residential,30,0
+1238,2725,6.97,residential,30,1
+2725,40,9.48,residential,30,1
+1241,2369,2.04,steps,5,1
+2369,2370,13.09,steps,5,1
+1242,1244,4.95,residential,30,1
+1244,1245,10.12,residential,30,1
+1245,1246,12.4,residential,30,1
+1246,1247,14.53,residential,30,1
+1247,1408,22.31,residential,30,1
+184,1248,5.87,residential,30,1
+1248,1249,2.72,residential,30,1
+1249,1250,17.66,residential,30,1
+1250,1251,9.16,residential,30,1
+1251,1252,11.93,residential,30,1
+1252,1253,10.81,residential,30,1
+750,764,96.37,living_street,20,1
+764,1497,39.72,living_street,20,1
+1497,2704,12.16,living_street,20,1
+2704,2703,13.29,living_street,20,1
+2703,1499,17.47,living_street,20,1
+1499,1777,18.03,living_street,20,1
+1777,1787,31.13,living_street,20,1
+1787,4156,0.68,living_street,20,1
+4156,751,5.9,living_street,20,1
+1512,2021,9.84,footway,5,1
+2021,3194,24.78,footway,5,1
+3194,3197,19.14,footway,5,1
+3197,1513,11.78,footway,5,1
+1513,2024,4.75,footway,5,1
+2024,1257,7.08,footway,5,1
+1257,2420,7.25,footway,5,1
+2420,1582,6.14,footway,5,1
+1582,2411,25.15,footway,5,1
+2411,1187,12.97,footway,5,1
+1187,1258,33.34,footway,5,1
+1258,1259,32.47,footway,5,1
+833,831,17.31,steps,5,1
+1025,1285,13.67,footway,5,1
+1285,2312,2.4,footway,5,1
+2312,2313,3.37,footway,5,1
+2313,1284,2.14,footway,5,1
+1281,3172,3.65,footway,5,1
+1280,3177,29.2,footway,5,1
+3177,3176,3.0,footway,5,1
+1820,1821,9.89,footway,5,1
+1821,1294,8.25,footway,5,1
+1294,1277,6.38,footway,5,1
+1277,1273,3.14,footway,5,1
+1273,1282,3.74,footway,5,1
+1282,1295,3.38,footway,5,1
+1295,2585,5.74,footway,5,1
+2585,1287,8.67,footway,5,1
+1285,3174,1.69,footway,5,1
+1486,1291,4.12,footway,5,1
+1291,1276,2.36,footway,5,1
+1276,1290,3.09,footway,5,1
+1290,1281,2.43,footway,5,1
+131,175,58.75,residential,30,1
+175,612,12.42,residential,30,1
+612,176,19.24,residential,30,1
+176,177,15.31,residential,30,1
+177,178,18.3,residential,30,1
+178,179,16.95,residential,30,1
+179,2348,89.84,residential,30,1
+2348,3100,1.86,residential,30,1
+3100,1009,7.28,residential,30,1
+1009,3086,6.51,residential,30,1
+3086,2349,0.95,residential,30,1
+2349,3093,122.06,residential,30,1
+3093,180,38.78,residential,30,1
+180,1121,15.6,residential,30,1
+1121,1122,14.9,residential,30,1
+1122,181,22.24,residential,30,1
+181,182,16.52,residential,30,1
+182,1123,6.82,residential,30,1
+1123,183,7.51,residential,30,1
+183,4269,19.86,residential,30,1
+4269,184,28.91,residential,30,1
+184,185,11.88,residential,30,1
+185,186,19.95,residential,30,1
+186,4263,99.55,residential,30,1
+4263,4258,7.17,residential,30,1
+4258,4259,4.99,residential,30,1
+4259,187,12.33,residential,30,1
+187,188,32.26,residential,30,1
+188,189,24.74,residential,30,1
+189,190,24.95,residential,30,1
+190,1137,28.02,residential,30,1
+1137,191,32.58,residential,30,1
+191,2120,3.96,residential,30,1
+2120,1142,7.41,residential,30,1
+1142,2123,8.97,residential,30,1
+2123,650,42.27,residential,30,1
+650,1148,11.73,residential,30,1
+1148,192,25.55,residential,30,1
+192,2503,25.74,residential,30,1
+2503,647,30.87,residential,30,1
+647,2210,41.6,residential,30,1
+2210,193,12.12,residential,30,1
+193,2504,10.92,residential,30,1
+2504,194,2.44,residential,30,1
+70,71,9.3,residential,30,1
+71,72,12.78,residential,30,1
+72,73,22.91,residential,30,1
+73,1687,26.19,residential,30,1
+1687,1786,23.82,residential,30,1
+1786,551,24.12,residential,30,1
+551,74,12.93,residential,30,1
+74,684,27.37,residential,30,1
+62,691,10.25,tertiary,50,1
+691,63,9.77,tertiary,50,1
+63,64,16.7,tertiary,50,1
+64,3245,49.36,tertiary,50,1
+3245,1352,12.76,tertiary,50,1
+198,3630,8.98,residential,30,1
+3630,4272,11.12,residential,30,1
+4272,3742,21.36,residential,30,1
+3742,3724,109.67,residential,30,1
+3724,157,11.98,residential,30,1
+157,3756,4.05,residential,30,1
+3756,3519,80.33,residential,30,1
+3519,3520,7.35,residential,30,1
+3520,1300,7.23,residential,30,1
+1300,3561,7.87,residential,30,1
+3561,139,19.82,residential,30,1
+840,3956,77.72,residential,30,1
+3956,3961,0.92,residential,30,1
+3961,2097,86.84,residential,30,1
+2097,2035,4.65,residential,30,1
+2035,1195,3.97,residential,30,1
+1195,22,4.87,residential,30,1
+770,1301,7.41,service,10,0
+1301,2872,1.8,service,10,0
+2872,1712,94.69,service,10,0
+144,1625,7.32,residential,30,1
+1625,3887,26.03,residential,30,1
+3887,2093,15.04,residential,30,1
+2093,2394,14.85,residential,30,1
+2394,3896,4.28,residential,30,1
+3896,2621,12.17,residential,30,1
+2621,3904,21.44,residential,30,1
+3904,3908,30.02,residential,30,1
+3908,3225,4.1,residential,30,1
+3225,2620,14.91,residential,30,1
+2620,145,4.39,residential,30,1
+145,1875,0.8,residential,30,1
+1875,1353,4.52,residential,30,1
+1353,1496,4.41,residential,30,1
+1496,146,6.29,residential,30,1
+1302,3650,15.98,residential,30,0
+3650,609,133.71,residential,30,0
+157,3725,14.48,residential,30,0
+3725,3651,122.03,residential,30,0
+3651,1303,7.63,residential,30,0
+1308,2078,8.72,path,5,1
+2078,1313,32.97,path,5,1
+1313,1314,29.04,path,5,1
+1314,1312,25.73,path,5,1
+1312,4225,10.27,path,5,1
+4225,1316,18.36,path,5,1
+1316,1318,5.74,path,5,1
+1308,592,4.64,service,10,1
+592,593,8.99,service,10,1
+593,594,36.06,service,10,1
+594,595,17.08,service,10,1
+595,596,5.73,service,10,1
+596,597,4.8,service,10,1
+597,598,5.42,service,10,1
+598,2457,6.14,service,10,1
+2457,599,6.27,service,10,1
+599,600,50.99,service,10,1
+1089,4207,1.41,service,10,1
+4207,1307,19.24,service,10,1
+1307,1317,7.17,service,10,1
+1317,1318,2.42,service,10,1
+815,1325,55.9,residential,30,1
+1325,1324,6.05,residential,30,1
+1324,1322,5.04,residential,30,1
+1322,1443,24.96,residential,30,1
+1443,1442,3.09,residential,30,1
+1442,1441,20.42,residential,30,1
+1441,1435,9.34,residential,30,1
+1435,1439,6.38,residential,30,1
+1439,2603,25.02,residential,30,1
+2603,1436,22.3,residential,30,1
+1436,1440,5.24,residential,30,1
+1440,1419,4.04,residential,30,1
+1419,1438,3.3,residential,30,1
+1438,1321,16.02,residential,30,1
+1321,1437,11.06,residential,30,1
+1437,1434,3.28,residential,30,1
+1434,1432,5.41,residential,30,1
+1432,1320,2.94,residential,30,1
+1320,1431,6.02,residential,30,1
+1431,1323,4.75,residential,30,1
+1323,1326,9.9,residential,30,1
+1326,2601,5.8,residential,30,1
+2601,1327,5.15,residential,30,1
+1327,1446,5.59,residential,30,1
+1446,826,25.88,residential,30,1
+1196,2526,126.92,tertiary,50,1
+2526,2318,60.84,tertiary,50,1
+2318,306,41.75,tertiary,50,1
+306,2402,22.19,tertiary,50,1
+2402,2408,14.39,tertiary,50,1
+2408,307,81.01,tertiary,50,1
+1339,3175,9.21,service,10,1
+3175,1338,2.68,service,10,1
+1338,1467,6.59,service,10,1
+1467,1337,3.92,service,10,1
+1337,1364,42.25,service,10,1
+1364,1468,14.2,service,10,1
+1342,1341,16.22,service,10,1
+1346,2702,12.42,tertiary,50,0
+2702,1347,8.44,tertiary,50,0
+1347,1348,22.3,tertiary,50,0
+1348,2697,7.09,tertiary,50,0
+2697,2696,9.39,tertiary,50,0
+2696,1349,8.79,tertiary,50,0
+1349,2694,9.54,tertiary,50,0
+2694,43,13.28,tertiary,50,0
+43,2693,13.7,tertiary,50,0
+2693,44,11.27,tertiary,50,0
+44,2695,9.84,tertiary,50,0
+2695,45,10.19,tertiary,50,0
+45,46,10.02,tertiary,50,0
+945,1893,4.51,tertiary,50,1
+1893,525,43.41,tertiary,50,1
+525,1894,10.3,tertiary,50,1
+1894,36,8.2,tertiary,50,1
+36,1895,6.52,tertiary,50,1
+1895,944,5.26,tertiary,50,1
+944,1896,7.65,tertiary,50,1
+1896,35,7.53,tertiary,50,1
+35,524,11.44,tertiary,50,1
+524,1845,11.3,tertiary,50,1
+1845,34,12.04,tertiary,50,1
+34,33,11.6,tertiary,50,1
+33,1842,13.39,tertiary,50,1
+1842,1235,9.43,tertiary,50,1
+1235,1236,15.58,tertiary,50,1
+1236,32,22.99,tertiary,50,1
+32,1890,37.86,tertiary,50,1
+1890,1858,62.78,tertiary,50,1
+1858,1385,9.2,tertiary,50,1
+1385,384,32.99,tertiary,50,1
+384,2445,16.55,tertiary,50,1
+2445,2444,74.98,tertiary,50,1
+2444,3934,3.8,tertiary,50,1
+3934,2443,4.95,tertiary,50,1
+2443,3232,17.84,tertiary,50,1
+3232,3234,6.47,tertiary,50,1
+3234,3233,5.39,tertiary,50,1
+3233,1238,60.91,tertiary,50,1
+1238,1239,11.47,tertiary,50,1
+1239,2732,0.55,tertiary,50,1
+2732,2730,3.07,tertiary,50,1
+2730,2731,17.67,tertiary,50,1
+2731,2737,4.16,tertiary,50,1
+2737,2738,4.15,tertiary,50,1
+2738,2736,17.99,tertiary,50,1
+2736,2735,3.03,tertiary,50,1
+2735,2442,3.09,tertiary,50,1
+2442,2746,12.93,tertiary,50,1
+2746,2759,2.85,tertiary,50,1
+2759,2747,3.2,tertiary,50,1
+2747,2748,17.47,tertiary,50,1
+2748,2749,3.91,tertiary,50,1
+2749,2750,4.39,tertiary,50,1
+2750,2751,50.09,tertiary,50,1
+2751,120,13.66,tertiary,50,1
+945,2564,30.79,tertiary,50,0
+2564,2577,14.38,tertiary,50,0
+2577,2568,15.8,tertiary,50,0
+2568,2576,15.27,tertiary,50,0
+2576,2562,14.72,tertiary,50,0
+2562,1345,12.78,tertiary,50,0
+1346,1344,6.13,tertiary,50,0
+1344,1343,3.99,tertiary,50,0
+1343,49,6.37,tertiary,50,0
+693,2511,7.68,tertiary,50,1
+2511,57,5.1,tertiary,50,1
+57,4130,8.31,tertiary,50,1
+4130,2016,19.17,tertiary,50,1
+2016,58,22.93,tertiary,50,1
+58,59,7.28,tertiary,50,1
+59,2333,4.83,tertiary,50,1
+2333,60,6.61,tertiary,50,1
+60,2334,8.89,tertiary,50,1
+2334,960,9.34,tertiary,50,1
+960,982,43.35,tertiary,50,1
+982,1620,62.32,tertiary,50,1
+1620,2917,6.3,tertiary,50,1
+2917,2918,11.1,tertiary,50,1
+2918,61,5.96,tertiary,50,1
+61,2329,26.13,tertiary,50,1
+2329,1511,29.97,tertiary,50,1
+1511,926,28.53,tertiary,50,1
+926,62,33.94,tertiary,50,1
+1352,3246,13.98,tertiary,50,1
+3246,927,1.02,tertiary,50,1
+927,1000,9.1,tertiary,50,1
+1280,3168,15.77,footway,5,1
+3168,1286,2.02,footway,5,1
+1283,1197,4.1,residential,30,1
+1197,1275,4.58,residential,30,1
+1275,2398,2.55,residential,30,1
+2398,1198,2.09,residential,30,1
+1198,2317,2.16,residential,30,1
+2317,1199,3.34,residential,30,1
+1199,2316,24.0,residential,30,1
+2316,2525,89.35,residential,30,1
+2525,2319,59.95,residential,30,1
+2319,2399,33.96,residential,30,1
+146,2556,5.88,primary,50,0
+2556,2037,29.81,primary,50,0
+2037,2038,22.91,primary,50,0
+2038,2613,4.83,primary,50,0
+830,740,5.2,primary,70,0
+740,825,148.31,primary,70,0
+825,801,48.71,primary,70,0
+1360,3946,8.04,service,10,1
+3946,3945,13.6,service,10,1
+3945,3947,1.64,service,10,1
+3947,3944,9.05,service,10,1
+3944,1358,14.25,service,10,1
+1358,1359,18.0,service,10,1
+2199,2195,7.33,residential,30,1
+2195,2469,39.43,residential,30,1
+2469,1361,2.15,residential,30,1
+1361,4047,1.17,residential,30,1
+4047,4045,13.77,residential,30,1
+4045,4046,6.44,residential,30,1
+4046,1363,0.68,residential,30,1
+1363,2468,2.48,residential,30,1
+2468,2192,39.18,residential,30,1
+2192,1362,7.36,residential,30,1
+132,745,14.98,residential,30,1
+766,1713,21.06,tertiary,50,1
+1713,1377,8.6,tertiary,50,1
+1377,2869,21.12,tertiary,50,1
+2869,2870,50.16,tertiary,50,1
+2870,739,23.21,tertiary,50,1
+739,1383,19.65,tertiary,50,1
+1383,768,14.29,tertiary,50,1
+768,769,11.37,tertiary,50,1
+769,770,9.05,tertiary,50,1
+770,771,8.43,tertiary,50,1
+771,772,6.4,tertiary,50,1
+772,773,9.38,tertiary,50,1
+773,774,5.6,tertiary,50,1
+774,775,4.74,tertiary,50,1
+775,776,4.36,tertiary,50,1
+776,777,3.9,tertiary,50,1
+777,778,4.07,tertiary,50,1
+778,779,5.94,tertiary,50,1
+779,780,4.38,tertiary,50,1
+780,781,9.91,tertiary,50,1
+781,782,4.05,tertiary,50,1
+782,783,8.0,tertiary,50,1
+783,784,8.89,tertiary,50,1
+80,358,27.3,tertiary,50,1
+754,1741,16.41,living_street,20,1
+1741,1254,27.77,living_street,20,1
+1254,88,18.23,living_street,20,1
+88,1800,22.7,living_street,20,1
+1800,386,14.97,living_street,20,1
+386,1801,39.71,living_street,20,1
+1801,78,11.71,living_street,20,1
+1138,227,20.62,residential,30,1
+227,228,39.13,residential,30,1
+228,3324,31.41,residential,30,1
+3324,687,16.87,residential,30,1
+687,2228,3.26,residential,30,1
+2228,3322,19.57,residential,30,1
+3322,229,16.23,residential,30,1
+229,3320,5.98,residential,30,1
+3320,230,7.08,residential,30,1
+230,2231,10.31,residential,30,1
+2231,1149,40.74,residential,30,1
+1149,1144,34.43,residential,30,1
+1144,1153,34.63,residential,30,1
+1153,2145,16.14,residential,30,1
+2145,231,7.59,residential,30,1
+231,232,14.17,residential,30,1
+232,233,7.43,residential,30,1
+233,234,6.1,residential,30,1
+234,235,6.81,residential,30,1
+235,1145,5.8,residential,30,1
+1145,194,11.7,residential,30,1
+1138,313,75.94,residential,30,1
+313,314,19.19,residential,30,1
+314,251,64.62,residential,30,1
+21,1465,13.66,tertiary,50,1
+1465,1823,22.38,tertiary,50,1
+1823,733,20.79,tertiary,50,1
+1309,742,22.55,service,10,1
+742,1305,5.42,service,10,1
+1305,1318,3.14,service,10,1
+653,2590,18.69,primary,70,0
+2590,2589,29.08,primary,70,0
+2589,26,46.66,primary,70,0
+26,1918,26.16,primary,70,0
+1918,1168,21.12,primary,70,0
+1168,27,18.75,primary,70,0
+27,847,34.58,primary,70,0
+847,829,37.84,primary,70,0
+829,2588,17.03,primary,70,0
+2588,28,14.94,primary,70,0
+28,830,30.41,primary,70,0
+1366,3042,65.87,service,10,1
+3042,1003,6.8,service,10,1
+1367,1368,31.41,residential,30,1
+1374,1372,42.92,service,10,1
+1372,1738,7.85,service,10,1
+939,1764,8.24,residential,30,1
+1764,3402,5.49,residential,30,1
+3402,1763,3.12,residential,30,1
+1763,1762,9.47,residential,30,1
+1762,938,13.0,residential,30,1
+1707,940,4.1,residential,30,1
+940,378,4.92,residential,30,1
+378,3398,30.85,residential,30,1
+3398,369,30.31,residential,30,1
+369,370,14.58,residential,30,1
+370,371,13.43,residential,30,1
+371,895,13.88,residential,30,1
+895,372,29.28,residential,30,1
+372,373,25.1,residential,30,1
+373,3400,12.08,residential,30,1
+3400,3401,11.92,residential,30,1
+3401,374,24.21,residential,30,1
+374,3399,56.97,residential,30,1
+938,1707,145.91,residential,30,1
+519,2339,5.29,residential,30,1
+2339,1382,15.58,residential,30,1
+1382,1379,38.58,residential,30,1
+1379,1381,18.36,residential,30,1
+1381,1380,9.24,residential,30,1
+1380,1709,10.5,residential,30,1
+1709,1708,11.61,residential,30,1
+1708,1707,25.38,residential,30,1
+767,2818,8.88,residential,50,1
+2818,1234,2.54,residential,50,1
+1234,766,4.72,residential,50,1
+1385,2714,6.55,residential,30,1
+2714,41,9.8,residential,30,1
+930,1386,46.4,residential,30,1
+1388,1387,116.02,residential,30,1
+1357,1389,1.83,primary_link,60,0
+1389,2027,1.76,primary_link,60,0
+2027,1390,1.65,primary_link,60,0
+1390,2029,1.26,primary_link,60,0
+2029,1391,1.71,primary_link,60,0
+1391,2028,2.1,primary_link,60,0
+2028,1392,2.85,primary_link,60,0
+73,1395,5.12,track,5,1
+1395,1396,2.59,track,5,1
+1396,1398,4.06,track,5,1
+1398,1400,7.79,track,5,1
+1400,1401,12.72,track,5,1
+1401,1403,13.27,track,5,1
+1403,1404,11.48,track,5,1
+1404,68,26.88,track,5,1
+217,1409,21.89,residential,30,1
+1409,1410,16.55,residential,30,1
+1410,1411,16.19,residential,30,1
+1411,1412,16.63,residential,30,1
+1412,1413,15.24,residential,30,1
+1413,1414,18.61,residential,30,1
+1414,1515,8.79,residential,30,1
+1515,1415,19.08,residential,30,1
+1415,1416,12.53,residential,30,1
+1416,1417,9.57,residential,30,1
+1417,663,17.29,residential,30,1
+1392,3217,15.3,primary,50,0
+1423,1429,33.64,path,5,1
+1422,1448,18.04,service,10,1
+1448,1434,22.41,service,10,1
+1433,1449,18.87,service,10,1
+1449,1419,24.65,service,10,1
+1421,1450,17.74,service,10,1
+1450,1435,23.42,service,10,1
+1424,1418,4.79,steps,5,1
+1323,1426,10.44,path,5,1
+1426,1425,2.82,path,5,1
+1420,1423,37.24,path,5,1
+1423,1424,4.8,path,5,1
+1418,1426,8.45,path,5,1
+1426,1427,3.1,path,5,1
+1427,1428,3.21,path,5,1
+1428,1430,2.63,path,5,1
+1430,1432,3.65,path,5,1
+1443,1444,25.17,service,10,1
+1324,2042,39.85,steps,5,1
+2042,1445,8.5,steps,5,1
+1429,1446,6.28,path,5,1
+1429,1447,26.05,path,5,1
+1448,1449,31.61,path,5,1
+1449,2602,32.49,path,5,1
+2602,1450,32.39,path,5,1
+1450,1451,18.82,path,5,1
+570,1452,2.34,footway,5,1
+1452,2936,7.63,footway,5,1
+2936,1453,4.27,footway,5,1
+1453,2935,4.23,footway,5,1
+2935,1454,4.11,footway,5,1
+1454,1455,4.81,footway,5,1
+1455,2934,4.65,footway,5,1
+2934,2933,4.63,footway,5,1
+2933,1456,4.8,footway,5,1
+1456,2311,4.42,footway,5,1
+2311,2310,5.11,footway,5,1
+1288,2324,6.24,tertiary,50,1
+2324,747,69.68,tertiary,50,1
+747,1,52.99,tertiary,50,1
+1,928,18.03,tertiary,50,1
+928,929,15.47,tertiary,50,1
+929,1539,105.32,tertiary,50,1
+1539,416,7.64,tertiary,50,1
+416,2,18.18,tertiary,50,1
+2,3,17.73,tertiary,50,1
+3,4197,30.08,tertiary,50,1
+4197,4,4.73,tertiary,50,1
+4,4194,87.68,tertiary,50,1
+4194,1541,47.54,tertiary,50,1
+1288,2309,5.38,footway,5,1
+748,2006,73.77,residential,30,0
+2006,1034,149.09,residential,30,0
+1034,1033,14.48,residential,30,0
+1033,1035,9.56,residential,30,0
+1035,1042,18.01,residential,30,0
+748,1027,54.57,residential,30,1
+1027,2534,12.97,residential,30,1
+2534,1028,12.21,residential,30,1
+1028,1029,49.29,residential,30,1
+1029,1030,30.27,residential,30,1
+585,1272,4.86,footway,5,1
+1272,2581,25.52,footway,5,1
+2581,1458,104.38,footway,5,1
+1458,1274,64.98,footway,5,1
+1274,1817,19.03,footway,5,1
+1817,1490,7.49,footway,5,1
+1490,1824,9.73,footway,5,1
+1824,1825,5.88,footway,5,1
+1287,2447,5.32,tertiary,50,1
+2447,2446,3.76,tertiary,50,1
+2446,1292,7.92,tertiary,50,1
+601,602,24.56,tertiary,50,1
+602,20,22.1,tertiary,50,1
+20,1459,27.29,tertiary,50,1
+1459,732,29.95,tertiary,50,1
+732,1208,23.69,tertiary,50,1
+1208,21,15.51,tertiary,50,1
+684,1265,35.91,residential,30,1
+1265,75,24.97,residential,30,1
+75,1766,17.72,residential,30,1
+1766,76,9.65,residential,30,1
+76,1765,16.13,residential,30,1
+1765,77,6.18,residential,30,1
+77,2876,14.81,residential,30,1
+2876,78,10.21,residential,30,1
+796,2598,28.8,primary,50,0
+2598,798,25.57,primary,50,0
+798,799,34.42,primary,50,0
+1345,37,5.18,footway,5,1
+761,1733,8.98,residential,30,1
+1733,933,3.9,residential,30,1
+933,357,11.8,residential,30,1
+357,1731,6.17,residential,30,1
+1731,358,4.84,residential,30,1
+1005,1388,66.38,residential,30,1
+1388,2355,62.95,residential,30,1
+2355,3103,0.82,residential,30,1
+3103,606,6.11,residential,30,1
+609,605,99.37,residential,50,1
+4163,3820,3.19,residential,50,1
+3820,3812,95.54,residential,50,1
+3812,3512,27.04,residential,50,1
+3512,131,8.36,residential,50,1
+131,2834,3.91,residential,30,1
+2834,4087,3.7,residential,30,1
+4087,4140,42.4,residential,30,1
+4140,4109,52.87,residential,30,1
+4109,130,3.49,residential,30,1
+130,4111,6.25,residential,30,1
+4111,89,89.79,residential,30,1
+89,918,80.64,residential,30,1
+918,2342,76.6,residential,30,1
+2342,170,21.41,residential,30,1
+170,896,107.76,residential,30,1
+1593,4200,15.86,primary,50,0
+4200,1576,16.82,primary,50,0
+1576,3215,12.87,primary,50,0
+3215,3211,18.04,primary,50,0
+3211,2558,3.07,primary,50,0
+2558,3263,20.78,primary,50,0
+3263,3207,6.47,primary,50,0
+3207,3204,5.79,primary,50,0
+3204,3199,28.06,primary,50,0
+3199,3200,1.59,primary,50,0
+3200,1341,12.94,primary,50,0
+358,1775,9.55,tertiary,50,1
+1775,1498,61.67,tertiary,50,1
+1498,355,9.16,tertiary,50,1
+355,43,21.58,tertiary,50,1
+745,3410,15.1,residential,30,1
+3410,3494,69.04,residential,30,1
+3494,2391,61.49,residential,30,1
+2391,2390,56.14,residential,30,1
+2390,2842,119.01,residential,30,1
+2842,131,47.64,residential,30,1
+1345,1346,5.93,tertiary,50,0
+746,2559,17.73,tertiary,50,1
+2559,766,50.14,tertiary,50,1
+607,1010,6.95,residential,30,1
+1010,610,7.26,residential,30,1
+610,1387,44.15,residential,30,1
+1387,2354,52.02,residential,30,1
+2354,3110,1.45,residential,30,1
+3110,824,6.7,residential,30,1
+824,3114,6.51,residential,30,1
+3114,2353,2.22,residential,30,1
+2353,608,213.85,residential,30,1
+588,1460,16.93,residential,30,1
+1460,1461,9.62,residential,30,1
+1461,1965,9.48,residential,30,1
+1965,1462,9.2,residential,30,1
+1463,2081,14.12,residential,30,1
+2081,2080,8.02,residential,30,1
+2080,2079,2.64,residential,30,1
+1466,3171,8.75,footway,5,1
+3171,1213,1.04,footway,5,1
+1213,1330,5.35,footway,5,1
+896,897,41.29,residential,30,1
+897,2531,35.13,residential,30,1
+2531,90,31.53,residential,30,1
+90,902,18.61,residential,30,1
+902,666,20.27,residential,30,1
+666,903,19.93,residential,30,1
+903,91,17.51,residential,30,1
+91,901,10.44,residential,30,1
+901,900,8.76,residential,30,1
+900,899,9.35,residential,30,1
+899,92,9.28,residential,30,1
+92,888,40.89,residential,30,1
+888,2001,13.35,residential,30,1
+2001,2000,120.12,residential,30,1
+2000,907,39.8,residential,30,1
+907,93,40.2,residential,30,1
+93,1628,59.84,residential,30,1
+1628,948,84.67,residential,30,1
+948,949,16.36,residential,30,1
+949,94,17.33,residential,30,1
+94,4149,15.47,residential,30,1
+4149,95,22.13,residential,30,1
+95,96,31.03,residential,30,1
+96,950,17.89,residential,30,1
+950,2011,9.14,residential,30,1
+2011,958,13.44,residential,30,1
+958,97,14.62,residential,30,1
+97,98,11.66,residential,30,1
+98,518,13.36,residential,30,1
+518,951,10.79,residential,30,1
+951,952,32.66,residential,30,1
+952,99,19.05,residential,30,1
+99,959,22.07,residential,30,1
+959,946,22.01,residential,30,1
+946,953,63.11,residential,30,1
+953,100,15.06,residential,30,1
+100,443,14.05,residential,30,1
+1184,1183,3.62,track,5,1
+1183,1182,3.66,track,5,1
+1182,1181,2.09,track,5,1
+1181,1180,3.41,track,5,1
+1180,1179,3.55,track,5,1
+1179,1178,5.71,track,5,1
+1178,1177,10.33,track,5,1
+1177,1185,4.02,track,5,1
+1185,1176,16.33,track,5,1
+1176,1175,11.47,track,5,1
+1175,1174,12.9,track,5,1
+1174,1173,10.57,track,5,1
+1173,2235,4.34,track,5,1
+2235,1172,18.2,track,5,1
+1172,1171,12.97,track,5,1
+1171,1170,12.16,track,5,1
+1170,251,17.74,track,5,1
+103,1612,13.87,tertiary,50,1
+1612,1354,3.44,tertiary,50,1
+1354,693,4.33,tertiary,50,1
+1485,1484,2.96,footway,5,1
+1484,1483,3.23,footway,5,1
+1483,1482,3.28,footway,5,1
+1482,1481,4.74,footway,5,1
+1481,1480,9.44,footway,5,1
+1480,1479,5.63,footway,5,1
+1479,1478,5.79,footway,5,1
+1478,1477,5.75,footway,5,1
+1477,1475,3.4,footway,5,1
+1475,1474,2.73,footway,5,1
+1474,1473,5.97,footway,5,1
+1473,1472,3.77,footway,5,1
+1472,2910,3.7,footway,5,1
+2910,59,6.96,footway,5,1
+1281,1487,5.13,footway,5,1
+1487,1488,4.9,footway,5,1
+1494,2671,4.85,service,10,1
+2671,1493,2.95,service,10,1
+1493,1492,25.17,service,10,1
+198,3731,54.63,residential,50,1
+3731,744,95.77,residential,50,1
+803,3124,6.55,residential,30,1
+3124,2352,0.71,residential,30,1
+2352,611,49.5,residential,30,1
+611,198,100.14,residential,30,1
+803,3133,83.0,tertiary,50,1
+3133,802,38.12,tertiary,50,1
+1593,156,10.5,residential,50,0
+156,1870,3.96,residential,50,0
+1870,2034,10.44,residential,50,0
+2286,2293,40.66,tertiary,50,1
+2293,1257,2.97,tertiary,50,1
+1257,17,10.96,tertiary,50,1
+802,3136,6.65,residential,30,1
+3136,2288,1.94,residential,30,1
+2288,200,44.32,residential,30,1
+200,805,17.81,residential,30,1
+805,201,12.81,residential,30,1
+201,804,14.05,residential,30,1
+804,202,13.02,residential,30,1
+202,203,16.78,residential,30,1
+203,808,16.44,residential,30,1
+808,204,15.66,residential,30,1
+204,807,11.31,residential,30,1
+807,205,12.48,residential,30,1
+205,806,11.72,residential,30,1
+806,206,12.54,residential,30,1
+206,2527,18.2,residential,30,1
+2527,2528,6.86,residential,30,1
+2528,197,12.05,residential,30,1
+197,809,14.66,residential,30,1
+744,2287,114.49,residential,30,1
+2287,3138,2.44,residential,30,1
+3138,802,6.87,residential,30,1
+1486,1960,26.2,residential,30,0
+1960,1025,13.82,residential,30,0
+1025,1026,6.39,residential,30,0
+1026,242,4.97,residential,30,0
+2871,3497,60.85,footway,5,1
+3497,1711,6.78,footway,5,1
+1501,2031,20.52,residential,30,1
+2031,2109,12.6,residential,30,1
+2109,1500,9.96,residential,30,1
+1502,4113,4.36,footway,5,1
+4113,1501,26.58,footway,5,1
+992,503,20.5,residential,30,1
+503,504,11.43,residential,30,1
+504,969,5.77,residential,30,1
+969,505,6.03,residential,30,1
+505,506,6.82,residential,30,1
+506,970,6.49,residential,30,1
+970,507,4.74,residential,30,1
+507,971,4.86,residential,30,1
+971,508,6.29,residential,30,1
+508,973,3.33,residential,30,1
+973,972,5.06,residential,30,1
+972,509,7.19,residential,30,1
+509,510,20.12,residential,30,1
+510,511,56.31,residential,30,1
+511,976,12.06,residential,30,1
+976,975,7.19,residential,30,1
+975,2363,4.64,residential,30,1
+2363,512,5.32,residential,30,1
+512,974,11.09,residential,30,1
+1595,741,41.4,primary,50,0
+741,1585,5.42,primary,50,0
+1585,17,14.8,primary,50,0
+1063,586,59.1,residential,30,1
+586,2458,4.88,residential,30,1
+2458,588,4.98,residential,30,1
+588,587,5.48,residential,30,1
+587,1065,9.04,residential,30,1
+1065,1066,32.6,residential,30,1
+1066,1067,4.9,residential,30,1
+1067,1068,6.52,residential,30,1
+1068,1069,8.83,residential,30,1
+1069,1070,21.02,residential,30,1
+1070,4206,0.48,residential,30,1
+4206,2233,46.46,residential,30,1
+2233,2250,3.85,residential,30,1
+2250,2243,10.22,residential,30,1
+2243,1815,6.81,residential,30,1
+1815,1813,9.81,residential,30,1
+1813,1814,9.89,residential,30,1
+1814,1816,14.26,residential,30,1
+1279,2455,3.17,residential,50,1
+2455,2452,2.1,residential,50,1
+2452,350,4.96,residential,50,1
+793,158,83.12,residential,30,1
+158,853,97.92,residential,30,1
+853,906,101.65,residential,30,1
+906,110,6.77,residential,30,1
+110,2765,4.21,residential,30,1
+2765,159,14.83,residential,30,1
+159,905,11.73,residential,30,1
+905,1723,14.98,residential,30,1
+1723,904,12.85,residential,30,1
+904,160,26.07,residential,30,1
+160,917,23.98,residential,30,1
+917,915,17.41,residential,30,1
+915,916,19.89,residential,30,1
+916,4010,2.33,residential,30,1
+4010,914,4.34,residential,30,1
+914,913,12.17,residential,30,1
+913,912,14.88,residential,30,1
+912,161,11.88,residential,30,1
+161,911,7.52,residential,30,1
+911,4216,4.81,residential,30,1
+4216,162,1.98,residential,30,1
+162,910,8.86,residential,30,1
+910,909,13.8,residential,30,1
+909,1188,26.24,residential,30,1
+1188,163,109.47,residential,30,1
+163,908,46.0,residential,30,1
+908,164,20.34,residential,30,1
+164,907,9.35,residential,30,1
+1506,1339,9.55,tertiary,50,1
+1339,583,9.08,tertiary,50,1
+583,1203,6.59,tertiary,50,1
+1203,1466,3.1,tertiary,50,1
+1466,305,4.81,tertiary,50,1
+305,1196,11.6,tertiary,50,1
+549,550,53.32,residential,30,1
+1511,1622,4.75,residential,30,1
+1622,2921,1.94,residential,30,1
+2921,1510,1.89,residential,30,1
+1510,2520,36.76,residential,30,1
+2520,2519,10.98,residential,30,1
+2519,1507,9.09,residential,30,1
+1507,2518,4.91,residential,30,1
+2518,1508,4.69,residential,30,1
+1508,1509,5.98,residential,30,1
+1533,1525,17.23,service,10,1
+1525,1523,12.31,service,10,1
+1523,1521,4.43,service,10,1
+1521,1520,3.68,service,10,1
+1520,1519,4.47,service,10,1
+1519,1522,5.14,service,10,1
+1522,1530,13.4,service,10,1
+1530,1529,10.42,service,10,1
+1529,1532,10.07,service,10,1
+1532,1536,5.99,service,10,1
+1536,1535,5.37,service,10,1
+1535,1534,4.65,service,10,1
+1534,1531,18.15,service,10,1
+1531,1528,3.31,service,10,1
+1528,1526,2.68,service,10,1
+1526,1524,8.59,service,10,1
+1524,1517,3.67,service,10,1
+1517,1515,4.31,service,10,1
+1523,1516,6.45,path,5,1
+1535,1538,20.24,path,5,1
+1522,2356,33.55,path,5,1
+1525,1537,23.91,path,5,1
+1534,1527,3.93,path,5,1
+1530,1518,12.54,path,5,1
+1518,1514,2.64,path,5,1
+1214,1961,7.91,residential,20,0
+1961,748,82.64,residential,20,0
+1042,1940,9.56,residential,50,0
+1940,1929,8.03,residential,50,0
+1929,1928,9.74,residential,50,0
+1928,2998,0.63,residential,50,0
+2998,2990,3.88,residential,50,0
+2990,1931,0.59,residential,50,0
+1931,1031,3.98,residential,50,0
+1541,1015,37.85,tertiary,50,1
+1015,1540,10.65,tertiary,50,1
+1540,1944,9.06,tertiary,50,1
+1944,1945,9.04,tertiary,50,1
+1945,5,17.9,tertiary,50,1
+5,1032,16.43,tertiary,50,1
+1032,517,21.66,tertiary,50,1
+517,3001,4.5,tertiary,50,1
+3001,6,21.83,tertiary,50,1
+6,7,7.61,tertiary,50,1
+7,3007,8.69,tertiary,50,1
+3007,997,7.72,tertiary,50,1
+997,2380,6.61,tertiary,50,1
+2380,3008,6.06,tertiary,50,1
+3008,8,6.46,tertiary,50,1
+8,9,8.12,tertiary,50,1
+9,2381,43.07,tertiary,50,1
+2381,2382,6.39,tertiary,50,1
+2382,3016,7.15,tertiary,50,1
+3016,10,5.79,tertiary,50,1
+10,3022,4.37,tertiary,50,1
+3022,998,4.94,tertiary,50,1
+998,11,7.95,tertiary,50,1
+11,993,7.75,tertiary,50,1
+993,12,7.22,tertiary,50,1
+12,1223,6.69,tertiary,50,1
+1223,13,37.15,tertiary,50,1
+13,14,77.84,tertiary,50,1
+14,2298,28.1,tertiary,50,1
+2298,1003,21.1,tertiary,50,1
+1003,1001,27.15,tertiary,50,1
+1001,3046,18.91,tertiary,50,1
+3046,1002,30.7,tertiary,50,1
+1002,15,31.61,tertiary,50,1
+15,16,26.01,tertiary,50,1
+16,119,40.59,tertiary,50,1
+119,2359,129.68,tertiary,50,1
+2359,882,7.44,tertiary,50,1
+882,1008,129.62,tertiary,50,1
+1008,3082,34.89,tertiary,50,1
+3082,2294,78.51,tertiary,50,1
+2294,1009,10.29,tertiary,50,1
+1009,606,56.55,tertiary,50,1
+606,622,59.34,tertiary,50,1
+622,824,80.94,tertiary,50,1
+824,1011,62.43,tertiary,50,1
+1011,803,87.72,tertiary,50,1
+1263,3334,12.31,residential,30,1
+3334,3333,94.89,residential,30,1
+3333,301,10.09,residential,30,1
+301,302,6.84,residential,30,1
+302,1072,3.69,residential,30,1
+1072,1071,4.16,residential,30,1
+1071,303,4.38,residential,30,1
+303,273,7.65,residential,30,1
+1542,2301,18.97,residential,30,1
+2301,488,10.01,residential,30,1
+488,1920,19.83,residential,30,1
+1920,1947,26.15,residential,30,1
+1947,2383,5.27,residential,30,1
+2383,1031,12.3,residential,30,1
+1042,1946,4.7,residential,30,1
+1946,498,15.12,residential,30,1
+498,499,6.54,residential,30,1
+499,500,5.85,residential,30,1
+500,1041,34.52,residential,30,1
+1041,501,9.54,residential,30,1
+501,1040,6.56,residential,30,1
+1040,502,15.54,residential,30,1
+1543,265,68.17,steps,5,1
+651,2284,98.77,residential,30,0
+2284,639,5.24,residential,30,0
+562,2533,18.68,steps,5,1
+2533,563,9.27,steps,5,1
+563,2538,17.55,steps,5,1
+2538,564,5.2,steps,5,1
+564,2539,6.97,steps,5,1
+983,981,11.66,residential,30,1
+981,565,10.06,residential,30,1
+565,566,17.29,residential,30,1
+566,2440,10.25,residential,30,1
+2440,567,11.92,residential,30,1
+649,1166,42.1,residential,30,1
+1166,1812,28.7,residential,30,1
+1812,3393,25.94,residential,30,1
+3393,1167,6.56,residential,30,1
+1167,3376,10.79,residential,30,1
+3376,652,2.93,residential,30,1
+797,796,23.03,primary,70,0
+801,2600,29.93,primary,70,0
+2600,2599,58.74,primary,70,0
+2599,797,37.53,primary,70,0
+1341,22,35.23,primary,50,0
+1582,2606,1.96,footway,5,1
+1593,4201,7.65,primary_link,60,0
+4201,1571,7.48,primary_link,60,0
+1571,1575,10.6,primary_link,60,0
+1593,2019,18.34,primary_link,60,0
+2019,1574,26.59,primary_link,60,0
+1574,4202,21.34,primary_link,60,0
+4202,1583,23.86,primary_link,60,0
+1583,1573,25.58,primary_link,60,0
+1573,1570,26.63,primary_link,60,0
+1570,1569,47.67,primary_link,60,0
+1569,2610,18.14,primary_link,60,0
+2610,1504,28.08,primary_link,60,0
+1504,2609,17.87,primary_link,60,0
+2609,4203,11.26,primary_link,60,0
+4203,1589,10.59,primary_link,60,0
+1581,1572,9.42,primary_link,60,0
+1572,1580,5.13,primary_link,60,0
+1580,2023,6.35,primary_link,60,0
+2023,1577,6.96,primary_link,60,0
+1577,1587,4.74,primary_link,60,0
+1587,2022,5.18,primary_link,60,0
+2022,1593,6.81,primary_link,60,0
+799,795,24.61,primary,50,0
+795,1595,32.51,primary,50,0
+1611,1610,4.92,service,10,1
+1610,1609,3.49,service,10,1
+1609,1608,4.83,service,10,1
+1608,1607,10.03,service,10,1
+1617,1619,26.4,footway,5,1
+1619,2915,18.99,footway,5,1
+2915,2916,37.76,footway,5,1
+2916,2328,18.7,footway,5,1
+2328,2919,13.9,footway,5,1
+2919,1621,6.86,footway,5,1
+1621,2920,6.23,footway,5,1
+2920,1622,12.33,footway,5,1
+1622,1623,60.18,footway,5,1
+1613,1614,4.92,steps,5,1
+1614,1615,4.5,steps,5,1
+1615,2331,3.26,steps,5,1
+2331,1616,3.17,steps,5,1
+1616,1618,4.29,steps,5,1
+1618,1619,2.95,steps,5,1
+2165,2166,2.81,residential,30,1
+2166,839,1.22,residential,30,1
+839,3876,1.59,residential,30,1
+3876,3875,4.13,residential,30,1
+3875,840,70.0,residential,30,1
+840,2171,6.8,residential,30,1
+2171,2174,90.01,residential,30,1
+2174,841,4.21,residential,30,1
+1628,2361,44.07,residential,30,1
+2361,1629,46.14,residential,30,1
+2271,1630,44.73,track,30,1
+2074,3976,7.57,service,10,1
+3976,1670,0.92,service,10,1
+1670,1669,4.06,service,10,1
+1669,1668,53.02,service,10,1
+1668,1667,27.97,service,10,1
+1667,1666,23.97,service,10,1
+1666,3237,4.65,service,10,1
+3237,1665,4.47,service,10,1
+1665,1656,19.37,service,10,1
+1656,1651,14.29,service,10,1
+1651,1647,3.34,service,10,1
+1647,1643,9.51,service,10,1
+1643,1639,13.79,service,10,1
+1639,1634,35.57,service,10,1
+1661,1659,5.38,footway,5,1
+1637,1646,32.66,footway,5,1
+1647,1652,26.84,service,10,1
+1644,1649,12.45,footway,5,1
+1635,1636,6.02,footway,5,1
+1648,1650,11.83,footway,5,1
+1661,1658,10.87,steps,5,1
+1664,1660,12.93,footway,5,1
+1660,1655,8.14,footway,5,1
+1658,1655,4.91,footway,5,1
+1655,1653,14.69,footway,5,1
+1643,1645,7.71,footway,5,1
+1645,1642,5.77,footway,5,1
+1642,1640,7.55,footway,5,1
+1661,1662,6.5,service,10,1
+1662,2056,14.18,service,10,1
+2056,2057,6.17,service,10,1
+2057,1664,5.94,service,10,1
+1664,1668,38.93,service,10,1
+2178,1663,1.85,footway,5,1
+1663,1648,42.55,footway,5,1
+1648,2053,3.3,footway,5,1
+2053,1644,4.4,footway,5,1
+1644,2052,10.23,footway,5,1
+1657,2177,7.49,service,10,1
+2177,1654,1.81,service,10,1
+1654,1641,46.88,service,10,1
+1641,2052,2.22,service,10,1
+2052,1637,24.99,service,10,1
+1637,2051,15.13,service,10,1
+2051,1635,3.88,service,10,1
+1635,1632,12.69,service,10,1
+1632,1631,7.4,service,10,1
+1631,2049,10.2,service,10,1
+2049,1634,11.27,service,10,1
+395,1310,12.53,track,5,1
+1310,387,11.17,track,5,1
+387,388,17.58,track,5,1
+388,389,11.13,track,5,1
+389,390,24.34,track,5,1
+390,391,20.65,track,5,1
+391,392,20.39,track,5,1
+392,2238,13.05,track,5,1
+2238,393,4.96,track,5,1
+393,1169,7.7,track,5,1
+1169,394,11.17,track,5,1
+1674,1673,12.26,path,5,1
+1673,4213,15.44,path,5,1
+4213,1671,1.62,path,5,1
+1671,1672,7.7,path,5,1
+1672,1675,25.51,path,5,1
+1675,2240,14.76,path,5,1
+2240,1676,30.24,path,5,1
+1676,1677,29.92,path,5,1
+1677,2242,7.21,path,5,1
+2242,1678,13.24,path,5,1
+1678,1679,19.81,path,5,1
+1679,1680,20.52,path,5,1
+1680,1681,32.17,path,5,1
+1681,1682,23.68,path,5,1
+1682,1683,22.24,path,5,1
+1683,4212,9.23,path,5,1
+4212,4208,5.72,path,5,1
+4208,1684,3.94,path,5,1
+1684,4210,4.96,path,5,1
+4210,4209,4.77,path,5,1
+4209,4211,4.19,path,5,1
+4211,1307,13.51,path,5,1
+1687,1688,5.82,service,10,1
+1688,1689,6.73,service,10,1
+1395,1693,3.4,path,5,1
+1693,1692,10.35,path,5,1
+1692,1691,5.13,path,5,1
+1691,1690,5.22,path,5,1
+1690,1688,3.96,path,5,1
+1688,1686,14.55,path,5,1
+1686,1685,28.11,path,5,1
+1685,552,6.83,path,5,1
+579,1963,16.77,footway,5,1
+1963,1962,15.94,footway,5,1
+1962,1694,7.46,footway,5,1
+1694,1695,10.57,footway,5,1
+1695,1463,12.84,footway,5,1
+1705,1704,5.42,footway,5,1
+1704,1703,49.3,footway,5,1
+1703,1702,12.63,footway,5,1
+1702,1699,17.31,footway,5,1
+1699,1698,22.36,footway,5,1
+1698,1697,8.07,footway,5,1
+1697,1696,4.47,footway,5,1
+1696,1838,5.81,footway,5,1
+1838,2656,14.69,footway,5,1
+2656,1700,6.49,footway,5,1
+1700,1701,26.49,footway,5,1
+1701,1868,1.56,footway,5,1
+1868,1886,4.12,footway,5,1
+1886,1885,91.72,footway,5,1
+1885,1884,52.05,footway,5,1
+1884,1883,8.73,footway,5,1
+1883,1882,8.45,footway,5,1
+1882,1881,71.86,footway,5,1
+1881,1880,2.71,footway,5,1
+1880,3231,32.52,footway,5,1
+3231,1879,17.07,footway,5,1
+1879,3230,7.03,footway,5,1
+3230,3228,9.75,footway,5,1
+3228,3229,11.92,footway,5,1
+3229,1878,4.56,footway,5,1
+1878,1877,4.79,footway,5,1
+1877,1876,4.29,footway,5,1
+1876,3227,14.05,footway,5,1
+3227,3226,25.8,footway,5,1
+3226,2608,28.95,footway,5,1
+2608,2279,11.62,footway,5,1
+2279,2280,20.72,footway,5,1
+2280,2085,62.59,footway,5,1
+2085,1875,4.84,footway,5,1
+1875,2086,16.79,footway,5,1
+1253,1710,18.42,footway,5,1
+1715,1717,10.08,footway,5,1
+376,1715,24.76,path,30,1
+1716,1718,15.13,service,10,1
+1721,1724,16.07,service,10,1
+1722,1723,4.76,service,10,1
+1719,1720,13.58,service,10,1
+376,1714,51.18,service,10,1
+376,1716,34.03,service,10,1
+1716,1719,32.43,service,10,1
+1719,1721,37.53,service,10,1
+1721,1722,5.46,service,10,1
+2397,1737,4.7,footway,5,1
+1737,1788,3.37,footway,5,1
+1788,1735,3.75,footway,5,1
+1735,1789,3.97,footway,5,1
+1789,1736,3.85,footway,5,1
+1736,1790,4.37,footway,5,1
+1790,1739,3.28,footway,5,1
+1739,1791,3.83,footway,5,1
+1791,1792,2.96,footway,5,1
+1792,1742,2.61,footway,5,1
+1742,1793,2.5,footway,5,1
+1793,1744,2.48,footway,5,1
+1744,1746,3.36,footway,5,1
+1746,2657,7.54,footway,5,1
+1738,1373,11.09,service,10,1
+1732,2281,10.2,service,10,1
+2281,1733,3.03,service,10,1
+1743,1375,6.35,service,10,1
+1375,1376,45.97,service,10,1
+1725,1727,8.46,footway,5,1
+1727,1728,13.61,footway,5,1
+1728,2689,4.68,footway,5,1
+2689,2688,4.47,footway,5,1
+2688,2687,4.77,footway,5,1
+2687,1730,4.22,footway,5,1
+1730,2686,3.69,footway,5,1
+2686,1729,6.56,footway,5,1
+2395,1769,12.39,footway,5,1
+1769,1734,13.1,footway,5,1
+1734,1770,7.13,footway,5,1
+1770,2698,10.74,footway,5,1
+2698,2699,8.53,footway,5,1
+2699,2700,7.8,footway,5,1
+2700,1740,6.84,footway,5,1
+1740,2701,10.89,footway,5,1
+2701,1745,6.93,footway,5,1
+1745,1751,29.41,footway,5,1
+1751,1729,40.8,footway,5,1
+761,1754,8.8,footway,5,1
+1754,1755,7.09,footway,5,1
+1755,1798,13.29,footway,5,1
+1798,1756,8.92,footway,5,1
+1756,1757,3.81,footway,5,1
+1757,1758,6.28,footway,5,1
+1758,1759,9.5,footway,5,1
+1759,1760,33.46,footway,5,1
+1760,3397,76.81,footway,5,1
+3397,1761,10.72,footway,5,1
+1761,3394,13.15,footway,5,1
+3394,3395,51.13,footway,5,1
+3395,3396,10.59,footway,5,1
+3396,2637,19.17,footway,5,1
+1783,2666,4.95,service,10,1
+2666,1782,10.76,service,10,1
+1782,1781,6.06,service,10,1
+1781,1780,4.71,service,10,1
+1780,1779,22.37,service,10,1
+78,79,59.22,residential,30,1
+3149,3151,7.55,service,10,1
+3151,1808,0.9,service,10,1
+1808,1806,2.7,service,10,1
+1806,2466,2.85,service,10,1
+2466,1807,5.6,service,10,1
+1809,110,30.44,residential,30,1
+120,38,27.02,tertiary,50,1
+38,2766,8.69,tertiary,50,1
+2766,19,11.56,tertiary,50,1
+19,39,22.2,tertiary,50,1
+39,852,18.46,tertiary,50,1
+852,1256,18.09,tertiary,50,1
+1256,858,36.55,tertiary,50,1
+858,121,68.01,tertiary,50,1
+121,2804,47.9,tertiary,50,1
+2804,669,14.6,tertiary,50,1
+669,2801,7.15,tertiary,50,1
+2801,2807,62.84,tertiary,50,1
+2807,738,52.51,tertiary,50,1
+738,2813,13.27,tertiary,50,1
+2813,1624,15.17,tertiary,50,1
+1624,124,19.31,tertiary,50,1
+124,746,28.17,tertiary,50,1
+1811,1812,49.13,residential,30,1
+1116,479,11.1,residential,30,1
+479,480,14.14,residential,30,1
+480,481,8.3,residential,30,1
+481,482,9.97,residential,30,1
+482,483,8.89,residential,30,1
+483,484,9.05,residential,30,1
+484,485,10.11,residential,30,1
+485,1124,14.9,residential,30,1
+1124,2474,4.5,residential,30,1
+2474,486,8.21,residential,30,1
+486,487,13.78,residential,30,1
+487,1104,11.46,residential,30,1
+1104,1103,12.34,residential,30,1
+1103,476,14.61,residential,30,1
+291,3362,13.47,residential,30,1
+3362,466,18.21,residential,30,1
+466,1105,23.69,residential,30,1
+1105,465,26.78,residential,30,1
+465,464,35.66,residential,30,1
+464,3069,0.9,residential,30,1
+3069,882,7.34,residential,30,1
+882,3067,6.14,residential,30,1
+3067,883,1.58,residential,30,1
+883,463,58.86,residential,30,1
+463,880,3.26,residential,30,1
+1819,1271,5.57,service,10,1
+1271,584,3.36,service,10,1
+584,1274,2.92,service,10,1
+1274,2459,1.52,service,10,1
+2459,1818,28.44,service,10,1
+733,1287,37.39,tertiary,50,1
+733,3235,8.59,service,10,1
+3235,1827,17.69,service,10,1
+1827,734,15.79,service,10,1
+734,1828,14.9,service,10,1
+1828,1822,24.38,service,10,1
+1822,735,14.83,service,10,1
+735,736,19.76,service,10,1
+736,737,7.83,service,10,1
+1834,1833,6.67,footway,5,1
+1833,1832,19.53,footway,5,1
+1832,1831,19.39,footway,5,1
+1831,1830,29.22,footway,5,1
+1830,1829,2.42,footway,5,1
+1211,1262,5.78,tertiary,30,1
+1262,1335,6.79,tertiary,30,1
+1335,1319,12.9,tertiary,30,1
+307,1334,11.21,tertiary,30,1
+1334,1260,4.92,tertiary,30,1
+1260,1336,4.74,tertiary,30,1
+1336,349,5.38,tertiary,30,1
+349,1921,5.38,tertiary,30,1
+1921,1211,4.95,tertiary,30,1
+1889,1888,15.18,service,10,1
+1890,2712,8.65,service,10,1
+2712,1869,14.19,service,10,1
+1869,1889,1.22,service,10,1
+1853,1892,13.99,footway,5,1
+1841,1840,16.17,service,10,1
+1843,1899,1.1,service,10,1
+1899,1842,23.27,service,10,1
+1844,1897,18.43,service,10,1
+1839,1900,6.56,service,10,1
+32,2711,20.39,service,10,1
+2711,1852,3.16,service,10,1
+1852,1841,1.92,service,10,1
+1901,1839,7.73,service,10,1
+1839,1843,13.82,service,10,1
+1845,3426,5.65,service,10,1
+3426,1846,15.91,service,10,1
+1846,1844,1.09,service,10,1
+1855,1854,8.59,footway,5,1
+1854,2716,35.76,footway,5,1
+2716,1853,47.65,footway,5,1
+1853,1869,24.91,footway,5,1
+1869,1852,41.28,footway,5,1
+1852,1851,16.21,footway,5,1
+1851,1850,14.0,footway,5,1
+1850,1898,12.24,footway,5,1
+1898,1899,8.39,footway,5,1
+1899,1849,4.85,footway,5,1
+1849,1848,18.1,footway,5,1
+1848,1847,11.41,footway,5,1
+1847,1846,11.38,footway,5,1
+1910,2499,3.09,footway,5,1
+2499,2479,5.26,footway,5,1
+2479,2480,9.94,footway,5,1
+2480,1911,5.05,footway,5,1
+1911,2490,10.6,footway,5,1
+2490,1909,2.71,footway,5,1
+1913,1912,10.22,path,5,1
+1912,2493,11.16,path,5,1
+2493,2494,15.74,path,5,1
+2494,1911,18.38,path,5,1
+1911,2486,7.99,path,5,1
+2486,2491,14.49,path,5,1
+2491,2492,5.99,path,5,1
+2492,2488,11.14,path,5,1
+2488,2481,10.2,path,5,1
+2481,2482,11.14,path,5,1
+2482,2483,3.6,path,5,1
+2483,2484,12.05,path,5,1
+2484,2485,10.51,path,5,1
+2485,2498,4.63,path,5,1
+2498,2487,3.48,path,5,1
+1917,2496,2.01,footway,5,1
+2496,1913,7.45,footway,5,1
+1913,1916,10.42,footway,5,1
+1916,2495,12.66,footway,5,1
+2495,2478,7.86,footway,5,1
+2478,1915,5.88,footway,5,1
+1915,2497,7.19,footway,5,1
+2497,1914,5.14,footway,5,1
+3001,1920,12.03,steps,5,1
+1031,1032,20.26,residential,50,0
+2989,3004,10.07,footway,5,1
+3004,1946,8.12,footway,5,1
+1946,3003,3.46,footway,5,1
+3003,3002,21.85,footway,5,1
+3002,2988,5.86,footway,5,1
+2988,1931,4.24,footway,5,1
+1931,2991,3.83,footway,5,1
+1933,1934,5.91,footway,5,1
+1934,1935,1.47,footway,5,1
+1935,1936,3.23,footway,5,1
+1936,1937,2.38,footway,5,1
+1937,1939,3.94,footway,5,1
+1939,1938,3.94,footway,5,1
+1943,1540,6.92,footway,5,1
+1540,1930,4.67,footway,5,1
+1950,2981,4.63,footway,5,1
+2981,1943,10.47,footway,5,1
+1943,1949,24.94,footway,5,1
+1949,1951,38.5,footway,5,1
+1951,1948,8.66,footway,5,1
+1948,2379,37.91,footway,5,1
+2379,2378,9.74,footway,5,1
+2378,2377,9.02,footway,5,1
+2377,2376,8.83,footway,5,1
+2376,2375,58.43,footway,5,1
+2375,2374,11.22,footway,5,1
+2374,2373,11.76,footway,5,1
+2373,2372,10.87,footway,5,1
+2372,2371,6.59,footway,5,1
+2371,2370,4.86,footway,5,1
+1952,1951,8.95,steps,5,1
+1462,1966,7.35,footway,5,1
+1966,1967,4.96,footway,5,1
+1967,1968,6.06,footway,5,1
+1968,1969,7.02,footway,5,1
+1969,1970,9.07,footway,5,1
+1067,1971,43.31,path,5,1
+1999,1998,13.55,footway,5,1
+1998,1997,11.91,footway,5,1
+1997,1996,5.95,footway,5,1
+1996,1995,8.6,footway,5,1
+1995,1994,8.86,footway,5,1
+1994,1993,5.65,footway,5,1
+1993,1992,5.57,footway,5,1
+1992,1991,8.04,footway,5,1
+1991,1990,7.35,footway,5,1
+1990,1989,9.23,footway,5,1
+1989,1988,8.49,footway,5,1
+1988,1987,12.34,footway,5,1
+1987,1986,15.38,footway,5,1
+1986,1985,4.6,footway,5,1
+1985,1984,8.2,footway,5,1
+1984,1983,14.19,footway,5,1
+1983,4174,8.65,footway,5,1
+4174,1982,19.6,footway,5,1
+1982,1981,31.2,footway,5,1
+1981,1980,28.21,footway,5,1
+1980,1979,8.29,footway,5,1
+1979,1978,6.47,footway,5,1
+1978,1977,2.84,footway,5,1
+1977,303,10.17,footway,5,1
+2011,2010,10.8,service,10,1
+2010,2009,22.79,service,10,1
+2013,2012,26.97,service,10,1
+2021,2418,13.72,footway,5,1
+2418,2417,5.62,footway,5,1
+2026,2036,1.47,footway,5,1
+2036,2025,2.21,footway,5,1
+2025,2416,22.3,footway,5,1
+2416,2283,11.41,footway,5,1
+2283,2607,2.92,footway,5,1
+2034,744,142.51,residential,50,0
+1451,1444,13.78,footway,5,1
+1444,2041,12.92,footway,5,1
+2041,2042,29.74,footway,5,1
+2047,2046,7.38,residential,30,1
+2044,977,62.31,residential,30,1
+977,410,82.54,residential,30,1
+410,411,13.23,residential,30,1
+411,412,7.97,residential,30,1
+412,1205,8.5,residential,30,1
+1205,413,10.22,residential,30,1
+413,1206,8.49,residential,30,1
+1206,414,8.81,residential,30,1
+414,415,11.14,residential,30,1
+415,2302,15.73,residential,30,1
+2302,2955,0.54,residential,30,1
+2955,416,6.96,residential,30,1
+2043,2432,12.74,footway,5,1
+2432,2431,33.3,footway,5,1
+2431,2434,13.43,footway,5,1
+2434,2433,6.96,footway,5,1
+2433,2435,7.27,footway,5,1
+2435,2437,13.48,footway,5,1
+2437,2439,11.09,footway,5,1
+2439,2436,12.59,footway,5,1
+2436,2438,8.57,footway,5,1
+2438,2441,4.02,footway,5,1
+2054,2059,45.87,service,10,1
+2059,2061,5.75,service,10,1
+2061,2062,2.31,service,10,1
+2062,2065,3.95,service,10,1
+2065,2066,9.94,service,10,1
+2066,2067,5.54,service,10,1
+2067,2068,7.1,service,10,1
+2068,2069,10.3,service,10,1
+2069,2070,4.12,service,10,1
+2070,2071,5.49,service,10,1
+2071,2072,2.95,service,10,1
+1641,1638,15.56,footway,5,1
+2066,2063,15.13,service,10,1
+2073,2075,26.19,service,10,1
+1633,2050,2.88,footway,5,1
+2050,2051,17.07,footway,5,1
+848,2062,21.43,service,10,1
+2062,2058,19.68,service,10,1
+2061,2064,10.36,service,10,1
+2064,2055,44.63,service,10,1
+50,574,7.0,tertiary,50,1
+574,2017,3.43,tertiary,50,1
+2017,1304,6.72,tertiary,50,1
+1304,2076,44.35,tertiary,50,1
+2127,2117,113.41,footway,5,1
+2117,2110,43.53,footway,5,1
+2110,2186,103.16,footway,5,1
+2186,4246,11.0,footway,5,1
+4246,2188,11.56,footway,5,1
+2188,4245,13.56,footway,5,1
+4245,4244,3.61,footway,5,1
+4244,2102,9.59,footway,5,1
+2102,2108,34.01,footway,5,1
+2108,2111,48.79,footway,5,1
+2111,2114,24.52,footway,5,1
+2114,2116,5.56,footway,5,1
+2116,2118,2.83,footway,5,1
+833,2177,38.73,footway,5,1
+2177,2178,15.92,footway,5,1
+2178,2179,6.32,footway,5,1
+2179,3976,96.39,footway,5,1
+3976,2185,17.17,footway,5,1
+2185,2190,86.58,footway,5,1
+2190,2106,33.57,footway,5,1
+2106,3975,82.18,footway,5,1
+3975,3305,32.22,footway,5,1
+3305,2120,49.65,footway,5,1
+2120,2122,5.7,footway,5,1
+2122,2470,39.49,footway,5,1
+2470,2192,23.46,footway,5,1
+2192,2195,25.34,footway,5,1
+2195,2216,52.47,footway,5,1
+2216,4042,35.68,footway,5,1
+4042,3306,1.73,footway,5,1
+3306,2139,36.55,footway,5,1
+2139,2151,72.38,footway,5,1
+2151,2084,43.55,footway,5,1
+2084,2232,43.94,footway,5,1
+2175,2174,8.35,footway,5,1
+2154,2228,10.47,steps,5,1
+2095,2093,5.49,service,10,1
+2160,2161,2.83,footway,5,1
+656,2226,7.04,footway,5,1
+2158,2094,32.99,service,10,1
+2096,2095,3.59,service,10,1
+2086,2087,5.92,footway,5,1
+2092,2090,28.01,service,10,1
+687,1186,28.65,path,5,1
+2201,2206,36.4,footway,5,1
+2206,2212,30.42,footway,5,1
+2212,4053,19.44,footway,5,1
+4053,2219,17.26,footway,5,1
+2219,4049,19.61,footway,5,1
+4049,2223,16.56,footway,5,1
+2223,2147,65.38,footway,5,1
+2147,2146,3.89,footway,5,1
+2146,2142,8.28,footway,5,1
+2142,2138,8.14,footway,5,1
+2138,2135,10.89,footway,5,1
+2135,2132,9.13,footway,5,1
+2132,2225,7.1,footway,5,1
+2225,2222,8.28,footway,5,1
+2222,2220,17.84,footway,5,1
+2220,2215,14.18,footway,5,1
+2215,2210,5.5,footway,5,1
+2210,2207,3.58,footway,5,1
+2207,2200,35.57,footway,5,1
+2200,2197,4.49,footway,5,1
+2197,2196,2.01,footway,5,1
+2196,2193,5.57,footway,5,1
+2153,2155,24.29,footway,5,1
+2155,2229,37.05,footway,5,1
+2229,2230,25.19,footway,5,1
+2230,3319,10.89,footway,5,1
+3319,2227,11.94,footway,5,1
+2227,3321,20.34,footway,5,1
+3321,2154,19.96,footway,5,1
+2154,3323,20.32,footway,5,1
+3323,2152,11.04,footway,5,1
+2152,2144,37.61,footway,5,1
+2144,2140,6.96,footway,5,1
+2140,2136,7.6,footway,5,1
+2136,2130,10.1,footway,5,1
+2130,2467,37.2,footway,5,1
+2467,2208,21.07,footway,5,1
+2208,2203,22.98,footway,5,1
+2203,2209,33.03,footway,5,1
+2209,2213,13.91,footway,5,1
+2213,2218,32.71,footway,5,1
+2218,2221,31.23,footway,5,1
+2221,3236,14.98,footway,5,1
+3236,2224,11.64,footway,5,1
+2224,2133,14.03,footway,5,1
+2133,2148,44.15,footway,5,1
+2148,2150,3.12,footway,5,1
+2150,2153,4.83,footway,5,1
+2163,2157,34.82,service,10,1
+2157,2096,7.95,service,10,1
+2156,1625,6.8,footway,5,1
+1625,2160,5.36,footway,5,1
+2231,2083,43.25,track,5,1
+2083,2082,13.53,track,5,1
+2082,2234,4.94,track,5,1
+2147,2149,6.98,footway,5,1
+2149,2150,5.56,footway,5,1
+4054,2205,1.48,footway,5,1
+2205,4056,1.2,footway,5,1
+4056,2212,10.75,footway,5,1
+2212,2217,4.13,footway,5,1
+2172,2171,3.54,footway,5,1
+2171,2169,11.92,footway,5,1
+2169,2168,58.4,footway,5,1
+2168,2098,94.98,footway,5,1
+2213,2226,38.27,footway,5,1
+2226,2137,21.47,footway,5,1
+2137,2143,10.23,footway,5,1
+2143,2152,11.83,footway,5,1
+2121,2126,42.64,footway,5,1
+2126,2127,3.08,footway,5,1
+2127,2128,28.46,footway,5,1
+2128,2194,57.3,footway,5,1
+2167,3521,70.98,footway,5,1
+3521,2170,8.49,footway,5,1
+2170,2172,7.96,footway,5,1
+2172,2173,74.5,footway,5,1
+2173,2175,14.39,footway,5,1
+2175,2176,4.05,footway,5,1
+2179,2180,7.69,footway,5,1
+2180,2181,5.29,footway,5,1
+2181,2182,2.68,footway,5,1
+2182,2183,2.92,footway,5,1
+2183,2184,47.66,footway,5,1
+2194,2193,2.59,footway,5,1
+2193,3968,146.26,footway,5,1
+3968,3967,4.21,footway,5,1
+3967,3969,2.83,footway,5,1
+3969,3970,28.59,footway,5,1
+3970,2114,31.97,footway,5,1
+2114,2112,6.46,footway,5,1
+2088,2089,13.13,service,10,1
+2089,3221,3.35,service,10,1
+3221,2091,3.77,service,10,1
+2091,2092,24.59,service,10,1
+2092,2158,30.93,service,10,1
+2158,2163,32.76,service,10,1
+2163,2165,34.59,service,10,1
+2125,2113,100.44,footway,5,1
+2113,2115,5.77,footway,5,1
+2115,2118,7.66,footway,5,1
+2118,3974,52.57,footway,5,1
+3974,2119,3.32,footway,5,1
+2119,3973,2.42,footway,5,1
+3973,3972,4.22,footway,5,1
+3972,3971,1.88,footway,5,1
+2203,2202,3.95,footway,5,1
+2202,2201,5.76,footway,5,1
+2201,2472,40.96,footway,5,1
+2472,2471,29.14,footway,5,1
+2471,2123,23.31,footway,5,1
+2123,2121,3.37,footway,5,1
+2121,2578,102.37,footway,5,1
+2578,2579,2.88,footway,5,1
+2579,2109,42.19,footway,5,1
+2109,2107,19.71,footway,5,1
+2107,2101,30.27,footway,5,1
+2186,2284,6.0,footway,5,1
+2284,2187,6.9,footway,5,1
+2187,2103,41.78,footway,5,1
+2103,2105,16.03,footway,5,1
+2105,2104,10.02,footway,5,1
+2104,3995,10.43,footway,5,1
+3995,2099,2.77,footway,5,1
+2099,3996,2.41,footway,5,1
+3996,2191,2.54,footway,5,1
+2191,3994,0.81,footway,5,1
+3994,2101,5.97,footway,5,1
+2210,2214,6.44,service,10,1
+2214,2129,38.68,service,10,1
+2129,2131,5.54,service,10,1
+2131,2134,5.23,service,10,1
+2134,2141,21.52,service,10,1
+2141,2142,3.68,service,10,1
+2142,2145,3.66,service,10,1
+2087,1874,5.75,footway,5,1
+1874,3219,18.63,footway,5,1
+3219,1873,27.85,footway,5,1
+1873,2097,38.6,footway,5,1
+2097,2098,3.1,footway,5,1
+2098,1872,6.74,footway,5,1
+1872,3202,39.62,footway,5,1
+3202,3206,28.48,footway,5,1
+3206,3209,6.37,footway,5,1
+3209,4153,21.69,footway,5,1
+4153,1871,7.54,footway,5,1
+1871,3213,0.62,footway,5,1
+3213,2026,17.45,footway,5,1
+2258,2257,2.89,path,5,1
+2257,2256,8.15,path,5,1
+2256,2254,2.84,path,5,1
+2254,2251,5.66,path,5,1
+2251,2248,2.52,path,5,1
+2248,2246,3.09,path,5,1
+2246,2245,3.73,path,5,1
+2245,2247,3.86,path,5,1
+2247,2249,4.02,path,5,1
+2249,2244,3.81,path,5,1
+2244,2243,1.98,path,5,1
+2237,2236,30.99,path,5,1
+2247,2252,2.78,path,5,1
+2252,2253,5.6,path,5,1
+2253,2254,3.41,path,5,1
+1309,2262,6.04,path,5,1
+2262,2261,18.17,path,5,1
+2261,2259,36.85,path,5,1
+2259,2258,24.92,path,5,1
+2258,2260,10.97,path,5,1
+2260,2255,18.54,path,5,1
+2255,2250,7.86,path,5,1
+2265,2266,1.78,service,30,1
+2266,2270,29.13,service,30,1
+2272,2271,34.84,path,5,1
+2266,2267,4.45,service,10,1
+1386,2275,12.26,steps,5,1
+2275,2274,2.36,steps,5,1
+2267,2268,20.09,service,10,1
+2268,2269,10.53,service,10,1
+2273,2901,3.08,footway,5,1
+2901,2274,3.48,footway,5,1
+2274,2276,29.32,footway,5,1
+2276,2902,11.5,footway,5,1
+2902,2277,25.81,footway,5,1
+2277,2278,73.25,footway,5,1
+802,195,73.13,tertiary,50,1
+195,3149,1.54,tertiary,50,1
+3149,3166,25.59,tertiary,50,1
+3166,2286,24.97,tertiary,50,1
+997,2300,6.28,footway,5,1
+1542,2300,12.69,steps,5,1
+2319,2521,4.26,service,10,1
+2521,2320,3.07,service,10,1
+2320,2321,3.32,service,10,1
+2321,2318,5.66,service,10,1
+1000,2323,6.9,tertiary,50,1
+2323,999,5.4,tertiary,50,1
+999,65,8.5,tertiary,50,1
+1355,2325,5.3,living_street,5,0
+2325,62,5.91,living_street,5,0
+62,2327,4.71,living_street,5,0
+2327,2326,4.71,living_street,5,0
+2326,1356,9.27,living_street,5,0
+2336,2337,10.94,residential,30,1
+1188,890,3.42,residential,30,0
+890,889,2.7,residential,30,0
+889,888,6.31,residential,30,0
+1873,1505,8.63,footway,5,1
+1505,2385,3.25,footway,5,1
+2385,2387,3.1,footway,5,1
+2387,2030,6.65,footway,5,1
+2030,2386,6.48,footway,5,1
+2386,2651,20.02,footway,5,1
+2651,2655,3.04,footway,5,1
+2655,2654,7.96,footway,5,1
+2654,2653,4.12,footway,5,1
+2653,2652,6.25,footway,5,1
+2652,2650,9.71,footway,5,1
+2650,2649,6.91,footway,5,1
+2649,2648,7.26,footway,5,1
+2648,2647,8.04,footway,5,1
+2647,2646,5.69,footway,5,1
+2646,2645,6.59,footway,5,1
+2645,2644,6.33,footway,5,1
+2644,2643,6.9,footway,5,1
+2643,2642,7.3,footway,5,1
+2642,2641,8.24,footway,5,1
+2641,2640,7.64,footway,5,1
+2640,2555,40.53,footway,5,1
+842,4190,8.56,path,5,1
+4190,3404,102.77,path,5,1
+3411,3518,8.25,footway,5,1
+3518,4007,118.93,footway,5,1
+4007,2392,6.82,footway,5,1
+2393,3486,99.6,residential,30,0
+2390,3515,8.66,residential,30,0
+3515,3827,111.68,residential,30,0
+3827,3483,6.22,residential,30,0
+3483,3823,2.35,residential,30,0
+3823,3826,1.78,residential,30,0
+3826,3404,1.44,residential,30,0
+2400,4240,2.97,steps,5,1
+4240,4241,4.19,steps,5,1
+4241,2399,5.22,steps,5,1
+2402,2403,5.48,service,10,1
+2403,2404,3.32,service,10,1
+2404,2401,9.26,service,10,1
+2405,4236,1.72,service,10,1
+4236,2406,7.75,service,10,1
+2406,2407,3.18,service,10,1
+2407,2408,5.55,service,10,1
+2309,1280,5.5,footway,5,1
+1280,1340,8.95,footway,5,1
+1340,2410,11.29,footway,5,1
+2410,2421,5.31,footway,5,1
+2421,2409,4.77,footway,5,1
+2409,0,8.76,footway,5,1
+0,1706,8.38,footway,5,1
+2424,2425,6.47,steps,5,1
+2425,2426,4.38,steps,5,1
+2426,3909,1.27,steps,5,1
+3909,2441,0.5,steps,5,1
+2441,2307,5.59,steps,5,1
+2043,2430,6.09,footway,5,1
+2430,2429,6.0,footway,5,1
+2429,2428,6.9,footway,5,1
+2428,2427,1.87,footway,5,1
+2427,2044,2.5,footway,5,1
+350,1210,10.44,tertiary,50,1
+1210,1489,15.35,tertiary,50,1
+1319,1487,29.06,tertiary,50,1
+1487,350,7.91,tertiary,50,1
+2462,2461,4.98,residential,30,1
+2461,2460,10.12,residential,30,1
+2465,166,11.01,footway,5,1
+2464,2465,7.65,steps,5,1
+2478,2477,18.32,path,5,1
+2477,2494,18.36,path,5,1
+2510,2505,11.68,footway,5,1
+2506,2507,5.77,footway,5,1
+2507,2508,13.35,footway,5,1
+2508,2510,14.09,footway,5,1
+2510,3236,19.42,footway,5,1
+2522,2525,5.42,steps,5,1
+2526,2524,5.36,footway,5,1
+2524,2523,3.31,footway,5,1
+2523,2522,1.88,footway,5,1
+360,2550,6.66,service,10,1
+2550,2549,5.96,service,10,1
+2549,2548,6.49,service,10,1
+2548,2547,41.19,service,10,1
+2547,2546,11.82,service,10,1
+1374,1743,6.36,service,10,1
+1374,2569,10.43,service,10,1
+2569,3435,6.13,service,10,1
+3435,2564,3.8,service,10,1
+2569,2570,8.96,service,10,1
+2570,2571,6.55,service,10,1
+3377,834,12.14,primary,50,0
+834,3415,58.52,primary,50,0
+3415,1551,21.05,primary,50,0
+1551,3414,44.29,primary,50,0
+3414,828,46.28,primary,50,0
+828,24,22.25,primary,50,0
+24,25,31.38,primary,50,0
+1584,2626,3.08,footway,5,1
+2626,2627,2.63,footway,5,1
+2627,2628,2.61,footway,5,1
+2628,1592,6.8,footway,5,1
+1592,1512,6.89,footway,5,1
+2606,1585,4.72,footway,5,1
+1585,2605,5.47,footway,5,1
+2417,1870,2.6,footway,5,1
+2607,1870,2.33,footway,5,1
+3409,3815,4.71,residential,30,0
+3815,4188,80.73,residential,30,0
+4188,4163,11.13,residential,30,0
+157,3574,13.72,residential,30,1
+3574,2170,49.73,residential,30,1
+2170,840,3.53,residential,30,1
+2611,1297,11.82,footway,5,1
+1297,2612,12.9,footway,5,1
+2612,1565,32.61,footway,5,1
+1565,2586,41.35,footway,5,1
+2586,1566,42.39,footway,5,1
+1566,1447,31.66,footway,5,1
+1447,1420,36.46,footway,5,1
+1420,1567,58.82,footway,5,1
+1567,3949,19.31,footway,5,1
+3949,1568,31.91,footway,5,1
+1568,3948,35.61,footway,5,1
+3948,1259,24.7,footway,5,1
+1299,1544,54.8,footway,5,1
+1544,1545,11.8,footway,5,1
+1545,1546,188.43,footway,5,1
+1546,1547,32.09,footway,5,1
+1547,1548,36.28,footway,5,1
+1548,1549,33.2,footway,5,1
+1549,2604,34.19,footway,5,1
+2604,1550,39.04,footway,5,1
+1550,1802,5.38,footway,5,1
+1802,1552,17.63,footway,5,1
+1552,1553,21.02,footway,5,1
+1553,1554,25.76,footway,5,1
+1554,1555,101.34,footway,5,1
+1555,1829,68.52,footway,5,1
+1829,1556,30.91,footway,5,1
+1556,1557,15.88,footway,5,1
+1557,1558,25.4,footway,5,1
+1558,1559,15.85,footway,5,1
+1559,1560,34.8,footway,5,1
+1560,1561,52.54,footway,5,1
+1561,1562,31.74,footway,5,1
+1562,1563,4.14,footway,5,1
+1563,1564,3.89,footway,5,1
+1564,1270,7.28,footway,5,1
+2273,2900,2.84,footway,5,1
+2900,2899,9.33,footway,5,1
+2899,2898,8.99,footway,5,1
+2898,2897,5.35,footway,5,1
+2897,2896,6.35,footway,5,1
+2896,2895,6.37,footway,5,1
+2895,2894,4.56,footway,5,1
+2894,2893,5.05,footway,5,1
+2893,2892,5.19,footway,5,1
+2892,2891,6.65,footway,5,1
+2891,2886,5.16,footway,5,1
+2886,2887,6.32,footway,5,1
+2887,2888,6.17,footway,5,1
+2888,2889,6.55,footway,5,1
+2889,2884,40.51,footway,5,1
+2884,1268,18.09,footway,5,1
+2657,2658,1.56,steps,5,1
+2658,1747,14.2,footway,5,1
+1747,1748,3.73,footway,5,1
+1748,1794,2.83,footway,5,1
+1794,1749,4.46,footway,5,1
+1749,1795,3.2,footway,5,1
+1795,1750,3.37,footway,5,1
+1750,1797,4.04,footway,5,1
+1797,1752,3.64,footway,5,1
+1752,1796,2.56,footway,5,1
+1796,1753,3.84,footway,5,1
+1753,1726,6.41,footway,5,1
+2660,2636,5.79,footway,5,1
+2636,2637,3.41,footway,5,1
+2637,574,5.7,footway,5,1
+574,2638,5.75,footway,5,1
+2663,2664,77.83,footway,5,1
+2664,2665,46.85,footway,5,1
+2665,2666,32.73,footway,5,1
+2666,2667,16.24,footway,5,1
+2667,2668,3.51,footway,5,1
+2668,2669,5.11,footway,5,1
+2669,2670,4.85,footway,5,1
+2670,2671,3.77,footway,5,1
+2671,2672,7.68,footway,5,1
+2672,2673,2.44,footway,5,1
+2673,2674,2.39,footway,5,1
+2674,2675,2.44,footway,5,1
+2675,2676,1.91,footway,5,1
+2676,2677,2.2,footway,5,1
+2677,3491,4.27,footway,5,1
+3491,3490,4.52,footway,5,1
+1191,2678,4.22,footway,5,1
+2678,2679,10.43,footway,5,1
+2679,751,4.77,footway,5,1
+2282,1731,9.43,footway,5,1
+2282,2681,2.72,footway,5,1
+2681,1776,13.63,footway,5,1
+1776,2281,5.75,footway,5,1
+2281,761,9.02,footway,5,1
+2682,1775,4.82,footway,5,1
+1775,2282,4.74,footway,5,1
+2678,2683,5.33,footway,5,1
+2683,2685,7.83,footway,5,1
+2685,2684,7.84,footway,5,1
+2684,4157,3.0,footway,5,1
+4157,2682,26.33,footway,5,1
+2682,2691,39.49,footway,5,1
+2691,2692,21.88,footway,5,1
+1190,2282,17.87,footway,5,1
+2395,2561,1.71,footway,5,1
+2561,763,5.85,footway,5,1
+763,762,5.16,footway,5,1
+762,2397,5.78,footway,5,1
+2397,1726,84.04,footway,5,1
+1726,351,5.48,footway,5,1
+351,2396,67.76,footway,5,1
+2396,761,11.5,footway,5,1
+2561,2708,13.41,footway,5,1
+2708,2705,10.23,footway,5,1
+2705,2706,8.79,footway,5,1
+2706,2707,6.36,footway,5,1
+2707,3436,13.14,footway,5,1
+3436,3435,18.83,footway,5,1
+3435,3434,8.46,footway,5,1
+3434,3433,17.62,footway,5,1
+3433,3432,22.8,footway,5,1
+3432,3431,28.79,footway,5,1
+3431,3430,10.98,footway,5,1
+3430,3429,9.52,footway,5,1
+3429,3428,11.4,footway,5,1
+3428,3424,8.1,footway,5,1
+3424,3427,8.06,footway,5,1
+3427,3425,11.62,footway,5,1
+3425,3426,11.64,footway,5,1
+1891,1856,28.86,footway,5,1
+2713,1858,3.65,footway,5,1
+1858,1856,4.4,footway,5,1
+1856,2560,4.46,footway,5,1
+2560,2715,5.18,footway,5,1
+2715,1857,12.68,footway,5,1
+1857,1855,25.44,footway,5,1
+1855,891,3.42,footway,5,1
+891,3933,88.62,footway,5,1
+3933,1237,65.69,footway,5,1
+1237,2726,29.62,footway,5,1
+2726,1240,11.03,footway,5,1
+1240,2733,0.68,footway,5,1
+2733,2740,22.54,footway,5,1
+2740,2743,5.28,footway,5,1
+2743,2762,22.42,footway,5,1
+2762,2760,18.72,footway,5,1
+2760,2755,22.61,footway,5,1
+2755,2756,4.55,footway,5,1
+2756,1233,66.13,footway,5,1
+1233,1863,30.83,footway,5,1
+1863,2768,3.39,footway,5,1
+2768,2769,3.93,footway,5,1
+2769,1862,5.19,footway,5,1
+1862,1861,4.43,footway,5,1
+1861,1860,4.12,footway,5,1
+1860,1192,2.62,footway,5,1
+1385,2715,7.91,service,10,1
+2715,2716,14.16,service,10,1
+2716,2717,1.29,service,10,1
+2717,2718,15.56,service,10,1
+2721,2722,7.55,footway,5,1
+2722,2723,15.96,footway,5,1
+2723,2728,11.09,footway,5,1
+1238,2723,4.62,service,10,1
+2723,2726,8.4,service,10,1
+2726,2727,7.42,service,10,1
+2729,1239,5.54,footway,5,1
+1239,2728,4.44,footway,5,1
+2728,1240,8.6,footway,5,1
+2732,2733,12.98,service,10,1
+2733,2734,7.44,service,10,1
+2737,2739,9.62,service,10,1
+2739,2740,4.41,service,10,1
+2740,3941,3.03,service,10,1
+3941,2741,4.54,service,10,1
+2741,2742,9.72,service,10,1
+2739,2743,4.59,service,10,1
+2743,3940,2.61,service,10,1
+3940,2744,4.71,service,10,1
+2744,2745,9.97,service,10,1
+2749,2752,9.97,service,10,1
+2752,2755,3.92,service,10,1
+2755,2753,6.84,service,10,1
+2753,2754,10.31,service,10,1
+2752,2756,3.77,service,10,1
+2756,2757,6.45,service,10,1
+2757,2758,10.2,service,10,1
+2759,2760,13.17,service,10,1
+2760,2761,7.22,service,10,1
+2735,2762,13.13,service,10,1
+2762,2763,7.25,service,10,1
+2767,1256,5.69,footway,5,1
+1256,859,4.92,footway,5,1
+859,860,24.51,footway,5,1
+1859,1887,11.71,footway,5,1
+1887,859,18.41,footway,5,1
+2460,2775,3.35,residential,30,1
+2775,2774,3.55,residential,30,1
+2774,604,4.82,residential,30,1
+167,2773,28.93,footway,5,1
+860,861,6.63,footway,5,1
+861,862,7.84,footway,5,1
+862,863,8.2,footway,5,1
+863,864,1.96,footway,5,1
+864,865,2.56,footway,5,1
+865,1865,4.54,footway,5,1
+1865,1864,26.46,footway,5,1
+1864,1866,3.08,footway,5,1
+1866,866,14.19,footway,5,1
+866,1867,17.12,footway,5,1
+1867,167,20.19,footway,5,1
+860,2779,16.86,footway,5,1
+2779,2790,12.48,footway,5,1
+2790,2792,40.42,footway,5,1
+2792,2780,9.79,footway,5,1
+2780,2781,36.4,footway,5,1
+2781,2803,12.39,footway,5,1
+2803,2782,18.1,footway,5,1
+2782,2800,3.55,footway,5,1
+2800,2783,20.48,footway,5,1
+2783,2784,29.21,footway,5,1
+2784,2806,13.1,footway,5,1
+2806,2785,12.96,footway,5,1
+2785,1193,12.95,footway,5,1
+2792,2793,2.1,footway,5,1
+2793,2794,2.17,footway,5,1
+2794,2795,2.12,footway,5,1
+2795,2796,2.33,footway,5,1
+2796,2797,2.75,footway,5,1
+2797,2798,24.57,footway,5,1
+2799,2800,8.85,service,10,1
+2800,2801,4.68,service,10,1
+2802,2803,8.73,service,10,1
+2803,2804,4.76,service,10,1
+2805,2806,9.24,service,10,1
+2806,2807,4.42,service,10,1
+1193,2786,27.58,footway,5,1
+2786,2787,22.46,footway,5,1
+2787,2788,5.55,footway,5,1
+2788,2789,18.46,footway,5,1
+2786,2808,19.37,path,5,1
+2808,2809,2.69,path,5,1
+2809,2810,1.95,path,5,1
+2810,2811,2.25,path,5,1
+2811,2812,3.11,path,5,1
+2788,1624,4.51,footway,5,1
+1624,2814,4.29,footway,5,1
+2788,2815,2.13,footway,5,1
+2815,2839,8.63,footway,5,1
+2839,2812,8.32,footway,5,1
+2812,2835,70.5,footway,5,1
+2835,2836,63.55,footway,5,1
+2836,2837,2.28,footway,5,1
+2837,2838,2.74,footway,5,1
+2838,2816,2.45,footway,5,1
+2816,4058,3.9,footway,5,1
+2789,2817,25.56,footway,5,1
+2817,2844,64.1,footway,5,1
+2844,2845,2.78,footway,5,1
+2845,2820,6.74,footway,5,1
+2820,3511,7.34,footway,5,1
+3511,2867,7.25,footway,5,1
+2867,2868,33.71,footway,5,1
+2868,1194,47.4,footway,5,1
+2843,2821,2.71,footway,5,1
+2821,2822,2.27,footway,5,1
+2822,2823,2.49,footway,5,1
+2823,2824,2.79,footway,5,1
+2824,2825,2.12,footway,5,1
+2825,2826,2.43,footway,5,1
+2826,2827,2.87,footway,5,1
+2827,2828,57.4,footway,5,1
+2828,2829,29.64,footway,5,1
+2829,2830,2.19,footway,5,1
+2830,2831,2.14,footway,5,1
+2831,2832,1.89,footway,5,1
+2832,2833,2.27,footway,5,1
+2833,2840,55.1,footway,5,1
+2840,2841,82.66,footway,5,1
+2841,4137,43.33,footway,5,1
+4137,2834,31.06,footway,5,1
+2845,2846,2.51,footway,5,1
+2846,2847,2.42,footway,5,1
+2847,2848,2.33,footway,5,1
+2848,2849,2.97,footway,5,1
+2849,2850,42.44,footway,5,1
+2850,2851,46.14,footway,5,1
+2851,4057,35.26,footway,5,1
+4057,4060,8.72,footway,5,1
+4060,2852,12.44,footway,5,1
+2852,2854,32.36,footway,5,1
+2854,2853,7.7,footway,5,1
+2853,2833,10.76,footway,5,1
+2854,2855,2.7,footway,5,1
+2855,2856,2.53,footway,5,1
+2856,2857,2.16,footway,5,1
+2857,2858,2.73,footway,5,1
+2858,4078,38.37,footway,5,1
+4078,4080,8.2,footway,5,1
+4080,2859,39.86,footway,5,1
+2859,2860,2.29,footway,5,1
+2860,2861,1.94,footway,5,1
+2861,2862,2.55,footway,5,1
+2862,2863,2.25,footway,5,1
+2863,2864,3.51,footway,5,1
+2864,2865,6.25,footway,5,1
+2865,2866,3.87,footway,5,1
+2877,731,9.7,residential,30,1
+2879,1406,4.36,footway,5,1
+1406,2881,4.99,footway,5,1
+2883,2881,31.22,footway,5,1
+2881,2882,45.46,footway,5,1
+2882,2631,11.41,footway,5,1
+2631,2632,8.64,footway,5,1
+2632,2633,62.67,footway,5,1
+2633,2634,50.22,footway,5,1
+2634,2635,17.73,footway,5,1
+2635,1267,95.92,footway,5,1
+2903,1207,14.98,footway,5,1
+1207,2904,3.91,footway,5,1
+2904,2905,3.67,footway,5,1
+2905,2906,2.81,footway,5,1
+2906,4131,2.14,footway,5,1
+1623,2922,8.28,footway,5,1
+2922,2923,6.45,footway,5,1
+2923,2925,8.14,footway,5,1
+2925,2924,7.56,footway,5,1
+2924,2926,32.04,footway,5,1
+2926,2927,7.49,footway,5,1
+2927,2928,22.86,footway,5,1
+2928,2930,24.88,footway,5,1
+2930,2929,10.34,footway,5,1
+4131,2907,1.3,footway,5,1
+2907,2908,3.73,footway,5,1
+2908,3260,3.54,footway,5,1
+3260,3261,2.78,footway,5,1
+3261,2912,46.02,footway,5,1
+2912,2913,7.07,footway,5,1
+2913,2911,9.12,footway,5,1
+2911,1617,59.61,footway,5,1
+2929,1351,3.37,footway,5,1
+1351,2308,4.87,footway,5,1
+2308,2306,6.09,footway,5,1
+2306,2305,3.95,footway,5,1
+2305,2307,4.51,footway,5,1
+2307,1288,5.37,footway,5,1
+2310,2931,6.04,footway,5,1
+2931,1457,5.66,footway,5,1
+1457,2932,5.36,footway,5,1
+2932,2422,4.26,footway,5,1
+2422,2423,7.88,footway,5,1
+2423,2309,5.51,footway,5,1
+2309,1204,16.52,footway,5,1
+2938,2939,1.62,footway,5,1
+2939,2940,35.93,footway,5,1
+2940,2941,23.95,footway,5,1
+2941,2942,26.58,footway,5,1
+2942,2943,17.74,footway,5,1
+2943,2944,33.12,footway,5,1
+2944,2946,24.82,footway,5,1
+2946,2945,6.53,footway,5,1
+2945,2947,3.11,footway,5,1
+2947,2948,31.05,footway,5,1
+2948,3070,17.78,footway,5,1
+3070,3072,10.61,footway,5,1
+3072,2950,7.83,footway,5,1
+2950,2949,7.96,footway,5,1
+2949,2970,12.73,footway,5,1
+2970,2969,10.24,footway,5,1
+2969,2968,12.6,footway,5,1
+2968,2971,26.13,footway,5,1
+2971,2974,32.12,footway,5,1
+2974,2973,15.78,footway,5,1
+2973,2975,32.7,footway,5,1
+2975,2979,40.66,footway,5,1
+2979,2985,59.67,footway,5,1
+2985,2986,4.95,footway,5,1
+2986,1930,7.34,footway,5,1
+2950,1539,6.67,footway,5,1
+1539,2951,7.11,footway,5,1
+1950,2980,4.01,footway,5,1
+2980,2982,13.68,footway,5,1
+2982,2984,11.23,footway,5,1
+2984,2978,22.54,footway,5,1
+2978,2977,44.9,footway,5,1
+2977,2976,22.94,footway,5,1
+2976,2972,54.31,footway,5,1
+2972,2952,24.64,footway,5,1
+2952,2953,8.79,footway,5,1
+2953,2954,14.84,footway,5,1
+2954,2956,13.9,footway,5,1
+2956,2955,3.71,footway,5,1
+2955,2951,7.16,footway,5,1
+2951,2958,50.71,footway,5,1
+2958,2959,58.02,footway,5,1
+2959,2960,18.24,footway,5,1
+2960,2962,8.27,footway,5,1
+2962,2961,12.82,footway,5,1
+2961,2967,24.02,footway,5,1
+2967,2963,21.49,footway,5,1
+2963,2966,45.78,footway,5,1
+2966,3242,19.49,footway,5,1
+3242,2307,10.35,footway,5,1
+2954,2957,1.71,footway,5,1
+1220,2953,1.71,footway,5,1
+747,2963,6.44,service,10,1
+2963,2965,10.44,service,10,1
+2965,2964,38.86,service,10,1
+2982,1217,1.89,footway,5,1
+2983,2984,1.9,footway,5,1
+1930,2993,2.56,footway,5,1
+2993,1942,1.47,footway,5,1
+2991,1932,3.84,footway,5,1
+1932,2999,1.41,footway,5,1
+1942,2995,4.5,footway,5,1
+2995,2994,10.04,footway,5,1
+2994,1941,1.54,footway,5,1
+1941,1938,1.17,footway,5,1
+1938,1940,6.69,footway,5,1
+2995,2992,8.78,footway,5,1
+2996,2997,3.29,footway,5,1
+2997,2998,7.68,footway,5,1
+1218,2992,8.58,footway,5,1
+2992,1930,5.91,footway,5,1
+3003,3005,1.95,footway,5,1
+3005,3006,17.44,footway,5,1
+3006,3336,12.27,footway,5,1
+3336,3337,37.97,footway,5,1
+2300,3009,5.81,footway,5,1
+3009,3010,3.32,footway,5,1
+3010,3011,5.77,footway,5,1
+3011,3012,12.51,footway,5,1
+3012,3013,13.43,footway,5,1
+3013,3014,20.68,footway,5,1
+3014,3017,8.59,footway,5,1
+3017,3018,6.79,footway,5,1
+3018,3019,6.87,footway,5,1
+3019,3020,4.93,footway,5,1
+3020,3021,5.11,footway,5,1
+3021,3025,7.09,footway,5,1
+3025,3024,4.53,footway,5,1
+3024,3023,5.92,footway,5,1
+3023,3029,4.1,footway,5,1
+3029,3028,4.0,footway,5,1
+3028,3032,13.91,footway,5,1
+3032,3031,13.66,footway,5,1
+3031,3030,10.8,footway,5,1
+3030,3040,48.78,footway,5,1
+3040,3041,40.01,footway,5,1
+3041,3044,30.01,footway,5,1
+3044,3043,16.93,footway,5,1
+3043,3048,36.92,footway,5,1
+3048,3051,48.65,footway,5,1
+3051,3053,26.5,footway,5,1
+3053,3055,18.98,footway,5,1
+3055,3054,16.53,footway,5,1
+3054,3058,23.94,footway,5,1
+3058,3063,18.59,footway,5,1
+3063,3060,9.83,footway,5,1
+3060,3061,0.0,footway,5,1
+3061,3064,37.79,footway,5,1
+3064,3066,30.44,footway,5,1
+3066,3069,41.03,footway,5,1
+3069,3076,37.69,footway,5,1
+3076,3077,26.69,footway,5,1
+3077,3078,18.4,footway,5,1
+3078,3079,45.93,footway,5,1
+3079,3081,47.47,footway,5,1
+3081,3083,24.12,footway,5,1
+3083,3089,20.64,footway,5,1
+3089,1227,1.76,footway,5,1
+2370,3026,7.07,footway,5,1
+3026,3035,3.06,footway,5,1
+3035,3027,6.24,footway,5,1
+3027,3034,5.92,footway,5,1
+3034,3037,45.0,footway,5,1
+3037,3036,3.89,footway,5,1
+3031,1221,1.52,footway,5,1
+3033,3030,1.62,footway,5,1
+1222,3038,3.21,footway,5,1
+3038,3039,45.66,footway,5,1
+3039,4168,39.32,footway,5,1
+4168,3042,4.62,footway,5,1
+3042,3045,16.59,footway,5,1
+3045,3047,37.43,footway,5,1
+3047,3049,16.44,footway,5,1
+3049,3050,23.5,footway,5,1
+3050,3052,17.62,footway,5,1
+3052,3056,25.88,footway,5,1
+3056,3057,29.89,footway,5,1
+3057,3059,3.99,footway,5,1
+3059,4012,6.28,footway,5,1
+4012,3065,45.65,footway,5,1
+3065,3121,49.55,footway,5,1
+3121,3068,1.59,footway,5,1
+3061,3062,1.37,footway,5,1
+1224,3063,1.34,footway,5,1
+1225,3120,1.42,footway,5,1
+3120,3067,21.13,footway,5,1
+3067,3074,36.39,footway,5,1
+3074,3073,47.5,footway,5,1
+3073,3075,45.46,footway,5,1
+3075,3080,51.95,footway,5,1
+3080,3084,21.66,footway,5,1
+3084,3096,32.48,footway,5,1
+3096,3085,8.77,footway,5,1
+3085,3094,2.03,footway,5,1
+3094,3100,5.22,footway,5,1
+3100,3099,5.25,footway,5,1
+3099,3101,11.36,footway,5,1
+3070,1219,2.0,footway,5,1
+3071,3072,1.99,footway,5,1
+3088,3087,5.94,footway,5,1
+3087,3090,7.59,footway,5,1
+3090,3086,5.1,footway,5,1
+3086,3102,44.7,footway,5,1
+3102,3105,68.56,footway,5,1
+3105,3116,73.82,footway,5,1
+3116,3115,3.66,footway,5,1
+3115,3114,5.02,footway,5,1
+3114,3111,5.82,footway,5,1
+3111,3119,7.37,footway,5,1
+3119,1228,3.34,footway,5,1
+3085,2294,6.58,footway,5,1
+2294,3087,5.93,footway,5,1
+3090,3092,2.01,steps,5,1
+3092,3091,80.21,footway,5,1
+3094,3097,10.66,footway,5,1
+3097,3095,50.02,footway,5,1
+3095,4095,34.06,footway,5,1
+4095,4094,9.03,footway,5,1
+4094,4093,17.98,footway,5,1
+4093,4083,5.61,footway,5,1
+4083,4092,13.52,footway,5,1
+4092,4084,20.86,footway,5,1
+4084,4091,11.72,footway,5,1
+4091,4085,6.86,footway,5,1
+4085,4086,22.96,footway,5,1
+4086,4090,17.92,footway,5,1
+4090,4089,2.09,footway,5,1
+4089,4088,5.37,footway,5,1
+4088,4087,5.21,footway,5,1
+3096,3097,11.46,footway,5,1
+3098,3099,49.79,footway,5,1
+1226,3103,30.08,footway,5,1
+3103,3104,69.78,footway,5,1
+3104,3106,61.26,footway,5,1
+3106,3110,7.05,footway,5,1
+3110,3108,6.51,footway,5,1
+3108,3122,48.95,footway,5,1
+3122,3125,49.11,footway,5,1
+3106,3107,39.04,footway,5,1
+3108,3109,43.4,footway,5,1
+3111,3113,3.01,steps,5,1
+3113,3112,15.21,footway,5,1
+3117,3118,1.7,footway,5,1
+3118,3123,53.48,footway,5,1
+3123,3127,61.03,footway,5,1
+3127,3126,6.23,footway,5,1
+3126,3134,36.38,footway,5,1
+3134,3135,48.32,footway,5,1
+3135,3139,28.41,footway,5,1
+3139,3136,6.42,footway,5,1
+3136,3148,28.45,footway,5,1
+3148,3152,37.48,footway,5,1
+3152,3150,8.32,footway,5,1
+3150,3164,39.58,footway,5,1
+3164,3015,24.65,footway,5,1
+3121,3120,14.53,footway,5,1
+3119,3118,15.35,footway,5,1
+1229,3131,28.48,footway,5,1
+3131,3124,6.23,footway,5,1
+3124,3132,35.13,footway,5,1
+3132,3137,49.06,footway,5,1
+3137,3138,38.4,footway,5,1
+3138,3147,31.24,footway,5,1
+3147,3151,42.39,footway,5,1
+3151,3165,49.17,footway,5,1
+3165,3167,20.13,footway,5,1
+3127,3128,49.73,footway,5,1
+3129,3130,100.48,footway,5,1
+3130,3131,52.07,footway,5,1
+3139,3146,29.36,footway,5,1
+3146,3145,15.82,footway,5,1
+3145,3144,5.95,footway,5,1
+3144,3143,7.16,footway,5,1
+3143,3142,27.12,footway,5,1
+3142,3141,5.19,footway,5,1
+3141,3140,7.29,footway,5,1
+3140,4106,26.88,footway,5,1
+4106,4105,21.2,footway,5,1
+4105,4104,13.79,footway,5,1
+4104,4103,20.36,footway,5,1
+4103,4102,19.39,footway,5,1
+4102,4101,9.37,footway,5,1
+4101,4100,4.59,footway,5,1
+4100,4099,4.74,footway,5,1
+4099,4098,2.57,footway,5,1
+4098,4097,1.46,footway,5,1
+4097,4096,6.48,footway,5,1
+3152,3153,6.98,footway,5,1
+3153,3154,36.76,footway,5,1
+3154,3155,27.46,footway,5,1
+3155,3156,14.34,footway,5,1
+3156,3160,9.33,footway,5,1
+3160,3157,3.92,footway,5,1
+3160,3161,16.58,footway,5,1
+3157,3162,3.4,footway,5,1
+3162,3163,26.03,footway,5,1
+1230,2024,15.01,footway,5,1
+3168,3169,4.9,footway,5,1
+3169,3170,5.19,footway,5,1
+3170,2422,3.67,footway,5,1
+3173,1284,2.41,footway,5,1
+1202,1296,17.44,footway,5,1
+1296,1278,5.11,footway,5,1
+1278,2580,7.42,footway,5,1
+2580,1283,9.89,footway,5,1
+1825,1287,7.9,footway,5,1
+1825,3180,8.06,footway,5,1
+3180,3179,7.58,footway,5,1
+1209,3178,7.2,footway,5,1
+3178,3181,51.73,footway,5,1
+3181,3182,10.48,footway,5,1
+3182,3183,61.71,footway,5,1
+3183,3184,38.21,footway,5,1
+3184,3185,41.95,footway,5,1
+3185,3186,44.53,footway,5,1
+3186,3187,22.83,footway,5,1
+3187,3188,15.52,footway,5,1
+3188,3191,4.67,footway,5,1
+3191,3189,4.86,footway,5,1
+3189,3190,17.7,footway,5,1
+3190,3192,35.97,footway,5,1
+962,968,10.59,residential,30,0
+968,447,12.8,residential,30,0
+447,4164,42.66,residential,30,0
+4164,2532,71.68,residential,30,0
+2532,446,22.94,residential,30,0
+446,967,10.21,residential,30,0
+967,966,7.39,residential,30,0
+966,445,10.01,residential,30,0
+445,965,3.98,residential,30,0
+965,964,20.31,residential,30,0
+964,444,10.47,residential,30,0
+444,2913,2.32,residential,30,0
+2913,2333,4.18,residential,30,0
+3193,3194,14.96,service,10,1
+3194,3195,1.68,service,10,1
+3196,3197,11.79,service,10,1
+3197,3198,1.72,service,10,1
+3200,3201,5.28,service,10,1
+3201,3202,7.8,service,10,1
+3202,3203,1.57,service,10,1
+3204,3205,5.48,service,10,1
+3205,3262,4.29,service,10,1
+3262,3206,3.28,service,10,1
+3207,3208,5.47,service,10,1
+3208,3209,7.43,service,10,1
+3209,3210,1.09,service,10,1
+3211,3212,4.84,service,10,1
+3212,3213,7.94,service,10,1
+3213,4150,33.65,service,10,1
+4150,3214,12.15,service,10,1
+3215,3216,4.84,service,10,1
+3216,2026,7.8,service,10,1
+4002,4004,44.81,service,10,1
+4004,4003,17.57,service,10,1
+3222,3223,16.15,service,10,1
+3223,3224,4.16,service,10,1
+3224,3225,4.39,service,10,1
+1656,3238,9.6,service,10,1
+3238,3239,18.1,service,10,1
+982,1617,4.92,residential,30,1
+1617,2914,4.12,residential,30,1
+2914,4129,4.6,residential,30,1
+4129,2330,0.63,residential,30,1
+2330,1613,18.9,residential,30,1
+1613,422,59.59,residential,30,1
+422,423,13.76,residential,30,1
+423,424,11.91,residential,30,1
+424,425,13.42,residential,30,1
+425,426,43.96,residential,30,1
+426,427,16.96,residential,30,1
+427,428,12.36,residential,30,1
+428,429,17.41,residential,30,1
+429,2539,65.85,residential,30,1
+2539,983,14.19,residential,30,1
+2441,3244,4.98,path,5,1
+3244,3243,3.27,path,5,1
+3243,3242,3.62,path,5,1
+3256,1089,8.64,footway,5,1
+251,315,19.99,residential,30,1
+315,1100,35.86,residential,30,1
+1100,1099,13.65,residential,30,1
+1099,395,17.09,residential,30,1
+395,316,43.6,residential,30,1
+316,1098,16.83,residential,30,1
+1098,317,11.87,residential,30,1
+317,332,7.42,residential,30,1
+332,318,11.61,residential,30,1
+318,1097,60.1,residential,30,1
+1097,319,9.87,residential,30,1
+319,2239,13.9,residential,30,1
+2239,2241,31.38,residential,30,1
+2241,1311,116.91,residential,30,1
+1311,1315,5.06,residential,30,1
+1315,320,5.31,residential,30,1
+320,1089,4.7,residential,30,1
+2500,346,70.57,residential,30,1
+346,1087,6.31,residential,30,1
+1087,1088,4.31,residential,30,1
+1088,1089,4.7,residential,30,1
+3248,3249,85.92,footway,5,1
+3249,3250,15.79,footway,5,1
+3250,3325,38.71,footway,5,1
+3325,3251,102.53,footway,5,1
+3251,3252,3.01,footway,5,1
+3252,3256,3.94,footway,5,1
+3256,3255,3.27,footway,5,1
+3255,3254,3.7,footway,5,1
+3254,3253,67.86,footway,5,1
+3253,2500,5.15,footway,5,1
+348,333,17.43,residential,30,1
+333,334,17.3,residential,30,1
+334,335,16.9,residential,30,1
+335,1085,21.91,residential,30,1
+1085,336,15.9,residential,30,1
+336,337,16.09,residential,30,1
+337,338,15.48,residential,30,1
+338,339,14.09,residential,30,1
+339,1086,16.36,residential,30,1
+1086,340,15.97,residential,30,1
+340,341,36.18,residential,30,1
+341,342,28.16,residential,30,1
+342,4179,32.33,residential,30,1
+4179,343,40.88,residential,30,1
+343,3257,24.2,residential,30,1
+3264,3453,9.24,steps,5,1
+3453,3284,4.46,steps,5,1
+3266,3265,3.33,path,5,1
+3284,3451,10.65,path,5,1
+3451,3266,13.38,path,5,1
+3266,3454,21.03,path,5,1
+3454,3280,7.71,path,5,1
+3284,3283,5.26,steps,5,1
+3283,3476,1.63,steps,5,1
+3476,3291,1.69,steps,5,1
+3291,3282,4.71,steps,5,1
+3282,3281,2.5,steps,5,1
+3274,3269,1.35,path,5,1
+3269,3272,6.12,path,5,1
+3272,3271,3.11,path,5,1
+3271,3270,3.44,path,5,1
+3270,3455,3.32,path,5,1
+3455,3268,3.98,path,5,1
+3268,3267,6.4,path,5,1
+3280,3279,11.2,path,5,1
+3279,3278,5.15,path,5,1
+3278,3277,4.98,path,5,1
+3277,3472,1.45,path,5,1
+3472,3445,1.82,path,5,1
+3445,3276,4.97,path,5,1
+3276,3275,5.54,path,5,1
+3275,3274,3.48,path,5,1
+3274,3273,9.65,path,5,1
+3280,3292,5.96,steps,5,1
+3292,2475,6.65,steps,5,1
+2475,2474,3.81,steps,5,1
+3290,3475,8.27,path,5,1
+3475,3267,2.45,path,5,1
+3267,3449,9.95,path,5,1
+3449,3289,2.97,path,5,1
+3289,3288,5.85,path,5,1
+3288,3452,3.79,path,5,1
+3452,3273,2.84,path,5,1
+3273,3287,3.31,path,5,1
+3287,3286,4.9,path,5,1
+3286,3285,4.68,path,5,1
+3285,3450,5.92,path,5,1
+3450,3447,1.92,path,5,1
+3447,3456,5.5,path,5,1
+3456,3264,6.33,path,5,1
+3296,3293,4.85,steps,5,1
+1094,2476,59.64,residential,30,1
+2476,1092,6.39,residential,30,1
+1101,3991,48.28,residential,30,1
+3991,661,64.44,residential,30,1
+3294,3295,4.18,footway,5,1
+3295,3296,18.59,footway,5,1
+3296,3299,98.32,footway,5,1
+3299,3298,102.37,footway,5,1
+3298,3297,10.88,footway,5,1
+251,2232,5.03,residential,30,1
+2232,252,22.31,residential,30,1
+252,253,13.13,residential,30,1
+253,254,16.53,residential,30,1
+254,1101,13.58,residential,30,1
+241,238,13.88,residential,30,1
+238,4044,38.29,residential,30,1
+4044,1136,25.69,residential,30,1
+1135,240,44.08,residential,30,1
+240,629,9.66,residential,30,1
+629,3304,8.4,residential,30,1
+3304,237,7.85,residential,30,1
+2122,3315,34.62,footway,5,1
+3315,3314,25.65,footway,5,1
+3314,3313,15.59,footway,5,1
+3313,3312,18.54,footway,5,1
+3312,3311,14.29,footway,5,1
+3311,3310,6.59,footway,5,1
+3310,3309,13.57,footway,5,1
+3309,3308,26.91,footway,5,1
+3308,3307,9.13,footway,5,1
+3320,2227,12.31,steps,5,1
+3322,3321,11.89,steps,5,1
+3324,3323,10.6,steps,5,1
+1106,3290,36.19,residential,30,1
+3290,476,61.5,residential,30,1
+3326,3329,22.1,footway,5,1
+3993,3330,50.26,footway,5,1
+477,2473,80.69,residential,30,1
+2473,3330,7.72,residential,30,1
+3330,1094,6.6,residential,30,1
+1051,1052,15.08,residential,30,1
+1051,4024,59.08,residential,30,1
+4024,3331,12.89,residential,30,1
+3331,1092,5.99,residential,30,1
+1092,1117,61.18,residential,30,1
+1117,291,81.75,residential,30,1
+3337,3338,12.55,footway,5,1
+3338,3339,11.63,footway,5,1
+3339,3340,32.64,footway,5,1
+3340,3341,47.22,footway,5,1
+3341,3342,21.65,footway,5,1
+3342,3343,3.15,footway,5,1
+3343,3344,31.52,footway,5,1
+3344,3345,20.88,footway,5,1
+3345,3346,1.95,footway,5,1
+3346,3347,9.38,footway,5,1
+3347,3348,18.51,footway,5,1
+3348,3349,5.68,footway,5,1
+3349,3350,25.93,footway,5,1
+3350,3351,15.5,footway,5,1
+3351,3352,37.06,footway,5,1
+3352,3353,22.49,footway,5,1
+3353,3354,15.37,footway,5,1
+3354,3355,33.97,footway,5,1
+3355,3356,13.52,footway,5,1
+3356,3357,22.98,footway,5,1
+3357,3358,25.5,footway,5,1
+3358,3359,22.25,footway,5,1
+3359,3360,10.76,footway,5,1
+3360,3361,17.82,footway,5,1
+3361,4023,24.76,footway,5,1
+4023,3365,18.69,footway,5,1
+3365,3335,34.38,footway,5,1
+3335,3364,98.0,footway,5,1
+3364,3363,8.08,footway,5,1
+3363,3362,2.88,footway,5,1
+1052,3332,16.83,residential,30,1
+3332,477,46.24,residential,30,1
+477,321,29.55,residential,30,1
+321,322,13.26,residential,30,1
+322,323,16.38,residential,30,1
+323,324,11.49,residential,30,1
+324,325,13.02,residential,30,1
+325,326,18.32,residential,30,1
+326,3366,17.17,residential,30,1
+3370,1095,39.47,residential,30,1
+1095,330,22.16,residential,30,1
+330,331,11.76,residential,30,1
+331,1096,12.65,residential,30,1
+1096,3248,49.69,residential,30,1
+3248,332,5.58,residential,30,1
+3370,3369,4.64,footway,5,1
+3369,3368,22.77,footway,5,1
+3368,3367,157.86,footway,5,1
+3367,3366,2.71,footway,5,1
+1894,3389,2.6,service,10,1
+3389,3430,2.29,service,10,1
+3430,3388,18.34,service,10,1
+3390,3392,12.16,service,10,1
+3392,3391,1.9,service,10,1
+3388,3387,4.71,service,10,1
+3387,3386,4.42,service,10,1
+3386,3385,5.82,service,10,1
+3385,3384,3.09,service,10,1
+3384,3383,3.59,service,10,1
+3383,3382,4.15,service,10,1
+3382,3381,5.12,service,10,1
+3381,3380,2.71,service,10,1
+3391,3431,18.36,service,10,1
+3431,525,4.77,service,10,1
+2571,2572,15.98,service,10,1
+383,892,14.91,residential,30,1
+892,884,14.19,residential,30,1
+884,885,34.92,residential,30,1
+885,1231,50.4,residential,30,1
+4214,1717,9.39,residential,30,1
+4008,1903,83.25,residential,30,1
+1903,382,63.36,residential,30,1
+382,1902,38.17,residential,30,1
+1902,106,13.3,residential,30,1
+3404,3482,3.04,residential,30,0
+3482,3406,2.72,residential,30,0
+3406,3824,3.77,residential,30,0
+3824,3408,4.54,residential,30,0
+3408,3409,49.96,residential,30,0
+3407,3485,4.0,residential,30,0
+3485,3405,3.53,residential,30,0
+3405,3404,4.62,residential,30,0
+2337,1471,50.72,residential,30,1
+1471,3413,14.07,residential,30,1
+3413,3412,6.88,residential,30,1
+3412,2903,30.77,footway,5,1
+2903,2278,21.45,footway,5,1
+3418,3417,10.03,service,10,1
+3416,3421,3.66,service,10,1
+3421,3418,8.62,service,10,1
+3418,3420,32.39,service,10,1
+3420,3419,3.12,service,10,1
+3444,3443,9.12,path,5,1
+3443,3442,6.04,path,5,1
+3442,3441,5.85,path,5,1
+3441,3440,9.64,path,5,1
+3440,3439,7.81,path,5,1
+3439,3438,7.97,path,5,1
+3438,3437,2.36,path,5,1
+3446,3445,8.97,path,5,1
+3448,3447,12.01,path,5,1
+3465,3458,2.79,steps,5,1
+2338,3459,3.05,footway,5,1
+3459,3467,11.06,footway,5,1
+3467,3466,40.97,footway,5,1
+3466,3457,3.07,footway,5,1
+3457,3465,13.93,footway,5,1
+3458,3464,82.4,footway,5,1
+3464,3463,3.42,footway,5,1
+3463,3462,2.6,footway,5,1
+3462,3461,4.07,footway,5,1
+3461,3460,6.96,footway,5,1
+3472,3471,5.48,path,5,1
+3486,3477,3.94,residential,30,0
+3477,3407,63.08,residential,30,0
+2392,3477,4.18,footway,5,1
+3477,4192,98.61,footway,5,1
+4192,3478,3.87,footway,5,1
+3484,2617,35.36,residential,30,1
+2617,2350,1.55,residential,30,1
+2350,3480,4.7,residential,30,1
+3480,842,4.91,residential,30,1
+3217,146,50.69,primary,50,0
+800,2290,67.0,residential,30,0
+2290,1360,13.46,residential,30,0
+1360,827,11.11,residential,30,1
+827,1259,2.11,residential,30,1
+1259,799,7.21,residential,30,1
+2392,3487,44.06,footway,5,1
+3487,3825,5.15,footway,5,1
+3825,3488,17.61,footway,5,1
+3488,3489,113.86,footway,5,1
+3495,4077,13.79,service,10,1
+4077,4062,23.64,service,10,1
+4062,3492,3.49,service,10,1
+3492,3493,13.27,service,10,1
+3493,4057,3.65,service,10,1
+4057,3494,3.46,service,10,1
+3511,3510,3.99,footway,5,1
+3510,3509,5.18,footway,5,1
+3509,3508,14.55,footway,5,1
+3508,3507,1.96,footway,5,1
+3507,3506,1.71,footway,5,1
+3506,3505,1.38,footway,5,1
+3505,3496,1.22,footway,5,1
+3496,3504,0.41,footway,5,1
+3504,3503,1.35,footway,5,1
+3503,3502,1.3,footway,5,1
+3502,3501,32.68,footway,5,1
+3501,3500,38.03,footway,5,1
+3500,3497,10.92,footway,5,1
+3497,3499,4.74,footway,5,1
+3499,3498,38.19,footway,5,1
+3498,3411,6.15,footway,5,1
+3514,3513,11.15,footway,5,1
+3512,3819,9.8,footway,5,1
+3819,3828,151.89,footway,5,1
+3828,3515,4.65,footway,5,1
+3515,3489,5.26,footway,5,1
+3489,3514,194.23,footway,5,1
+3514,3517,8.13,footway,5,1
+3517,3516,8.4,footway,5,1
+3516,3496,6.87,footway,5,1
+3566,3518,113.58,footway,5,1
+3518,3513,118.95,footway,5,1
+3513,3517,8.52,footway,5,1
+792,2843,11.71,residential,30,1
+2843,129,87.55,residential,30,1
+129,4108,15.1,residential,30,1
+4108,794,93.79,residential,30,1
+792,2853,104.14,residential,30,0
+2853,2391,3.9,residential,30,0
+3537,3534,7.04,footway,5,1
+3536,3534,7.31,footway,5,1
+3534,3535,11.13,footway,5,1
+3484,3478,22.9,residential,30,0
+3478,2393,5.03,residential,30,0
+3539,3538,48.23,footway,5,1
+3538,3535,9.18,footway,5,1
+3535,3537,12.93,footway,5,1
+3537,3540,45.65,footway,5,1
+3540,3541,57.15,footway,5,1
+3541,3542,18.16,footway,5,1
+3542,3543,4.25,footway,5,1
+3543,3544,2.25,footway,5,1
+3544,3545,2.01,footway,5,1
+3545,3546,2.13,footway,5,1
+3546,3547,2.7,footway,5,1
+3547,3548,2.37,footway,5,1
+3548,3549,3.87,footway,5,1
+3549,3550,70.98,footway,5,1
+3550,3670,4.77,footway,5,1
+3670,3551,1.25,footway,5,1
+3551,3552,3.99,footway,5,1
+3552,3553,3.66,footway,5,1
+3553,3554,8.89,footway,5,1
+3556,3555,20.08,footway,5,1
+3558,3557,21.83,footway,5,1
+3716,3708,5.57,footway,5,1
+3708,3713,2.01,footway,5,1
+3713,3718,6.86,footway,5,1
+3718,3719,5.96,footway,5,1
+3719,3720,2.73,footway,5,1
+3720,3721,4.91,footway,5,1
+3721,3715,1.19,footway,5,1
+3715,3722,4.2,footway,5,1
+3722,3714,2.86,footway,5,1
+3714,3716,12.94,footway,5,1
+3566,3565,35.17,footway,5,1
+3565,3533,15.87,footway,5,1
+3533,3564,19.57,footway,5,1
+3564,3563,45.77,footway,5,1
+3563,3559,7.93,footway,5,1
+3559,3558,7.46,footway,5,1
+3558,3562,2.61,footway,5,1
+3562,3556,26.09,footway,5,1
+3556,3554,2.52,footway,5,1
+3554,3561,5.79,footway,5,1
+3568,3533,11.89,service,10,1
+3533,3567,13.77,service,10,1
+3564,3569,16.14,footway,5,1
+3572,3573,25.66,service,10,1
+3574,3755,3.96,service,10,1
+3755,3572,4.78,service,10,1
+3577,3575,16.19,footway,5,1
+3647,3578,9.59,footway,5,1
+3578,3577,3.51,footway,5,1
+3577,3576,5.22,footway,5,1
+3479,4191,6.47,footway,5,1
+4191,3579,2.44,footway,5,1
+3579,3481,1.74,footway,5,1
+3581,3580,4.47,footway,5,1
+3583,3581,2.55,footway,5,1
+3581,3582,15.63,footway,5,1
+2618,3585,22.76,footway,5,1
+3585,3582,3.13,footway,5,1
+3582,3584,1.72,footway,5,1
+3587,3591,4.13,footway,5,1
+3591,3590,2.11,footway,5,1
+3590,3589,1.53,footway,5,1
+3588,3595,7.82,footway,5,1
+3595,3599,1.33,footway,5,1
+3599,3598,15.37,footway,5,1
+3598,3597,4.09,footway,5,1
+3595,3594,6.8,footway,5,1
+3598,3596,2.23,footway,5,1
+3646,3612,12.08,footway,5,1
+3612,3611,11.93,footway,5,1
+3611,3610,8.58,footway,5,1
+3610,3609,5.79,footway,5,1
+3609,3608,3.87,footway,5,1
+3608,3607,3.23,footway,5,1
+3607,3606,2.4,footway,5,1
+3606,3605,2.9,footway,5,1
+3605,3604,1.95,footway,5,1
+3604,3589,0.82,footway,5,1
+3589,3603,1.5,footway,5,1
+3603,3602,2.76,footway,5,1
+3602,3601,3.62,footway,5,1
+3601,3600,1.74,footway,5,1
+3600,3588,16.39,footway,5,1
+3617,3616,9.13,footway,5,1
+3616,3615,8.61,footway,5,1
+3615,3614,25.1,footway,5,1
+3614,3613,8.38,footway,5,1
+3613,3592,7.22,footway,5,1
+3592,3593,7.9,footway,5,1
+3593,3587,1.01,footway,5,1
+3629,3628,2.18,footway,5,1
+3628,3627,1.88,footway,5,1
+3627,3626,1.75,footway,5,1
+3626,3625,5.57,footway,5,1
+3625,3624,132.19,footway,5,1
+3624,3623,1.55,footway,5,1
+3623,3622,1.48,footway,5,1
+3622,3621,2.18,footway,5,1
+3621,3620,2.45,footway,5,1
+3620,3619,1.87,footway,5,1
+3619,3618,124.35,footway,5,1
+3637,3636,125.25,footway,5,1
+3636,3635,2.32,footway,5,1
+3635,3634,2.08,footway,5,1
+3634,3633,1.45,footway,5,1
+3633,3632,1.91,footway,5,1
+3632,3631,6.58,footway,5,1
+3631,3586,28.43,footway,5,1
+3586,3629,102.01,footway,5,1
+3629,3630,5.36,footway,5,1
+3630,3726,7.53,footway,5,1
+3645,3642,20.6,footway,5,1
+3642,3641,8.13,footway,5,1
+3641,3640,7.26,footway,5,1
+3640,3639,10.27,footway,5,1
+3639,3638,3.39,footway,5,1
+3481,3649,10.88,footway,5,1
+3649,3648,16.72,footway,5,1
+3648,3647,21.46,footway,5,1
+3647,3646,19.32,footway,5,1
+3646,3645,20.76,footway,5,1
+3645,3644,16.07,footway,5,1
+3644,3643,9.86,footway,5,1
+3651,3618,4.77,footway,5,1
+3618,3579,4.5,footway,5,1
+3579,3637,16.2,footway,5,1
+3637,3650,6.06,footway,5,1
+3653,3652,3.14,footway,5,1
+2616,3653,10.15,footway,5,1
+3654,2615,13.35,footway,5,1
+3560,3654,3.23,footway,5,1
+3655,3656,1.93,footway,5,1
+2614,3655,10.11,footway,5,1
+3670,2614,6.66,footway,5,1
+2615,3998,9.7,steps,5,1
+3700,3694,13.09,footway,5,1
+3694,2616,8.35,footway,5,1
+3665,3657,9.13,footway,5,1
+3657,3658,2.6,footway,5,1
+3671,3658,9.63,footway,5,1
+3658,3663,8.98,footway,5,1
+3663,3662,14.11,footway,5,1
+3662,3661,4.88,footway,5,1
+3661,3660,11.5,footway,5,1
+3660,3659,9.77,footway,5,1
+3659,3662,1.14,footway,5,1
+3656,3669,1.98,footway,5,1
+3669,3668,10.27,footway,5,1
+3668,3667,13.13,footway,5,1
+3667,3675,1.85,footway,5,1
+3675,3666,3.36,footway,5,1
+3666,3671,5.75,footway,5,1
+3671,3665,15.89,footway,5,1
+3665,3664,7.73,footway,5,1
+3679,3678,32.73,footway,5,1
+3678,3677,15.18,footway,5,1
+3677,3676,4.35,footway,5,1
+3676,3657,3.92,footway,5,1
+3657,3671,10.23,footway,5,1
+3671,3675,8.41,footway,5,1
+3675,3674,12.74,footway,5,1
+3674,3673,10.45,footway,5,1
+3673,3672,4.29,footway,5,1
+3701,3680,9.01,footway,5,1
+3686,3682,9.87,footway,5,1
+3693,3691,6.22,footway,5,1
+3691,3690,6.73,footway,5,1
+3690,3689,2.4,footway,5,1
+3689,3688,1.18,footway,5,1
+3688,3664,17.05,footway,5,1
+3664,3687,2.43,footway,5,1
+3687,3686,14.17,footway,5,1
+3686,3685,1.14,footway,5,1
+3685,3684,17.13,footway,5,1
+3684,3683,3.39,footway,5,1
+3697,3681,12.69,footway,5,1
+3681,3680,10.15,footway,5,1
+3680,3693,6.92,footway,5,1
+3693,3692,17.0,footway,5,1
+3695,3694,8.64,footway,5,1
+3652,3699,2.33,footway,5,1
+3699,3698,5.28,footway,5,1
+3698,3697,16.27,footway,5,1
+3697,3696,6.03,footway,5,1
+3696,3698,13.27,footway,5,1
+3704,3683,4.98,footway,5,1
+3683,3701,35.53,footway,5,1
+3701,3681,7.1,footway,5,1
+3706,3702,20.08,footway,5,1
+3711,3707,16.21,footway,5,1
+3707,3706,6.82,footway,5,1
+3706,3705,17.14,footway,5,1
+3705,3704,2.89,footway,5,1
+3704,3703,16.41,footway,5,1
+3709,3708,9.97,footway,5,1
+3712,3711,24.43,footway,5,1
+3711,3710,10.89,footway,5,1
+3714,3713,8.69,footway,5,1
+3718,3715,9.43,footway,5,1
+3717,3702,2.98,footway,5,1
+3702,3716,1.66,footway,5,1
+3716,3723,5.67,footway,5,1
+3723,3709,4.02,footway,5,1
+3709,3560,0.56,footway,5,1
+3543,3725,4.42,footway,5,1
+3725,3619,5.59,footway,5,1
+3624,3724,6.6,footway,5,1
+3724,3747,4.77,footway,5,1
+3728,3727,95.47,footway,5,1
+3732,3730,17.45,service,10,1
+3730,3728,5.38,service,10,1
+3728,3729,4.94,service,10,1
+3729,3731,3.42,service,10,1
+3743,3740,13.97,service,10,1
+3740,3742,4.54,service,10,1
+3755,3754,2.86,footway,5,1
+3754,3753,1.44,footway,5,1
+3753,3752,1.7,footway,5,1
+3752,3751,1.34,footway,5,1
+3751,3750,1.88,footway,5,1
+3750,3749,1.36,footway,5,1
+3749,3748,1.93,footway,5,1
+3748,3747,2.09,footway,5,1
+3747,3746,2.26,footway,5,1
+3746,3745,25.29,footway,5,1
+3745,3744,59.71,footway,5,1
+3744,3740,22.18,footway,5,1
+3740,3741,26.06,footway,5,1
+3741,3739,2.79,footway,5,1
+3739,3738,2.06,footway,5,1
+3738,3726,1.88,footway,5,1
+3726,3737,0.63,footway,5,1
+3737,3736,1.83,footway,5,1
+3736,3735,3.79,footway,5,1
+3735,3734,1.86,footway,5,1
+3734,3733,2.42,footway,5,1
+3733,3729,38.53,footway,5,1
+3586,2618,7.94,footway,5,1
+3781,3760,1.9,footway,5,1
+3760,3780,3.57,footway,5,1
+3780,3779,1.1,footway,5,1
+3779,3778,0.86,footway,5,1
+3778,3777,1.09,footway,5,1
+3777,3761,5.43,footway,5,1
+3761,3776,9.28,footway,5,1
+3776,3775,1.59,footway,5,1
+3775,3774,1.31,footway,5,1
+3774,3773,1.12,footway,5,1
+3773,3772,1.22,footway,5,1
+3772,3771,1.67,footway,5,1
+3771,3770,1.34,footway,5,1
+3770,3769,1.29,footway,5,1
+3769,3768,5.16,footway,5,1
+3768,3767,4.77,footway,5,1
+3767,3766,2.09,footway,5,1
+3766,3765,1.54,footway,5,1
+3765,3764,2.31,footway,5,1
+3764,3763,2.46,footway,5,1
+3763,3762,3.99,footway,5,1
+3808,3807,32.59,footway,5,1
+3807,3806,1.64,footway,5,1
+3806,3805,2.53,footway,5,1
+3805,3781,2.09,footway,5,1
+3781,3804,0.76,footway,5,1
+3804,3803,3.51,footway,5,1
+3803,3802,2.49,footway,5,1
+3802,3801,3.73,footway,5,1
+3801,3800,2.66,footway,5,1
+3800,3799,2.49,footway,5,1
+3799,3798,2.96,footway,5,1
+3798,3797,2.76,footway,5,1
+3797,3796,4.91,footway,5,1
+3862,3861,4.22,footway,5,1
+3861,3860,3.22,footway,5,1
+3860,3859,2.8,footway,5,1
+3859,3858,2.78,footway,5,1
+3858,3857,3.19,footway,5,1
+3857,3856,3.23,footway,5,1
+3856,3855,3.99,footway,5,1
+3855,3854,3.32,footway,5,1
+3854,3853,2.96,footway,5,1
+3853,3852,3.49,footway,5,1
+3852,3851,3.89,footway,5,1
+3851,3850,1.58,footway,5,1
+3850,3808,1.95,footway,5,1
+3808,3849,1.08,footway,5,1
+3849,3848,3.2,footway,5,1
+3848,3847,6.71,footway,5,1
+3847,3758,1.8,footway,5,1
+3758,3846,5.72,footway,5,1
+3846,3845,2.08,footway,5,1
+3845,3844,1.36,footway,5,1
+3844,3843,0.84,footway,5,1
+3843,3842,1.12,footway,5,1
+3842,3841,3.6,footway,5,1
+3841,3840,4.59,footway,5,1
+3840,3839,4.29,footway,5,1
+3839,3838,4.35,footway,5,1
+3838,3837,2.92,footway,5,1
+3837,3836,1.81,footway,5,1
+3836,3835,3.82,footway,5,1
+3835,3834,4.45,footway,5,1
+3834,3833,3.6,footway,5,1
+3833,3832,2.01,footway,5,1
+3832,3831,1.24,footway,5,1
+3831,3830,1.26,footway,5,1
+3830,3829,1.37,footway,5,1
+3829,3810,2.01,footway,5,1
+3810,3809,1.92,footway,5,1
+3865,3864,7.1,footway,5,1
+3864,3796,51.18,footway,5,1
+3796,3863,12.66,footway,5,1
+3761,3782,9.55,footway,5,1
+3782,3762,7.1,footway,5,1
+3762,3783,8.33,footway,5,1
+3783,3784,8.88,footway,5,1
+3784,3759,2.16,footway,5,1
+3759,3785,0.96,footway,5,1
+3785,3758,1.8,footway,5,1
+3758,3786,2.71,footway,5,1
+3786,3787,2.63,footway,5,1
+3787,3788,1.95,footway,5,1
+3788,3789,1.92,footway,5,1
+3789,3790,3.04,footway,5,1
+3790,3791,5.46,footway,5,1
+3791,3792,4.7,footway,5,1
+3792,3793,4.36,footway,5,1
+3793,3794,3.79,footway,5,1
+3794,3795,4.33,footway,5,1
+3795,3867,5.7,footway,5,1
+3867,3809,56.14,footway,5,1
+3809,3866,16.74,footway,5,1
+3870,3865,5.99,footway,5,1
+3865,3862,2.88,footway,5,1
+3862,3869,1.89,footway,5,1
+3869,3867,81.01,footway,5,1
+3867,3868,7.7,footway,5,1
+3813,3811,13.54,service,10,1
+3811,3812,10.13,service,10,1
+3816,3814,6.82,service,10,1
+3814,3815,4.79,service,10,1
+3817,3404,8.98,footway,5,1
+3819,3811,27.9,footway,5,1
+3811,3818,94.85,footway,5,1
+3818,4188,3.39,footway,5,1
+3827,3877,4.22,footway,5,1
+3877,3817,7.46,footway,5,1
+3817,3821,13.57,footway,5,1
+3821,3814,48.24,footway,5,1
+3814,3818,80.86,footway,5,1
+3818,3820,11.0,footway,5,1
+3488,3822,8.04,footway,5,1
+3826,3822,8.23,footway,5,1
+3822,3825,15.41,footway,5,1
+3521,3874,2.82,footway,5,1
+3874,3873,1.76,footway,5,1
+3873,3872,1.93,footway,5,1
+3872,3871,1.14,footway,5,1
+3871,3757,1.14,footway,5,1
+3757,3756,55.42,footway,5,1
+3828,3877,113.77,footway,5,1
+3879,3878,3.85,footway,5,1
+3887,3879,5.28,footway,5,1
+3878,3886,6.22,footway,5,1
+3886,3885,1.91,footway,5,1
+3885,3884,1.19,footway,5,1
+3884,3883,0.93,footway,5,1
+3883,3882,1.19,footway,5,1
+3882,3881,1.11,footway,5,1
+3881,3880,0.79,footway,5,1
+3889,3888,3.52,footway,5,1
+3896,3889,6.34,footway,5,1
+3888,3895,3.46,footway,5,1
+3895,3894,2.01,footway,5,1
+3894,3893,1.13,footway,5,1
+3893,3892,1.19,footway,5,1
+3892,3891,0.84,footway,5,1
+3891,3890,1.13,footway,5,1
+3898,3897,3.28,footway,5,1
+3904,3898,6.73,footway,5,1
+3897,3903,1.99,footway,5,1
+3903,3902,1.58,footway,5,1
+3902,3901,1.14,footway,5,1
+3901,3900,2.04,footway,5,1
+3900,3899,1.95,footway,5,1
+3905,3907,3.03,footway,5,1
+3906,3905,4.21,footway,5,1
+3908,3906,6.73,footway,5,1
+2424,3911,6.44,footway,5,1
+3911,3910,7.39,footway,5,1
+3911,3912,2.51,steps,5,1
+3917,3913,8.79,footway,5,1
+3913,3919,2.19,footway,5,1
+2317,3918,3.14,service,10,1
+3918,3917,7.78,service,10,1
+3917,3916,12.53,service,10,1
+3916,3915,9.48,service,10,1
+3915,3914,9.78,service,10,1
+3920,3923,3.7,steps,5,1
+1452,3920,11.8,footway,5,1
+3923,3922,1.52,footway,5,1
+3922,3921,7.94,footway,5,1
+3921,3913,10.93,footway,5,1
+3471,3470,5.71,path,5,1
+3470,3469,3.9,path,5,1
+3469,3468,5.71,path,5,1
+3468,3471,3.9,path,5,1
+3925,3924,12.85,steps,5,1
+3924,3926,16.47,steps,5,1
+3926,3938,4.95,steps,5,1
+3933,3925,5.55,service,10,1
+3925,3930,0.78,service,10,1
+3930,3929,6.27,service,10,1
+3929,3928,5.88,service,10,1
+3934,3933,13.4,service,10,1
+3933,3932,3.07,service,10,1
+3932,3935,6.32,service,10,1
+3935,3931,6.98,service,10,1
+3935,3927,2.15,steps,5,1
+3927,3936,2.29,steps,5,1
+3936,3937,28.84,steps,5,1
+3937,3939,7.72,steps,5,1
+3940,3942,13.77,steps,5,1
+3943,3941,13.3,steps,5,1
+3951,2412,5.56,steps,5,1
+3948,3951,2.14,footway,5,1
+3953,3952,5.94,footway,5,1
+3952,3950,42.53,footway,5,1
+3950,2412,4.47,footway,5,1
+3954,3953,6.38,steps,5,1
+3949,3954,3.11,footway,5,1
+3956,3955,6.62,service,10,1
+3955,3960,32.89,service,10,1
+3958,3959,19.75,service,10,1
+3959,3960,28.06,service,10,1
+3960,3957,60.48,service,10,1
+841,3962,5.96,footway,5,1
+3962,3963,3.88,footway,5,1
+3963,3964,0.78,footway,5,1
+1242,3965,9.68,path,5,1
+1121,3965,14.22,service,10,1
+3973,3966,5.61,footway,5,1
+3991,3990,6.25,service,10,1
+3990,3989,3.21,service,10,1
+3989,3988,1.98,service,10,1
+3988,3987,1.39,service,10,1
+3987,3986,1.71,service,10,1
+3986,3985,2.89,service,10,1
+3985,3984,3.8,service,10,1
+3984,3983,25.12,service,10,1
+3983,3982,12.9,service,10,1
+3982,3981,6.15,service,10,1
+3981,3980,3.55,service,10,1
+3980,3979,3.37,service,10,1
+3979,3978,2.64,service,10,1
+3978,3977,7.35,service,10,1
+3992,3993,3.85,steps,5,1
+3331,3992,11.68,footway,5,1
+3998,3559,14.33,footway,5,1
+3220,3999,1.97,service,10,1
+3999,4001,5.0,service,10,1
+4001,4000,11.28,service,10,1
+3217,3218,5.34,service,10,1
+3218,3219,8.68,service,10,1
+3219,3220,3.21,service,10,1
+3220,4002,2.12,service,10,1
+4007,4006,95.77,footway,5,1
+4006,4005,17.55,footway,5,1
+1231,4008,31.36,residential,30,1
+4011,4009,65.25,service,10,1
+4009,4010,4.43,service,10,1
+4012,4013,86.65,footway,5,1
+4013,4014,18.91,footway,5,1
+4014,4016,31.33,footway,5,1
+4016,4015,12.34,footway,5,1
+4028,4027,10.34,steps,5,1
+4018,4031,13.51,footway,5,1
+4031,4030,1.23,footway,5,1
+4030,4029,8.51,footway,5,1
+4029,4028,4.3,footway,5,1
+4028,4022,6.52,footway,5,1
+4022,4021,9.12,footway,5,1
+4020,4019,12.59,footway,5,1
+4019,4018,4.31,footway,5,1
+4018,4017,3.64,footway,5,1
+4026,4022,10.34,footway,5,1
+4027,4026,6.51,footway,5,1
+4026,4025,3.81,footway,5,1
+4025,4023,10.25,footway,5,1
+4023,4024,11.13,footway,5,1
+4041,4032,6.28,footway,5,1
+4032,4038,38.97,footway,5,1
+4039,4034,13.96,service,10,1
+4034,4040,2.8,service,10,1
+4040,4038,49.2,service,10,1
+4038,4035,17.4,service,10,1
+4035,4037,11.36,service,10,1
+4037,4033,29.74,service,10,1
+4033,4036,6.41,service,10,1
+4044,4043,8.79,footway,5,1
+4043,4042,94.35,footway,5,1
+4049,4048,11.08,footway,5,1
+2219,4050,8.39,footway,5,1
+4053,4052,3.84,footway,5,1
+4052,4055,8.2,footway,5,1
+4055,4051,1.48,footway,5,1
+1146,2204,29.07,footway,5,1
+2204,2205,11.9,footway,5,1
+4081,4059,3.39,footway,5,1
+4059,4068,14.06,footway,5,1
+4063,4059,15.17,footway,5,1
+4059,4061,10.08,footway,5,1
+4061,4060,20.36,footway,5,1
+4073,4063,15.48,footway,5,1
+4063,4082,3.65,footway,5,1
+4075,4074,6.08,footway,5,1
+4074,4073,3.37,footway,5,1
+4073,4064,2.26,footway,5,1
+4064,4072,2.28,footway,5,1
+4072,4071,2.89,footway,5,1
+4071,4070,2.78,footway,5,1
+4070,4069,2.29,footway,5,1
+4069,4068,3.42,footway,5,1
+4068,4067,5.92,footway,5,1
+4067,4066,2.76,footway,5,1
+4066,4065,4.12,footway,5,1
+4078,4076,17.69,service,10,1
+4076,4075,3.52,service,10,1
+4075,4065,25.18,service,10,1
+4065,4077,10.77,service,10,1
+4079,4076,9.9,steps,5,1
+4080,4079,17.12,footway,5,1
+4079,1810,2.47,footway,5,1
+794,4110,3.22,footway,5,1
+4110,4109,17.82,footway,5,1
+4112,4111,17.81,footway,5,1
+4121,4120,55.47,service,10,1
+4120,4115,5.2,service,10,1
+4124,4118,4.34,steps,5,1
+4118,4119,37.51,steps,5,1
+4119,4116,7.3,steps,5,1
+4127,4124,4.58,service,10,1
+4124,4123,23.95,service,10,1
+4123,4122,15.93,service,10,1
+432,4117,7.19,service,10,1
+4117,4127,37.68,service,10,1
+4127,4126,10.95,service,10,1
+4126,4125,6.89,service,10,1
+693,2517,5.0,residential,50,1
+2517,720,8.92,residential,50,1
+720,4133,13.34,residential,50,1
+3259,2909,16.25,footway,5,1
+2909,4132,4.84,footway,5,1
+4132,2511,6.58,footway,5,1
+2511,4131,5.31,footway,5,1
+4136,4140,20.9,footway,5,1
+4110,4139,9.01,footway,5,1
+4139,4136,44.41,footway,5,1
+4136,4138,36.26,footway,5,1
+4138,4137,14.39,footway,5,1
+4135,4134,5.16,footway,5,1
+4134,4136,1.23,footway,5,1
+4143,4142,23.38,service,10,1
+4142,4146,26.15,service,10,1
+4146,4141,5.04,service,10,1
+4151,4153,1.54,footway,5,1
+4151,4152,0.74,steps,5,1
+4155,4154,9.82,footway,5,1
+4154,4152,2.25,footway,5,1
+4159,4158,35.34,steps,5,1
+605,4163,4.73,residential,50,1
+4166,4165,6.02,steps,5,1
+4167,4165,6.32,steps,5,1
+4165,4164,6.72,steps,5,1
+1489,1328,13.75,tertiary,50,1
+1328,1331,52.84,tertiary,50,1
+1331,1261,38.92,tertiary,50,1
+578,1463,20.24,residential,30,1
+578,1464,9.26,service,10,1
+1464,2264,1.93,service,10,1
+4171,4172,8.57,steps,5,1
+4169,1976,6.49,steps,5,1
+4171,4170,22.44,path,5,1
+4170,1976,14.01,path,5,1
+1976,1975,15.43,path,5,1
+1975,4173,6.33,path,5,1
+4177,4174,3.9,service,10,1
+4174,4176,41.34,service,10,1
+4176,4175,8.7,service,10,1
+4179,4178,52.36,path,5,1
+4187,4186,8.41,service,10,1
+4186,4185,4.81,service,10,1
+4185,4184,3.48,service,10,1
+4184,4183,8.76,service,10,1
+4183,4182,12.5,service,10,1
+4182,4181,26.49,service,10,1
+4188,4189,97.27,footway,5,1
+4189,3633,12.38,footway,5,1
+4190,4192,68.51,footway,5,1
+4197,2972,6.89,service,10,1
+2972,4193,0.79,service,10,1
+4193,4196,27.61,service,10,1
+4196,4195,27.74,service,10,1
+4198,984,12.15,steps,5,1
+4206,4205,11.41,service,10,1
+4205,4204,13.49,service,10,1
+4208,4207,29.48,path,5,1
+1030,2502,8.2,residential,30,1
+2502,573,80.91,residential,30,1
+4215,4217,9.81,service,10,1
+4217,4216,99.22,service,10,1
+886,887,40.88,residential,30,1
+887,1378,69.18,residential,30,1
+1378,4214,36.63,residential,30,1
+4209,4218,4.95,path,5,1
+4218,4219,7.05,path,5,1
+4219,4220,8.59,path,5,1
+4220,4221,6.41,path,5,1
+4221,4222,7.83,path,5,1
+4222,4223,2.66,path,5,1
+4223,4224,4.52,path,5,1
+4224,4225,0.93,path,5,1
+2404,4228,2.36,steps,5,1
+4228,4227,6.38,steps,5,1
+4234,4233,11.1,service,10,1
+4233,4232,4.21,service,10,1
+4232,4231,1.04,service,10,1
+4231,4230,3.5,service,10,1
+4230,4229,9.25,service,10,1
+4237,4227,15.75,path,5,1
+4227,4236,16.01,path,5,1
+4236,4226,10.14,path,5,1
+4226,4235,7.98,path,5,1
+4235,4229,101.17,path,5,1
+2400,4239,3.79,steps,5,1
+4239,4238,6.56,steps,5,1
+4189,4242,3.76,footway,5,1
+4242,4190,142.6,footway,5,1
+4243,3820,74.97,footway,5,1
+4247,4250,13.13,footway,5,1
+4250,4249,10.91,footway,5,1
+4249,4248,2.69,footway,5,1
+4251,1231,70.39,steps,5,1
+4260,4257,64.87,footway,5,1
+4257,4256,10.62,footway,5,1
+4256,4255,6.14,footway,5,1
+4255,4252,17.0,footway,5,1
+4252,4254,17.13,footway,5,1
+4254,4253,23.38,footway,5,1
+4253,1252,3.21,footway,5,1
+4262,4261,10.43,steps,5,1
+4261,4260,19.84,steps,5,1
+4264,4267,23.06,footway,5,1
+4263,4264,5.53,steps,5,1
+4268,4270,111.18,footway,5,1
+4270,4269,8.15,footway,5,1
+4265,4268,3.67,steps,5,1
+4266,4271,7.8,footway,5,1
+4271,4265,9.2,footway,5,1
+4267,4266,4.41,steps,5,1
+3327,3326,39.74,steps,5,1
+3293,3328,15.35,footway,5,1
+3328,3327,32.43,footway,5,1

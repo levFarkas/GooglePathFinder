@@ -1,15 +1,18 @@
 from multiprocessing import Pool
 from typing import List
+from random import randint
 
 import dearpygui.core as core
 
 from GooglePathFinder.src.backend.services.algorithm_handler_service import AlgorithmHandlerService
+from GooglePathFinder.src.frontend.map_display import MapDisplay
 
 
 class ExecutionPanel:
-    def __init__(self, name: str, parent: str):
+    def __init__(self, name: str, parent: str, plotter: MapDisplay):
         self.name = name
         self.parent = parent
+        self.plotter = plotter
         self.algorithm_service = AlgorithmHandlerService()
         self.pool = Pool()
         self.algorithms = {
@@ -95,23 +98,25 @@ class ExecutionPanel:
         init_coords = core.get_value("init_coordinate")
         dest_coords = core.get_value("destination_coordinate")
 
+        objective = {}
         for algorithm in selected_algorithms:
-            result = self.pool.apply_async(
-                self._do_execute,
-                args=[algorithm, init_coords, dest_coords],
-                callback=self._handle_result
-            )
-            result.get()
+            init_node = self.algorithm_service.get_nearest_node_by_lat_long(float(init_coords[0]), float(init_coords[1]))
+            dest_node = self.algorithm_service.get_nearest_node_by_lat_long(float(dest_coords[0]), float(dest_coords[1]))
+            objective[algorithm] = [init_node, dest_node]
 
-    def _do_execute(self, algorithm: str, init_coords, dest_coords):
-        init_node = self.algorithm_service.get_nearest_node_by_lat_long(float(init_coords[0]), float(init_coords[1]))
-        dest_node = self.algorithm_service.get_nearest_node_by_lat_long(float(dest_coords[0]), float(dest_coords[1]))
-        print(init_node.node_id)
-        print(dest_node.node_id)
-        return self.algorithms[algorithm](init_node, dest_node)
+        self.pool.apply_async(
+            self.algorithm_service.compute,
+            args=[objective],
+            callback=self._handle_result
+        )
 
     def _handle_result(self, result):
-        print(result)
+        self.plotter.refresh()
+        for algorithm in result:
+            route = []
+            for n in algorithm["alg_result"]["path"]:
+                route.append((n.latitude, n.longitude))
+            self.plotter.plot_route(route, (255, randint(0,255), randint(0,255)))
 
     def update_listbox(self):
         core.configure_item(

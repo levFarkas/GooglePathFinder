@@ -1,5 +1,6 @@
 import logging
 from typing import Callable
+from copy import deepcopy
 
 from GooglePathFinder.src.model.node import Node
 from GooglePathFinder.src.backend.services.interface.distance_interface import DistanceInterface
@@ -60,17 +61,18 @@ class BiAStar:
             # Find candidates with minimum weight (by minimizing tentative_cost)
             min_nodes = []
             min_cost = float("inf")
-            for f_node, b_node in zip(forward_open.keys(), backward_open.keys()):
-                tentative_cost = max(
-                    forward_open[f_node] + heuristic_function(f_node, end_node),
-                    backward_open[b_node] + heuristic_function(b_node, start_node),
-                    forward_open[f_node] + backward_open[b_node],
-                )
-                if tentative_cost < min_cost:
-                    min_nodes = [(f_node, b_node)]
-                    min_cost = tentative_cost
-                elif tentative_cost == min_cost:
-                    min_nodes.append((f_node, b_node))
+            for f_node in forward_open.keys():
+                for b_node in backward_open.keys():
+                    tentative_cost = max(
+                        forward_open[f_node] + heuristic_function(f_node, end_node),
+                        backward_open[b_node] + heuristic_function(b_node, start_node),
+                        forward_open[f_node] + backward_open[b_node],
+                    )
+                    if tentative_cost < min_cost:
+                        min_nodes = [(f_node, b_node)]
+                        min_cost = tentative_cost
+                    elif tentative_cost == min_cost:
+                        min_nodes.append((f_node, b_node))
 
             if min_cost > solution["path_cost"]:
                 break
@@ -81,12 +83,10 @@ class BiAStar:
             )
 
             del forward_open[f_expanded]
-            forward_dict[f_expanded]["preceding"] = forward_current
             forward_current = f_expanded
             forward_dict[forward_current]["visited"] = True
 
             del backward_open[b_expanded]
-            backward_dict[b_expanded]["preceding"] = backward_current
             backward_current = b_expanded
             backward_dict[backward_current]["visited"] = True
 
@@ -122,12 +122,12 @@ class BiAStar:
                         logging.warning("A closed node is revisited.")
 
                     forward_dict[n_node]["sum_distance"] = neighbor_distance
-                    forward_dict[n_node]["preceding"] = forward_current
+                    forward_dict[n_node]["preceding"] = deepcopy(forward_current)
                     forward_dict[n_node]["visited"] = False
                 else:
                     forward_dict[n_node] = {
                         "sum_distance": neighbor_distance,
-                        "preceding": forward_current,
+                        "preceding": deepcopy(forward_current),
                         "visited": False,
                     }
                 forward_open[n_node] = neighbor_distance
@@ -164,12 +164,12 @@ class BiAStar:
                         logging.warning("A closed node is revisited.")
 
                     backward_dict[n_node]["sum_distance"] = neighbor_distance
-                    backward_dict[n_node]["preceding"] = backward_current
+                    backward_dict[n_node]["preceding"] = deepcopy(backward_current)
                     backward_dict[n_node]["visited"] = False
                 else:
                     backward_dict[n_node] = {
                         "sum_distance": neighbor_distance,
-                        "preceding": backward_current,
+                        "preceding": deepcopy(backward_current),
                         "visited": False,
                     }
                 backward_open[n_node] = neighbor_distance
@@ -193,12 +193,12 @@ class BiAStar:
         curr_backward = solution["node"]
 
         while curr_forward != start_node:
-            path.insert(0, curr_forward.node_id)
+            path.insert(0, deepcopy(curr_forward))
             curr_forward = forward_dict[curr_forward]["preceding"]
 
         while curr_backward != None:
             curr_backward = backward_dict[curr_backward]["preceding"]
             if curr_backward != None:
-                path.append(curr_backward.node_id)
+                path.append(deepcopy(curr_backward))
 
         return {"path": path, "distance": sum_distance, "expanded": len(backward_dict) + len(forward_dict)}

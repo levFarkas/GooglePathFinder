@@ -1,5 +1,6 @@
 import logging
 from queue import PriorityQueue
+from copy import deepcopy
 
 from GooglePathFinder.src.model.node import Node
 from GooglePathFinder.src.backend.services.interface.distance_interface import DistanceInterface
@@ -24,7 +25,7 @@ class Dijkstra:
             neighbor_queue.put([n_distance, n_node])
             node_dict[n_node] = {
                 "sum_distance": n_distance,
-                "preceding": curr_node,
+                "preceding": deepcopy(curr_node),
                 "visited": False,
             }
 
@@ -44,7 +45,7 @@ class Dijkstra:
                     neighbor_queue.put([updated_distance, n_node])
                     node_dict[n_node] = {
                         "sum_distance": updated_distance,
-                        "preceding": curr_node,
+                        "preceding": deepcopy(curr_node),
                         "visited": False,
                     }
 
@@ -55,7 +56,7 @@ class Dijkstra:
                         )
 
                     neighbor_queue.put([updated_distance, n_node])
-                    node_dict[n_node]["preceding"] = curr_node
+                    node_dict[n_node]["preceding"] = deepcopy(curr_node)
                     node_dict[n_node]["sum_distance"] = updated_distance
 
         # Evaluate the solution ------------------------------------------------
@@ -74,7 +75,7 @@ class Dijkstra:
         # Reconstruct the path
         path = []
         while curr_node != start_node:
-            path.insert(0, curr_node.node_id)
+            path.insert(0, deepcopy(curr_node))
             curr_node = node_dict[curr_node]["preceding"]
 
         return {"path": path, "distance": sum_distance, "expanded": len(node_dict)}

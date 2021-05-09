@@ -16,7 +16,7 @@ def node_l2distance(node_x: Node, node_y: Node):
     )
 
 
-def node_shperical_distance(node_x: Node, node_y, Node):
+def node_shperical_distance(node_x: Node, node_y: Node):
     p1 = Point(latitude=node_x.latitude, longitude=node_x.longitude)
     p2 = Point(latitude=node_y.latitude, longitude=node_y.longitude)
     return distance.distance(p1, p2).meters
