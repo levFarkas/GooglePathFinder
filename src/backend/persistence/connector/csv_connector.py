@@ -40,7 +40,7 @@ class CSVConnector(Connector):
         for n in neighbor_entries:
             current_dao = self.find_node_by_id(n[0])
             if current_dao is None:
-                break
+                continue
             current_dao.distance = float(n[1])
             neighbors.append(current_dao)
         return neighbors
