@@ -61,16 +61,9 @@ class Dijkstra:
 
         # Evaluate the solution ------------------------------------------------
         if curr_node != end_node:
-            logging.info(
-                f"There is no path between {start_node.node_id} and {end_node.node_id}."
-            )
             return {"path": [], "distance": float("inf"), "expanded": len(node_dict)}
 
         sum_distance = node_dict[end_node]["sum_distance"]
-        logging.info(
-            f"Path computed successfully between node {start_node.node_id} and \
-            {end_node.node_id}. Final distance is {sum_distance}"
-        )
 
         # Reconstruct the path
         path = []

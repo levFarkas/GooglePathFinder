@@ -2,6 +2,7 @@ from functools import reduce
 from multiprocessing import Process
 from multiprocessing import Queue
 from typing import List, Dict, Tuple
+import logging
 
 from GooglePathFinder.src.algorithm.heuristics import l2distance, node_l2distance, node_shperical_distance
 from GooglePathFinder.src.backend.services.distance_service import DistanceService
@@ -26,7 +27,7 @@ class AlgorithmHandlerService:
 
     @metric_measure
     def do_biastar(self, start_node: Node, end_node: Node):
-        return BiAStar.run(start_node, end_node, node_shperical_distance, self.distance_service)
+        return BiAStar.run(start_node, end_node, node_l2distance, self.distance_service)
 
     @staticmethod
     def _min(a, b):
@@ -54,6 +55,8 @@ class AlgorithmHandlerService:
 
     def compute(self, objective: Dict):
         """Call this function using a multiprocessing pool"""
-
-        return [self.algorithm_mapper(algorithm, objective[algorithm]) for algorithm in objective.keys()]
+        logging.info("The executor process is started.")
+        result =  [self.algorithm_mapper(algorithm, objective[algorithm]) for algorithm in objective.keys()]
+        logging.info("The executor process is finished.")
+        return result
 

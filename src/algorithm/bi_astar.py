@@ -176,16 +176,9 @@ class BiAStar:
 
         # Evaluate the solution -----------------------------------------------
         if solution["node"] == None:
-            logging.info(
-                f"There is no path between {start_node.node_id} and {end_node.node_id}."
-            )
             return {"path": [], "distance": float("inf"), "expanded": len(backward_dict) + len(forward_dict)}
 
         sum_distance = solution["path_cost"]
-        logging.info(
-            f"Path computed successfully between node {start_node.node_id} and \
-            {end_node.node_id}. Final distance is {sum_distance}"
-        )
 
         # Reconstruct the path
         path = []
