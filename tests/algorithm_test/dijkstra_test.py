@@ -1,5 +1,6 @@
 from GooglePathFinder.src.algorithm.dijkstra import Dijkstra
 from GooglePathFinder.src.model.node import Node
+from GooglePathFinder.src.backend.services.mocks.mock_distance_service import MockDistanceService
 
 
 def test_dijkstra_predefined_match():
@@ -9,6 +10,7 @@ def test_dijkstra_predefined_match():
     - update required of an already queued node
     - intermediate node without neighbors (no outgoing edge)
     """
+    mock_service = MockDistanceService()
 
     # Nodes
     s = Node("s")  # Start node
@@ -25,46 +27,47 @@ def test_dijkstra_predefined_match():
     g = Node("g")  # End node
 
     # Neighbors
-    s.set_neighbors([[3, d], [9, e], [1, i]])
-    a.set_neighbors([])
-    b.set_neighbors([[2, a]])
-    c.set_neighbors([[2, a]])
-    d.set_neighbors([[1, b], [8, c], [2, e]])
-    e.set_neighbors([[9, k], [1, h], [14, f]])
-    f.set_neighbors([[5, g]])
-    h.set_neighbors([[4, j], [4, i]])
-    i.set_neighbors([[15, j]])
-    j.set_neighbors([[3, k]])
-    k.set_neighbors([[5, f]])
-    g.set_neighbors([])
+    mock_service.set_neighbors(s, [[3, d], [9, e], [1, i]])
+    mock_service.set_neighbors(a, [])
+    mock_service.set_neighbors(b, [[2, a]])
+    mock_service.set_neighbors(c, [[2, a]])
+    mock_service.set_neighbors(d, [[1, b], [8, c], [2, e]])
+    mock_service.set_neighbors(e, [[9, k], [1, h], [14, f]])
+    mock_service.set_neighbors(f, [[5, g]])
+    mock_service.set_neighbors(h, [[4, j], [4, i]])
+    mock_service.set_neighbors(i, [[15, j]])
+    mock_service.set_neighbors(j, [[3, k]])
+    mock_service.set_neighbors(k, [[5, f]])
+    mock_service.set_neighbors(g, [])
 
-    solver = Dijkstra()
-    manual_solution = (["d", "e", "h", "j", "k", "f", "g"], 23)
-    (path, sum_distance, expand_number) = solver.run(s, g)
+    manual_solution = ([d, e, h, j, k, f, g], 23)
+    result = Dijkstra.run(s, g, mock_service)
 
-    assert (path, sum_distance) == manual_solution
+    assert (result['path'], result['distance']) == manual_solution
 
 
 def test_dijkstra_emptyqueue_unmatched():
+    mock_service = MockDistanceService()
+
     # Nodes
     s = Node("s")  # Start node
     g = Node("g")  # End node
 
     # Neighbors
-    s.set_neighbors([])
-    g.set_neighbors([])
+    mock_service.set_neighbors(s, [])
+    mock_service.set_neighbors(g, [])
 
-    solver = Dijkstra()
     manual_solution = ([], float("inf"))
-    (path, sum_distance, expand_number) = solver.run(s, g)
+    result = Dijkstra.run(s, g, mock_service)
 
-    assert (path, sum_distance) == manual_solution
+    assert (result['path'], result['distance']) == manual_solution
 
 
 def test_dijkstra_multigraph_match():
     """
     The graph contains loops (edges defined by the same vertex)
     """
+    mock_service = MockDistanceService()
 
     # Nodes
     s = Node("s")  # Start node
@@ -73,33 +76,33 @@ def test_dijkstra_multigraph_match():
     g = Node("g")  # End node
 
     # Neighbors
-    s.set_neighbors([[3, a]])
-    a.set_neighbors([[1, a], [3, b]])
-    b.set_neighbors([[1, b], [2, a], [3, g]])
-    g.set_neighbors([])
+    mock_service.set_neighbors(s, [[3, a]])
+    mock_service.set_neighbors(a, [[1, a], [3, b]])
+    mock_service.set_neighbors(b, [[1, b], [2, a], [3, g]])
+    mock_service.set_neighbors(g, [])
 
-    solver = Dijkstra()
-    manual_solution = (["a", "b", "g"], 9)
-    (path, sum_distance, expand_number) = solver.run(s, g)
+    manual_solution = ([a, b, g], 9)
+    result = Dijkstra.run(s, g, mock_service)
 
-    assert (path, sum_distance) == manual_solution
+    assert (result['path'], result['distance']) == manual_solution
 
 
 def test_dijkstra_direct_path_match():
     """
     Direct path between the start and end node
     """
+    mock_service = MockDistanceService()
+
 
     # Nodes
     s = Node("s")  # Start node
     g = Node("g")  # End node
 
     # Neighbors
-    s.set_neighbors([[1, g]])
-    g.set_neighbors([])
+    mock_service.set_neighbors(s, [[1, g]])
+    mock_service.set_neighbors(g, [])
 
-    solver = Dijkstra()
-    manual_solution = (["g"], 1)
-    (path, sum_distance, expand_number) = solver.run(s, g)
+    manual_solution = ([g], 1)
+    result = Dijkstra.run(s, g, mock_service)
 
-    assert (path, sum_distance) == manual_solution
+    assert (result['path'], result['distance']) == manual_solution

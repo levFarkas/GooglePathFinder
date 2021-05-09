@@ -24,7 +24,7 @@ class MapDisplay:
         self.tile_radius = tile_radius
         self.latitude = latitude
         self.longitude = longitude
-        self.zoom = 16
+        self.zoom = 15
         self.pool = Pool()
         self.map_size = [700, 700]
         self.stored_map = [255 for i in range(self.map_size[0] * self.map_size[1] * 4)]
@@ -65,7 +65,7 @@ class MapDisplay:
 
         return lat_current, long_current
 
-    def coordinate_to_pixel(self, lat: float, long: float):
+    def coordinate_to_pixel(self, latitude: float, longitude: float):
         self.adjust_coordinate_to_center_tile()
         x_tile, y_tile = deg2num(self.latitude, self.longitude, self.zoom)
         lat_next, long_next = num2deg(x_tile + 1, y_tile - 1, self.zoom)
@@ -79,8 +79,8 @@ class MapDisplay:
         lat_last = lat_first + (2 * self.tile_radius + 1) * lat_delta
         long_last = long_first + (2 * self.tile_radius + 1) * long_delta
 
-        return ((long - long_first) / (long_last - long_first)), (
-            (lat - lat_first) / (lat_last - lat_first)
+        return ((longitude - long_first) / (long_last - long_first)), (
+            (latitude - lat_first) / (lat_last - lat_first)
         )
 
     def plot_route(self, route: List[Tuple[float, float]], route_color=(255, 50, 50)):
@@ -113,45 +113,14 @@ class MapDisplay:
                     self.latitude, self.longitude, self.zoom
                 )
             else:
-                self.render()
+                self.refresh()
 
-            # Example plot by geographic coordinates
-            self.plot_route(
-                [
-                    (46.98951907893645, 17.933736746651785),
-                    (46.98892490282087, 17.933854457310268),
-                    (46.98845919721676, 17.93390154157366),
-                    (46.98815407975201, 17.93397216796875),
-                    (46.987768668217576, 17.934254673549106),
-                    (46.987463550752814, 17.934678431919643),
-                    (46.98707813921838, 17.935573032924108),
-                    (46.986644551242144, 17.936585344587055),
-                    (46.985889786987215, 17.93747994559152),
-                    (46.98494231696507, 17.938351004464284),
-                    (46.98470143475605, 17.938633510044642),
-                    (46.98426784677981, 17.939104352678573),
-                    (46.984107258640464, 17.93936331612723),
-                    (46.98407514101259, 17.93964582170759),
-                    (46.984059082198655, 17.939810616629465),
-                    (46.98421967033801, 17.939881243024555),
-                    (46.98474961119785, 17.940446254185268),
-                    (46.9853759049413, 17.94115251813616),
-                    (46.98492625815113, 17.942117745535715),
-                    (46.98457296424457, 17.942918178013393),
-                    (46.98446055254703, 17.94308297293527),
-                    (46.98457296424457, 17.943812779017858),
-                    (46.98468537594211, 17.944189453125),
-                    (46.98519925798802, 17.943341936383927),
-                    (46.98553649308065, 17.943812779017858),
-                ]
-            )
-
-    def async_update_by_coordinate(self, lat: float, long: float, zoom: int):
+    def async_update_by_coordinate(self, latitude: float, longitude: float, zoom: int):
         self.pool.apply_async(
             load_tiles,
             kwds={
-                "lat": lat,
-                "long": long,
+                "lat": latitude,
+                "long": longitude,
                 "zoom": zoom,
                 "tile_radius": self.tile_radius,
             },
@@ -162,9 +131,9 @@ class MapDisplay:
         self.stored_map = image_data
         save("cached_map.npy", image_data)
         self.cached = True
-        self.render()
+        self.refresh()
 
-    def render(self):
+    def refresh(self):
         core.add_texture(
             "geomap",
             self.stored_map,
