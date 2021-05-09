@@ -4,13 +4,21 @@ from GooglePathFinder.src.model.node import Node
 class NodeDao:
     def __init__(self, data: dict):
         self.node_id = data["NODE_ID"]
-        self.node_name = data["NODE_NAME"]
-        self.city = data["CITY"]
-        self.zip = data["ZIP_CODE"]
-        self.latitude = data["LATITUDE"]
-        self.longitude = data["LONGITUDE"]
-        self.heuristic = data["HEURISTICS"]
-        self.distance = data["DISTANCE"]
+        self.latitude = float(data["LATITUDE"])
+        self.longitude = float(data["LONGITUDE"])
+        self.city = ""
+        self.heuristic = 0
+
+        if "NODE_NAME" in data.keys():
+            self.node_name = data["NODE_NAME"]
+        if "CITY" in data.keys():
+            self.city = data["CITY"]
+        if "ZIP_CODE" in data.keys():
+            self.zip = data["ZIP_CODE"]
+        if "HEURISTICS" in data.keys():
+            self.heuristic = float(data["HEURISTICS"])
+        if "DISTANCE" in data.keys():
+            self.distance = float(data["DISTANCE"])
 
     def convert_to_node_model(self) -> Node:
         return Node(

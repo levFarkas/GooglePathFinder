@@ -24,8 +24,8 @@ class PathFinderGui:
                 "map_display",
                 parent="main_panel",
                 tile_radius=1,
-                latitude=46.98703882546629,
-                longitude=17.9394546906496,
+                latitude=47.4751158, 
+                longitude=19.0057389
             )
             map_display.construct()
 
@@ -36,7 +36,7 @@ class PathFinderGui:
             )
             input_panel.construct()
 
-            execution_panel = ExecutionPanel("execution_panel", parent="user_panel")
+            execution_panel = ExecutionPanel("execution_panel", parent="user_panel", plotter = map_display)
             execution_panel.construct()
             core.end()  # user_panel
 

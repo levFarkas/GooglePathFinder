@@ -1,8 +1,10 @@
 import logging
 from queue import PriorityQueue
 from typing import Callable
+from copy import deepcopy
 
 from GooglePathFinder.src.model.node import Node
+from GooglePathFinder.src.backend.services.interface.distance_interface import DistanceInterface
 
 
 class AStar:
@@ -16,6 +18,7 @@ class AStar:
         start_node: Node,
         end_node: Node,
         heuristic_function: Callable[[Node, Node], float],
+        distance_service: DistanceInterface,
     ):
         curr_node = start_node
         curr_distance = 0
@@ -23,12 +26,12 @@ class AStar:
         node_dict = {curr_node: {"sum_distance": 0, "preceding": None, "visited": True}}
 
         neighbor_queue = PriorityQueue()
-        for (n_distance, n_node) in start_node.get_neighbors():
+        for (n_distance, n_node) in distance_service.get_neighbours_by_node(start_node.node_id):
             n_distance += heuristic_function(n_node, end_node)
             neighbor_queue.put([n_distance, n_node])
             node_dict[n_node] = {
                 "sum_distance": n_distance,
-                "preceding": curr_node,
+                "preceding": deepcopy(curr_node),
                 "visited": False,
             }
 
@@ -41,7 +44,7 @@ class AStar:
 
             node_dict[curr_node]["visited"] = True
 
-            for (n_distance, n_node) in curr_node.get_neighbors():
+            for (n_distance, n_node) in distance_service.get_neighbours_by_node(curr_node.node_id):
                 updated_distance = (
                     curr_distance
                     - heuristic_function(curr_node, end_node)
@@ -53,7 +56,7 @@ class AStar:
                     neighbor_queue.put([updated_distance, n_node])
                     node_dict[n_node] = {
                         "sum_distance": updated_distance,
-                        "preceding": curr_node,
+                        "preceding": deepcopy(curr_node),
                         "visited": False,
                     }
 
@@ -66,7 +69,7 @@ class AStar:
                         )
 
                     neighbor_queue.put([updated_distance, n_node])
-                    node_dict[n_node]["preceding"] = curr_node
+                    node_dict[n_node]["preceding"] = deepcopy(curr_node)
                     node_dict[n_node]["sum_distance"] = updated_distance
 
         # Evaluate the solution ------------------------------------------------
@@ -74,7 +77,7 @@ class AStar:
             logging.info(
                 f"There is no path between {start_node.node_id} and {end_node.node_id}."
             )
-            return [], float("inf"), len(node_dict)
+            return {"path": [], "distance": float("inf"), "expanded": len(node_dict)}
 
         sum_distance = node_dict[end_node]["sum_distance"]
         logging.info(
@@ -85,7 +88,7 @@ class AStar:
         # Reconstruct the path
         path = []
         while curr_node != start_node:
-            path.insert(0, curr_node.node_id)
+            path.insert(0, deepcopy(curr_node))
             curr_node = node_dict[curr_node]["preceding"]
 
-        return path, sum_distance, len(node_dict)
+        return {"path": path, "distance": sum_distance, "expanded": len(node_dict)}

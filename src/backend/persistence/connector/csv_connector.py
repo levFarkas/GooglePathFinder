@@ -6,27 +6,56 @@ from GooglePathFinder.src.backend.persistence.connector.model.nodedao import Nod
 
 
 class CSVConnector(Connector):
+    def __init__(self):
+        self.loaded_data = []
+
     def find_all(self) -> List[NodeDao]:
-        with open("../resources/mocks/nodes.csv") as f:
-            return self._read_data(f)
+        if len(self.loaded_data):
+            return self.loaded_data
+        with open("../resources/offline_dataset/nodes.csv") as f:
+            self.loaded_data = self._read_nodes(f)
+            return self.loaded_data
 
     def find_node_by_id(self, node : str) -> Optional[NodeDao]:
-        with open("../resources/mocks/nodes.csv") as f:
-            for n in self._read_data(f):
-                if n.node_id == node: return n
-            return None
+        for n in self.find_all():
+            if n.node_id == node: return n
+        return None
 
     def find_neighbors_by_node(self, node: str) -> List[NodeDao]:
-        with open("../resources/mocks/neighbours.csv") as f:
-            return self._read_data(f)
+        with open("../resources/offline_dataset/edges.csv") as f:
+            edges = self._read_edges(f)
+            neighbor_entries = [(edge["TO_ID"], edge["DISTANCE"]) for edge in edges if edge["FROM_ID"] == node]
+            return self._create_neighbor_list(neighbor_entries)
+            
 
     def find_backward_neighbors_by_node(self, node: str) -> List[NodeDao]:
-        with open("../resources/mocks/backward_neighbours.csv") as f:
-            return self._read_data(f)
+        with open("../resources/offline_dataset/edges.csv") as f:
+            edges = self._read_edges(f)
+            neighbor_entries = [(edge["FROM_ID"], edge["DISTANCE"]) for edge in edges if edge["TO_ID"] == node]
+            return self._create_neighbor_list(neighbor_entries)
+
+    
+    def _create_neighbor_list(self,neighbor_entries: list):
+        neighbors = []
+        for n in neighbor_entries:
+            current_dao = self.find_node_by_id(n[0])
+            if current_dao is None:
+                continue
+            current_dao.distance = float(n[1])
+            neighbors.append(current_dao)
+        return neighbors
+
 
     @staticmethod
-    def _read_data(f):
+    def _read_nodes(f):
         reader = csv.reader(f)
         data = [r for r in reader]
         header = data.pop(0)
         return [NodeDao(dict(zip(header, row))) for row in data]
+
+    @staticmethod
+    def _read_edges(f):
+        reader = csv.reader(f)
+        data = [r for r in reader]
+        header = data.pop(0)
+        return [dict(zip(header, row)) for row in data]
