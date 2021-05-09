@@ -1,5 +1,5 @@
 from typing import List
-
+import logging
 import dearpygui.core as core
 import dearpygui.simple as simple
 
@@ -52,7 +52,7 @@ class InputPanel:
             coordinates = self.context.pixel_to_coordinate(
                 pos_x / sx, (sy - pos_y) / sy
             )
-            print(coordinates)
+            logging.info(f"Selected coordinate: lat: {coordinates[0]}°, long: {coordinates[1]}°")
             core.set_value(callback_object, coordinates)
             core.set_mouse_click_callback(None)
 
