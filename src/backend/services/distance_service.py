@@ -16,12 +16,12 @@ class DistanceService(DistanceInterface):
         nodes = [nodedao.convert_to_node_model() for nodedao in node_daos]
         return nodes
 
-    def get_neighbours_by_node(self, node: str) -> List[Tuple[Node, float]]:
+    def get_neighbours_by_node(self, node: str) -> List[Tuple[float, Node]]:
         node_daos = self._connector.find_neighbors_by_node(node)
         nodes = [(nodedao.distance, nodedao.convert_to_node_model()) for nodedao in node_daos]
         return nodes
 
-    def get_backward_neighbours_by_node(self, node: str) -> List[Tuple[Node, float]]:
+    def get_backward_neighbours_by_node(self, node: str) -> List[Tuple[float, Node]]:
         node_daos = self._connector.find_backward_neighbors_by_node(node)
         nodes = [(nodedao.distance, nodedao.convert_to_node_model()) for nodedao in node_daos]
         return nodes

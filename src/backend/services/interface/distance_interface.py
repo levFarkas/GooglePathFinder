@@ -11,8 +11,8 @@ class DistanceInterface:
     def get_all_nodes(self) -> List[Node]:
         pass
 
-    def get_neighbours_by_node(self, node: str) -> List[Tuple[Node, float]]:
+    def get_neighbours_by_node(self, node: str) -> List[Tuple[float, Node]]:
         pass
 
-    def get_backward_neighbours_by_node(self, node: str) -> List[Tuple[Node, float]]:
+    def get_backward_neighbours_by_node(self, node: str) -> List[Tuple[float, Node]]:
         pass
