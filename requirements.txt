@@ -7,4 +7,3 @@ dearpygui==0.6.415
 numpy
 pillow
 requests
-pandas

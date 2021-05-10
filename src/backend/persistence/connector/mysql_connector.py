@@ -1,5 +1,7 @@
 import os
 from typing import List, Optional
+import logging
+import atexit
 
 import mysql.connector
 from GooglePathFinder.src.backend.persistence.connector.interface.connector import Connector
@@ -7,6 +9,9 @@ from GooglePathFinder.src.backend.persistence.connector.model.nodedao import Nod
 
 
 class MySQLConnector(Connector):
+    def __init__(self):
+        self._connect()
+        atexit.register(self._disconnect)
 
     def _connect(self):
         self._db = mysql.connector.connect(
@@ -16,75 +21,79 @@ class MySQLConnector(Connector):
             database=os.getenv("DB_DATABASE", "PATHFINDER")
         )
         if self._db.cursor:
-            print("Successful connection to database.")
+            logging.info("Successful connection to the database.")
+        else:
+            logging.warning("Couldn't connect to the database.")
+    
+    def _disconnect(self):
+        self._db.close()
 
     def find_all(self) -> List[NodeDao]:
-        self._connect()
         cursor = self._db.cursor()
-        cursor.execute("""
-        SELECT NODE_ID, NODE_NAME, CITY, ZIP_CODE, LONGITUDE, LATITUDE, HEURISTICS
-        FROM PATHFINDER.NODES""")
+        try:
+            cursor.execute("""
+                SELECT * FROM PATHFINDER.NODES""")
+            columns = tuple([d[0] for d in cursor.description])
+            result = [dict(zip(columns, row)) for row in cursor]
+            cursor.close()
+            return [NodeDao(item) for item in result]
+        except Exception as e:
+            logging.warning("Error when querying all nodes.")
+            logging.warning(e)
 
-        columns = tuple([d[0] for d in cursor.description])
-
-        result = [dict(zip(columns, row)) for row in cursor]
-
-        cursor.close()
-        self._db.close()
-
-        return [NodeDao(item) for item in result]
+        return []
 
     def find_node_by_id(self, node_id : str) -> Optional[NodeDao]:
-        self._connect()
-        cursor = self._db.cursor()
-        cursor.execute("""
-        SELECT NODE_ID, NODE_NAME, CITY, ZIP_CODE, LONGITUDE, LATITUDE, HEURISTICS
-        FROM PATHFINDER.NODES
-        where NODE_ID = """ + node_id)
+        try:
+            cursor = self._db.cursor()
+            cursor.execute("""
+                SELECT NODE_ID , NODE_NAME , CITY , ZIP_CODE , LATITUDE , LONGITUDE , HEURISTICS
+                FROM PATHFINDER.NODES
+                where NODE_ID = """ + str(node_id))
+            columns = tuple([d[0] for d in cursor.description])
+            result = [dict(zip(columns, row)) for row in cursor]
+            assert len(result) <= 1
+            cursor.close()
+            return NodeDao(result[0]) if len(result) == 1 else None
+        except Exception as e:
+            logging.warning("Error when querying node by id.")
+            logging.warning(e)
 
-        columns = tuple([d[0] for d in cursor.description])
-
-        result = [dict(zip(columns, row)) for row in cursor]
-        assert len(result) <= 1
-
-        cursor.close()
-        self._db.close()
-
-        return NodeDao(result[0]) if len(result) == 1 else None
+        return None
 
     def find_neighbors_by_node(self, node_id: str) -> List[NodeDao]:
-        self._connect()
-        cursor = self._db.cursor()
-        cursor.execute("""
-        SELECT n.NODE_ID, n.NODE_NAME, n.CITY, n.ZIP_CODE, n.LATITUDE, n.LONGITUDE, n.HEURISTICS, e.DISTANCE
-        FROM PATHFINDER.NODES n LEFT JOIN PATHFINDER.GRAPH g ON n.node_id=g.NODE_ID 
-        RIGHT JOIN PATHFINDER.EDGES e ON g.EDGE_ID=E.EDGE_ID
-        WHERE e.FROM_CROSSROADS_ID = = """ + node_id)
-
-        columns = tuple([d[0] for d in cursor.description])
-
-        result = [dict(zip(columns, row)) for row in cursor]
-
-        cursor.close()
-        self._db.close()
-
-        return [NodeDao(item) for item in result]
+        try:
+            cursor = self._db.cursor()
+            cursor.execute("""
+                SELECT e.DISTANCE , n2.NODE_ID , n2.LATITUDE , n2.LONGITUDE 
+                FROM PATHFINDER.NODES n1 INNER JOIN EDGES e ON n1.NODE_ID = e.FROM_ID 
+                INNER JOIN PATHFINDER.NODES n2 ON e.TO_ID = n2.NODE_ID 
+                WHERE e.FROM_ID =""" + str(node_id))
+            columns = tuple([d[0] for d in cursor.description])
+            result = [dict(zip(columns, row)) for row in cursor]
+            cursor.close()
+            logging.info(result)
+            return [NodeDao(item) for item in result]
+        except Exception as e:
+            logging.warning("Error when querying neighbors.")
+            logging.warning(e)
+        
+        return []
 
     def find_backward_neighbors_by_node(self, node_id: str) -> List[NodeDao]:
-        self._connect()
-        cursor = self._db.cursor()
-        cursor.execute("""
-            SELECT n.NODE_ID, n.NODE_NAME, n.CITY, n.ZIP_CODE, n.LATITUDE, n.LONGITUDE, n.HEURISTICS, e.DISTANCE
-            FROM PATHFINDER.NODES n LEFT JOIN PATHFINDER.GRAPH g ON n.node_id=g.NODE_ID 
-            RIGHT JOIN PATHFINDER.EDGES e ON g.EDGE_ID=E.EDGE_ID
-            WHERE e.TO_CROSSROADS_ID = 
-        """ + node_id)
+        try:
+            cursor = self._db.cursor()
+            cursor.execute("""
+                SELECT e.DISTANCE , n2.NODE_ID, n2.LATITUDE , n2.LONGITUDE 
+                FROM PATHFINDER.NODES n1 INNER JOIN EDGES e ON n1.NODE_ID = e.FROM_ID 
+                INNER JOIN PATHFINDER.NODES n2 ON e.FROM_ID = n2.NODE_ID 
+                WHERE e.TO_ID =""" + str(node_id))
+            columns = tuple([d[0] for d in cursor.description])
+            result = [dict(zip(columns, row)) for row in cursor]
+            cursor.close()
+            return [NodeDao(item) for item in result]
+        except Exception as e:
+            logging.warning("Error when querying backward neighbors.")
+            logging.warning(e)
 
-        columns = tuple([d[0] for d in cursor.description])
-
-        result = [dict(zip(columns, row)) for row in cursor]
-
-        cursor.close()
-        self._db.close()
-
-        return [NodeDao(item) for item in result]
+        return []
