@@ -1,11 +1,11 @@
 from multiprocessing import Pool
-from typing import List
 from random import randint
+from typing import List
 
 import dearpygui.core as core
-
 from GooglePathFinder.src.backend.services.algorithm_handler_service import AlgorithmHandlerService
 from GooglePathFinder.src.frontend.map_display import MapDisplay
+from dearpygui import simple
 
 
 class ExecutionPanel:
@@ -100,8 +100,10 @@ class ExecutionPanel:
 
         objective = {}
         for algorithm in selected_algorithms:
-            init_node = self.algorithm_service.get_nearest_node_by_lat_long(float(init_coords[0]), float(init_coords[1]))
-            dest_node = self.algorithm_service.get_nearest_node_by_lat_long(float(dest_coords[0]), float(dest_coords[1]))
+            init_node = self.algorithm_service.get_nearest_node_by_lat_long(float(init_coords[0]),
+                                                                            float(init_coords[1]))
+            dest_node = self.algorithm_service.get_nearest_node_by_lat_long(float(dest_coords[0]),
+                                                                            float(dest_coords[1]))
             objective[algorithm] = [init_node, dest_node]
 
         self.pool.apply_async(
@@ -116,7 +118,33 @@ class ExecutionPanel:
             route = []
             for n in algorithm["alg_result"]["path"]:
                 route.append((n.latitude, n.longitude))
-            self.plotter.plot_route(route, (255, randint(0,255), randint(0,255)))
+            self.plotter.plot_route(route, (255, randint(0, 255), randint(0, 255)))
+
+        elapsed_times = [algorithm["elapsed_time"] for algorithm in result]
+        elapsed_constants = [1, 3, 5]
+
+        with simple.group(self.name, parent=self.parent):
+            core.add_radio_button("metrics",
+                                  items=["Elapsed times", "Expanded nodes"],
+                                  callback=self.handle_metric,
+                                  callback_data=result
+                                  )
+            core.add_plot("plot")
+            core.add_bar_series("plot", "Metrics", elapsed_constants, elapsed_times)
+
+    @staticmethod
+    def handle_metric(name, result):
+        value = core.get_value("metrics")
+
+        elapsed_times = [algorithm["elapsed_time"] for algorithm in result]
+        expanded_nodes = [algorithm["alg_result"]["expanded"] for algorithm in result]
+        expanded_constants = constants = [2, 4, 6]
+        elapsed_constants = constants = [1, 3, 5]
+
+        if value == 0:
+            core.configure_item("Metrics", x=elapsed_constants, y=elapsed_times)
+        if value == 1:
+            core.configure_item("Metrics", x=expanded_constants, y=expanded_nodes)
 
     def update_listbox(self):
         core.configure_item(
