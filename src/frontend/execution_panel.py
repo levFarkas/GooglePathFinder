@@ -136,20 +136,23 @@ class ExecutionPanel:
     def handle_metric(self):
         value = core.get_value("metrics")
         core.clear_plot("Metrics plot")
+        bar_positions = [2*idx+1 for idx in range(len(self.alg_result))]
 
         if len(self.alg_result):
             elapsed_times = [self.alg_result[idx]["elapsed_time"] for idx in range(len(self.alg_result))]
             expanded_nodes = [algorithm["alg_result"]["expanded"] for algorithm in self.alg_result]
-            bar_positions = [1, 3, 5]
+            
 
             if value == 0:
                 core.add_bar_series("Metrics plot", "Elapsed time", bar_positions, elapsed_times)
                 core.set_plot_ylimits("Metrics plot", 0, max(elapsed_times)*1.2)
-                core.configure_item("Metrics plot", x_axis_name="seconds")
             if value == 1:
                 core.add_bar_series("Metrics plot", "Expanded nodes", bar_positions, expanded_nodes)
                 core.set_plot_ylimits("Metrics plot", 0, max(expanded_nodes)*1.2)
-                core.configure_item("Metrics plot", x_axis_name="number of nodes")
+        
+        x_ticks = [[alg, idx] for alg, idx in zip(self.selected_algorithms, bar_positions)]
+        core.reset_xticks("Metrics plot")
+        core.set_xticks("Metrics plot", x_ticks)
 
 
     def update_listbox(self):
